@@ -1,0 +1,377 @@
+{
+  "description": "MenuMargin is a comprehensive multi-agent pricing intelligence framework that transforms recipes into actionable pricing plans for independent pop-up dining and small catering businesses. The framework solves five critical challenges: (1) Automated location-based retail price discovery from public store websites using ethical web scraping with full respect for robots.txt and rate limiting; (2) Intelligent ingredient standardization converting diverse recipe formats to normalized metric units with smart synonym matching; (3) Accurate cost calculation incorporating USDA-based edible yield factors and Pareto analysis to identify cost drivers; (4) Strategic pricing recommendations with multi-scenario sensitivity analysis, psychological pricing strategies, and competitive margin targets; (5) Continuous pre-launch price monitoring through periodic re-scraping with severity-weighted alerts. The framework employs a three-tier hierarchical architecture with a central scheduler orchestrating 8 framework-level worker agents and 3 specialized sub-agents across 6 distinct workflow phases with conditional branching, retry logic, and monitoring loops.",
+  "subagents": [
+    {
+      "name": "MenuPricingOrchestrator",
+      "description": "Central coordination scheduler managing the complete pricing workflow from recipe input to final pricing recommendations, coordinating 8 framework-level worker agents and 3 specialized sub-agents through 6 distinct phases with state management, retry logic for failed operations, monitoring loop coordination, and final report synthesis",
+      "role": "orchestrator",
+      "capabilities": [
+        "six_phase_workflow_orchestration",
+        "state_management_across_agents",
+        "retry_logic_implementation",
+        "monitoring_loop_coordination",
+        "final_report_synthesis",
+        "conditional_branching_logic"
+      ],
+      "tools": []
+    },
+    {
+      "name": "LocationDataCollector",
+      "description": "Gathers store websites and promotional pages based on user-specified location, performing location-based store discovery, URL validation and accessibility checking, promotional page identification, and weekly ad/price list detection to establish the pricing data source landscape",
+      "role": "researcher",
+      "capabilities": [
+        "location_based_store_discovery",
+        "url_validation_and_accessibility",
+        "promotional_page_identification",
+        "weekly_ad_detection",
+        "pricing_source_cataloging"
+      ],
+      "tools": [
+        "web_search",
+        "web_read",
+        "web_search_tool",
+        "store_url_validator_tool",
+        "promotional_page_finder_tool"
+      ]
+    },
+    {
+      "name": "IngredientMapper",
+      "description": "Standardizes recipe ingredients to normalized formats with metric units, performing ingredient name normalization, store category mapping, synonym generation for flexible matching, and unit conversion from diverse formats (cups, tablespoons, ounces) to standard metric (grams/mL)",
+      "role": "technical_specialist",
+      "capabilities": [
+        "ingredient_name_normalization",
+        "store_category_mapping",
+        "synonym_generation",
+        "unit_conversion_to_metric",
+        "recipe_format_standardization"
+      ],
+      "tools": [
+        "ingredient_normalizer_tool",
+        "synonym_matcher_tool",
+        "unit_standardization_tool"
+      ]
+    },
+    {
+      "name": "PriceHarvester",
+      "description": "Orchestrates search and scraping operations to collect retail ingredient prices from discovered stores, managing multi-source price discovery, search strategy optimization, scraping coordination between sub-agents (PriceSearchAgent and PriceScraperAgent), and confidence scoring for pricing data quality",
+      "role": "orchestrator",
+      "capabilities": [
+        "multi_source_price_discovery",
+        "search_strategy_optimization",
+        "scraping_coordination",
+        "confidence_scoring",
+        "sub_agent_orchestration"
+      ],
+      "tools": []
+    },
+    {
+      "name": "CostCalculator",
+      "description": "Calculates accurate dish costs with USDA yield factor adjustments and Pareto analysis, integrating edible yield percentages to account for typical 12-18% waste from bones/stems/peels, performing per-serving cost breakdown, and executing 80/20 Pareto analysis to identify the 20% of ingredients driving 80% of costs",
+      "role": "analyst",
+      "capabilities": [
+        "usda_yield_factor_integration",
+        "waste_percentage_calculation",
+        "per_serving_cost_breakdown",
+        "pareto_analysis_execution",
+        "cost_driver_identification"
+      ],
+      "tools": [
+        "yield_factor_retriever_tool",
+        "cost_computation_tool",
+        "recipe_cost_aggregator_tool"
+      ]
+    },
+    {
+      "name": "PricingAdvisor",
+      "description": "Generates strategic menu pricing with sensitivity analysis and positioning strategies, calculating target margin-based pricing, performing multi-scenario sensitivity analysis modeling ±5%, ±10%, ±15% price volatility, recommending psychological pricing strategies (charm pricing, prestige positioning), and providing competitive positioning recommendations aligned with standard 25-35% food cost ratios",
+      "role": "strategist",
+      "capabilities": [
+        "target_margin_calculation",
+        "multi_scenario_sensitivity_analysis",
+        "psychological_pricing_strategies",
+        "competitive_positioning_recommendations",
+        "food_cost_ratio_optimization"
+      ],
+      "tools": [
+        "price_calculator_tool",
+        "sensitivity_analyzer_tool",
+        "pricing_strategy_recommender_tool"
+      ]
+    },
+    {
+      "name": "NutritionChecker",
+      "description": "Estimates nutrition content and validates against user-defined dietary ranges, retrieving per-100g nutrition data from authoritative sources, calculating per-serving nutritional estimates, validating against dietary constraints, and generating health warnings when thresholds are exceeded",
+      "role": "validator",
+      "capabilities": [
+        "per_100g_nutrition_retrieval",
+        "per_serving_estimation",
+        "dietary_constraint_validation",
+        "health_warning_generation",
+        "nutritional_compliance_checking"
+      ],
+      "tools": [
+        "nutrition_validator_tool"
+      ]
+    },
+    {
+      "name": "SubstituteRecommender",
+      "description": "Finds cost-effective ingredient alternatives while maintaining quality, discovering alternative ingredients through similarity search, scoring culinary compatibility, calculating cost savings potential, and comparing nutritional impact to ensure substitutions meet quality and dietary requirements",
+      "role": "optimizer",
+      "capabilities": [
+        "alternative_ingredient_discovery",
+        "culinary_compatibility_scoring",
+        "cost_savings_calculation",
+        "nutrition_impact_comparison",
+        "quality_maintenance_validation"
+      ],
+      "tools": [
+        "substitute_search_tool",
+        "similarity_scorer_tool",
+        "cost_impact_calculator_tool",
+        "nutrition_impact_tool"
+      ]
+    },
+    {
+      "name": "PriceMonitor",
+      "description": "Tracks ingredient price changes through periodic monitoring, performing periodic price re-checking via lightweight scraping, detecting changes and trends, generating threshold-based alerts when costs fluctuate beyond configurable thresholds (default >10% change), and managing monitoring schedules for pre-launch continuous tracking",
+      "role": "monitor",
+      "capabilities": [
+        "periodic_price_rechecking",
+        "change_detection_and_trending",
+        "threshold_based_alerting",
+        "monitoring_schedule_management",
+        "pre_launch_tracking"
+      ],
+      "tools": [
+        "lightweight_scraper_tool",
+        "price_change_detector_tool",
+        "alert_threshold_checker_tool"
+      ]
+    },
+    {
+      "name": "PriceSearchAgent",
+      "description": "Searches for product pages containing pricing information, optimizing search queries, filtering results for relevance, and ranking by likelihood of containing usable pricing data",
+      "role": "researcher",
+      "capabilities": [
+        "query_optimization",
+        "result_filtering",
+        "relevance_ranking",
+        "pricing_page_identification"
+      ],
+      "tools": [
+        "web_search",
+        "web_read",
+        "search_query_builder_tool",
+        "result_ranker_tool"
+      ]
+    },
+    {
+      "name": "PriceScraperAgent",
+      "description": "Scrapes and parses pricing from product pages with ethical web scraping compliance, performing HTML price extraction, unit price conversion, and respecting robots.txt and rate limits",
+      "role": "technical_specialist",
+      "capabilities": [
+        "ethical_web_scraping",
+        "html_price_extraction",
+        "unit_price_conversion",
+        "robots_txt_compliance"
+      ],
+      "tools": [
+        "web_scraper_tool",
+        "price_parser_tool",
+        "unit_price_converter_tool"
+      ]
+    },
+    {
+      "name": "NutritionDataScraperAgent",
+      "description": "Retrieves per-100g nutrition data from authoritative sources like USDA databases, performing nutrition database search, per-100g data parsing, and source validation to ensure data quality",
+      "role": "technical_specialist",
+      "capabilities": [
+        "nutrition_database_search",
+        "per_100g_data_parsing",
+        "source_validation",
+        "authoritative_data_retrieval"
+      ],
+      "tools": [
+        "nutrition_search_tool",
+        "nutrition_parser_tool"
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "ingredient_normalizer_tool",
+      "description": "Extracts base ingredient names from descriptive recipe text, handling diverse formats and removing qualifiers",
+      "capabilities": [
+        "base_name_extraction",
+        "format_normalization",
+        "qualifier_removal"
+      ]
+    },
+    {
+      "name": "synonym_matcher_tool",
+      "description": "Maps ingredients to store categories and generates synonyms for flexible product matching",
+      "capabilities": [
+        "store_category_mapping",
+        "synonym_generation",
+        "flexible_matching"
+      ]
+    },
+    {
+      "name": "unit_standardization_tool",
+      "description": "Converts recipe units to standard metric (grams/mL) from diverse formats like cups, tablespoons, ounces",
+      "capabilities": [
+        "unit_conversion",
+        "metric_standardization",
+        "format_parsing"
+      ]
+    },
+    {
+      "name": "search_query_builder_tool",
+      "description": "Generates effective search queries for product pages based on normalized ingredients and location",
+      "capabilities": [
+        "query_construction",
+        "location_targeting",
+        "keyword_optimization"
+      ]
+    },
+    {
+      "name": "web_scraper_tool",
+      "description": "Fetches web pages while respecting robots.txt and rate limits for ethical scraping",
+      "capabilities": [
+        "ethical_web_fetching",
+        "robots_txt_compliance",
+        "rate_limit_enforcement"
+      ]
+    },
+    {
+      "name": "price_parser_tool",
+      "description": "Extracts structured product pricing from HTML content",
+      "capabilities": [
+        "html_price_extraction",
+        "structured_data_parsing",
+        "price_validation"
+      ]
+    },
+    {
+      "name": "yield_factor_retriever_tool",
+      "description": "Retrieves edible yield percentages from USDA and professional sources to account for waste",
+      "capabilities": [
+        "usda_data_retrieval",
+        "yield_percentage_lookup",
+        "waste_factor_calculation"
+      ]
+    },
+    {
+      "name": "cost_computation_tool",
+      "description": "Calculates ingredient cost with yield factor adjustment and per-serving breakdown",
+      "capabilities": [
+        "cost_calculation",
+        "yield_adjustment",
+        "per_serving_breakdown"
+      ]
+    },
+    {
+      "name": "price_calculator_tool",
+      "description": "Calculates suggested selling price from cost and target food cost ratio",
+      "capabilities": [
+        "selling_price_calculation",
+        "margin_computation",
+        "target_ratio_application"
+      ]
+    },
+    {
+      "name": "sensitivity_analyzer_tool",
+      "description": "Simulates price volatility scenarios (±5%, ±10%, ±15%) and calculates adjustments",
+      "capabilities": [
+        "scenario_simulation",
+        "volatility_modeling",
+        "adjustment_calculation"
+      ]
+    },
+    {
+      "name": "nutrition_search_tool",
+      "description": "Searches for authoritative nutrition data pages from USDA and verified databases",
+      "capabilities": [
+        "database_search",
+        "authoritative_source_identification",
+        "nutrition_page_discovery"
+      ]
+    },
+    {
+      "name": "substitute_search_tool",
+      "description": "Finds alternative ingredients from pricing data with similar characteristics",
+      "capabilities": [
+        "alternative_search",
+        "similarity_matching",
+        "substitution_candidate_identification"
+      ]
+    },
+    {
+      "name": "price_change_detector_tool",
+      "description": "Compares current vs baseline prices to detect changes and trends",
+      "capabilities": [
+        "price_comparison",
+        "change_detection",
+        "trend_analysis"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "author": "MenuMargin Development Team",
+    "created_date": "2024-10-24",
+    "framework_type": "culinary_pricing_intelligence",
+    "base_architecture": "Three-tier hierarchical agent system with scheduler-based coordination",
+    "primary_llm": "Nex",
+    "use_cases": [
+      "pop_up_dining_menu_pricing",
+      "catering_event_quote_generation",
+      "menu_profitability_testing",
+      "seasonal_menu_pricing",
+      "ingredient_cost_optimization",
+      "recipe_cost_analysis",
+      "competitive_pricing_strategy",
+      "food_cost_ratio_management",
+      "price_volatility_planning",
+      "nutritional_constraint_validation",
+      "ingredient_substitution_planning",
+      "pre_launch_price_monitoring",
+      "retail_price_intelligence",
+      "culinary_entrepreneur_support",
+      "small_catering_business_operations"
+    ],
+    "strengths": [
+      "three_tier_hierarchical_architecture",
+      "automated_location_based_price_discovery",
+      "ethical_web_scraping_compliance",
+      "usda_yield_factor_integration",
+      "pareto_cost_analysis",
+      "multi_scenario_sensitivity_analysis",
+      "psychological_pricing_strategies",
+      "continuous_pre_launch_monitoring",
+      "ingredient_standardization_automation",
+      "nutritional_validation",
+      "intelligent_substitution_recommendations",
+      "90_percent_manual_effort_reduction"
+    ],
+    "limitations": [
+      "dependent_on_public_store_websites",
+      "requires_location_specific_data",
+      "yield_factors_may_vary_by_supplier",
+      "web_scraping_subject_to_site_changes",
+      "limited_to_ingredients_available_online",
+      "coordination_complexity_in_three_tiers"
+    ],
+    "optimal_scenarios": [
+      "independent_pop_up_dining_operations",
+      "small_scale_catering_businesses",
+      "culinary_entrepreneurs_without_cost_management_tools",
+      "seasonal_menu_planning",
+      "event_based_catering_quote_generation",
+      "recipe_testing_and_profitability_validation",
+      "competitive_menu_pricing_in_local_markets",
+      "cost_conscious_culinary_startups",
+      "menu_optimization_projects"
+    ]
+  }
+}

@@ -1,0 +1,556 @@
+# Copyright (c) Nex-AGI. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# === Medical and Health Consultant Framework Configuration ===
+
+# === Framework Description ===
+framework:
+  name: Medical_Health_Consultant
+  description_en: >-
+    Comprehensive medical and health consultation framework providing full-spectrum healthcare services
+    from emergency triage to specialized health management. Features a 3-tier multi-agent architecture
+    with 10 specialized agents, 32 custom medical tools, and evidence-based clinical protocols.
+  description_zh: >-
+    综合医疗健康咨询框架，提供从紧急分流到专业健康管理的全方位医疗服务。
+    采用3层多代理架构，包含10个专业代理、32个自定义医疗工具和循证临床协议。
+
+# === Agent Definitions ===
+agents:
+  # Level 0: Main Coordinator
+  - agent_name: medical_and_health_consultant
+    description_en: >-
+      Main medical coordinator responsible for medical consultation triage, emergency assessment,
+      sub-agent coordination, health guidance synthesis, and medical safety oversight.
+    description_zh: >-
+      主医疗健康协调器，负责医疗咨询分流、应急评估、子代理协调、健康指导综合和医疗安全监督。
+    capabilities:
+      - Emergency medical triage and recognition
+      - Multi-system health analysis coordination
+      - Patient communication and education
+      - Evidence-based health guidance synthesis
+      - Medical navigation and appointment coordination
+    llm_config: default_llm
+    tools:
+      - web_search
+      - emergency_triage
+      - knowledge_base_search
+      - user_history
+      - appointment_recommender
+
+  # Level 1: Primary Specialists
+  - agent_name: SymptomAnalyzer
+    description_en: >-
+      Specialized symptom analysis expert using standardized medical frameworks (OPQRST, SOCRATES, HPI)
+      for systematic symptom assessment and differential diagnosis support.
+    description_zh: >-
+      专门的医疗症状分析专家，使用标准化医疗框架（OPQRST、SOCRATES、HPI）进行系统性症状评估和鉴别诊断支持。
+    capabilities:
+      - Systematic symptom assessment using clinical frameworks
+      - Differential diagnosis support
+      - Red flag/danger sign identification
+      - Evidence-based symptom-disease correlation analysis
+      - Special population considerations (pediatric, geriatric, pregnancy)
+    llm_config: default_llm
+    tools:
+      - web_search
+      - symptom_database
+      - red_flag_checker
+      - differential_assistant
+
+  - agent_name: medicationadvisor
+    description_en: >-
+      Specialized medication consultation expert focused on drug safety assessment,
+      interaction analysis, and evidence-based pharmacological guidance.
+    description_zh: >-
+      专门的药物咨询专家，专注于药物安全评估、相互作用分析和循证药理学指导。
+    capabilities:
+      - Drug-drug and drug-food interaction analysis
+      - Dosage calculation and adjustment
+      - Adverse drug reaction identification and management
+      - Medication adherence optimization strategies
+      - Evidence-based pharmacology research
+      - Clinical pharmacology monitoring
+      - Comprehensive medication reconciliation
+    llm_config: default_llm
+    tools:
+      - web_search
+      - drug_interaction_analyzer
+      - dosage_calculator
+      - safety_assessor
+      - adr_analyzer
+
+  - agent_name: HealthManager
+    description_en: >-
+      Specialized health management expert providing chronic disease management,
+      lifestyle optimization, and preventive care coordination.
+    description_zh: >-
+      专门的健康管理专家，提供慢性疾病管理、生活方式优化和预防保健协调。
+    capabilities:
+      - Chronic disease daily management (diabetes, hypertension, cardiovascular)
+      - Evidence-based lifestyle medicine
+      - Preventive care scheduling and coordination
+      - Health risk assessment and stratification
+      - Personalized health plan design
+      - Behavior change support and motivation
+    llm_config: default_llm
+    tools:
+      - web_search
+      - lifestyle_assessor
+      - goal_tracker
+      - screening_scheduler
+
+  - agent_name: ReportInterpreter
+    description_en: >-
+      Specialized medical report interpretation expert providing accurate and comprehensive
+      explanations of laboratory, imaging, and diagnostic test results.
+    description_zh: >-
+      专门的医疗报告解释专家，提供准确、全面的实验室、影像学和诊断检查结果解释。
+    capabilities:
+      - Laboratory report parsing and interpretation
+      - Medical imaging interpretation support
+      - Test result trend analysis over time
+      - Reference value comparison and contextualization
+      - Critical value identification and flagging
+      - Comprehensive multi-test result synthesis
+    llm_config: default_llm
+    tools:
+      - web_search
+      - medical_report_parser
+      - lab_reference
+      - trend_analyzer
+
+  - agent_name: MentalHealthSupporter
+    description_en: >-
+      Specialized mental health support expert providing compassionate evidence-based
+      psychological support, crisis intervention, and mental wellness guidance.
+    description_zh: >-
+      专门的心理健康支持专家，提供富有同情心的循证心理支持、危机干预和心理健康指导。
+    capabilities:
+      - Crisis identification and intervention
+      - Suicide and self-harm risk assessment
+      - Evidence-based therapy approaches (CBT, mindfulness, trauma-informed care)
+      - Mental health screening using validated tools
+      - Anxiety and depression support strategies
+      - Substance use awareness and harm reduction
+    llm_config: default_llm
+    tools:
+      - web_search
+      - mental_screening
+      - crisis_hotline
+      - coping_library
+
+  # Level 2: Sub-Specialists
+  - agent_name: PainAnalyzer
+    description_en: >-
+      Specialized pain assessment expert using evidence-based clinical frameworks
+      for comprehensive pain evaluation and management support.
+    description_zh: >-
+      专门的疼痛评估专家，使用循证临床框架进行全面的疼痛评估和管理支持。
+    capabilities:
+      - OPQRST pain assessment framework implementation
+      - Pain scale management (numeric, visual analog, functional)
+      - Pain pattern recognition and classification
+      - Emergency pain condition identification
+      - Clinical pain assessment documentation
+      - Pediatric and geriatric pain assessment techniques
+    llm_config: default_llm
+    tools:
+      - web_search
+      - pain_scale
+
+  - agent_name: RespiratoryAnalyzer
+    description_en: >-
+      Specialized respiratory symptom analysis expert providing systematic assessment,
+      emergency recognition, and evidence-based clinical reasoning for respiratory conditions.
+    description_zh: >-
+      专门的呼吸道症状分析专家，提供系统评估、紧急识别和循证临床推理的呼吸系统评估。
+    capabilities:
+      - Cough characteristic analysis (productive vs dry, acute vs chronic)
+      - Dyspnea assessment and severity grading
+      - Chest pain evaluation in respiratory context
+      - Upper vs lower respiratory tract differentiation
+      - Emergency respiratory condition recognition
+      - Age-specific respiratory assessment techniques
+    llm_config: default_llm
+    tools:
+      - web_search
+      - respiratory_assessor
+
+  - agent_name: NutritionAdvisor
+    description_en: >-
+      Specialized nutrition consultation expert providing comprehensive dietary guidance,
+      medical nutrition therapy, and personalized nutrition solutions.
+    description_zh: >-
+      专门的营养咨询专家，提供全面的膳食指导、医学营养治疗和个性化营养解决方案。
+    capabilities:
+      - Advanced nutrition science and dietetics principles
+      - Medical nutrition therapy for chronic diseases
+      - Macronutrient and micronutrient metabolism
+      - Food composition analysis and dietary planning
+      - Cultural and religious dietary adaptations
+      - Sports nutrition and performance optimization
+      - Weight management strategies (gain, loss, maintenance)
+    llm_config: default_llm
+    tools:
+      - web_search
+      - nutrition_calculator
+      - food_database
+      - meal_planner
+
+  - agent_name: FitnessCoach
+    description_en: >-
+      Specialized fitness and exercise expert providing comprehensive fitness guidance,
+      personalized workout plans, and evidence-based exercise prescription.
+    description_zh: >-
+      专门的健身和运动专家，提供全面的健身指导、个性化锻炼计划和循证运动处方。
+    capabilities:
+      - Exercise physiology and biomechanics principles
+      - Strength training and resistance exercise programming
+      - Cardiovascular training and endurance development
+      - Functional movement assessment and correction
+      - Chronic disease exercise modification
+      - Exercise behavior change psychology
+    llm_config: default_llm
+    tools:
+      - web_search
+      - fitness_assessor
+      - workout_library
+      - progress_tracker
+
+# === LLM Configuration ===
+llm_configs:
+  - llm_name: default_llm
+    provider: openai
+    model: nex
+    api_key: ${LLM_API_KEY}
+    base_url: ${LLM_BASE_URL}
+    max_tokens: 64000
+    temperature: 0.6
+    timeout: 300
+
+# === Tool Definitions ===
+tools:
+  # Custom Medical Tools
+  - tool_name: emergency_triage
+    description_en: Emergency triage tool for rapid health symptom assessment
+    description_zh: 快速评估健康症状以确定是否需要紧急医疗关注的紧急分流工具
+    capabilities:
+      - Rapid emergency recognition
+      - Triage level assessment (immediate, urgent, standard)
+      - Life-threatening condition identification
+    binding: src.created_subagents.medical_and_health_consultant.tools.emergency_triage:emergency_triage
+
+  - tool_name: knowledge_base_search
+    description_en: Advanced medical knowledge base search querying authoritative medical databases
+    description_zh: 查询多个权威医学数据库的高级医学知识库搜索工具
+    capabilities:
+      - Multi-database query (PubMed, UpToDate, clinical guidelines)
+      - Evidence-based research retrieval
+      - Clinical guideline access
+    binding: src.created_subagents.medical_and_health_consultant.tools.knowledge_base_search:knowledge_base_search
+
+  - tool_name: user_history
+    description_en: Comprehensive user medical history management tool
+    description_zh: 安全存储和检索用户历史医疗记录的综合用户医疗历史管理工具
+    capabilities:
+      - Secure medical history storage
+      - Patient data retrieval
+      - Longitudinal health tracking
+    binding: src.created_subagents.medical_and_health_consultant.tools.user_history:user_history
+
+  - tool_name: appointment_recommender
+    description_en: Intelligent medical appointment recommendation tool
+    description_zh: 分析健康关注并提供综合指导的智能医疗预约推荐工具
+    capabilities:
+      - Specialist recommendation
+      - Appointment scheduling guidance
+      - Care pathway optimization
+    binding: src.created_subagents.medical_and_health_consultant.tools.appointment_recommender:appointment_recommender
+
+  - tool_name: symptom_database
+    description_en: Symptom database querying comprehensive symptom-disease associations
+    description_zh: 查询综合症状疾病关联和临床相关性的症状数据库
+    capabilities:
+      - Symptom-disease correlation analysis
+      - Differential diagnosis support
+      - Clinical pattern recognition
+    binding: src.created_subagents.SymptomAnalyzer.tools.symptom_database:symptom_database
+
+  - tool_name: red_flag_checker
+    description_en: Red flag detection for dangerous warning signs requiring emergency care
+    description_zh: 检测需要立即紧急护理的危险警告征象
+    capabilities:
+      - Emergency sign detection
+      - Critical symptom identification
+      - Immediate care triage
+    binding: src.created_subagents.SymptomAnalyzer.tools.red_flag_checker:red_flag_checker
+
+  - tool_name: differential_assistant
+    description_en: Differential diagnosis assistant supporting clinical decision-making
+    description_zh: 支持差异诊断分析和临床决策制定
+    capabilities:
+      - Differential diagnosis analysis
+      - Clinical reasoning support
+      - Diagnostic probability assessment
+    binding: src.created_subagents.SymptomAnalyzer.tools.differential_assistant:differential_assistant
+
+  - tool_name: drug_interaction_analyzer
+    description_en: Drug interaction analyzer detecting potential medication interactions
+    description_zh: 药物相互作用分析器，检测药物间的潜在相互作用
+    capabilities:
+      - Drug-drug interaction detection
+      - Pharmacokinetic analysis
+      - Safety alert generation
+    binding: src.created_subagents.medicationadvisor.tools.drug_interaction_analyzer:drug_interaction_analyzer
+
+  - tool_name: dosage_calculator
+    description_en: Dosage calculator computing appropriate medication doses
+    description_zh: 基于患者参数计算适当剂量的剂量计算器
+    capabilities:
+      - Dose calculation
+      - Weight-based dosing
+      - Renal/hepatic adjustment
+    binding: src.created_subagents.medicationadvisor.tools.dosage_calculator:dosage_calculator
+
+  - tool_name: safety_assessor
+    description_en: Medication safety assessor evaluating medication use safety
+    description_zh: 药物安全评估器，评估药物使用的安全性
+    capabilities:
+      - Medication safety evaluation
+      - Contraindication checking
+      - Risk-benefit analysis
+    binding: src.created_subagents.medicationadvisor.tools.safety_assessor:safety_assessor
+
+  - tool_name: adr_analyzer
+    description_en: Adverse drug reaction analyzer for medication adverse reactions
+    description_zh: 不良药物反应分析器，识别和分析药物不良反应
+    capabilities:
+      - Adverse reaction identification
+      - Causality assessment
+      - Severity classification
+    binding: src.created_subagents.medicationadvisor.tools.adr_analyzer:adr_analyzer
+
+  - tool_name: lifestyle_assessor
+    description_en: Lifestyle assessor evaluating lifestyle impact on health
+    description_zh: 生活方式评估器，评估生活方式对健康的影响
+    capabilities:
+      - Lifestyle evaluation
+      - Health behavior assessment
+      - Risk factor identification
+    binding: src.created_subagents.HealthManager.tools.lifestyle_assessor:lifestyle_assessor
+
+  - tool_name: goal_tracker
+    description_en: Goal tracker monitoring health goal progress
+    description_zh: 目标跟踪器，监测和跟踪健康目标进展
+    capabilities:
+      - Goal progress monitoring
+      - Milestone tracking
+      - Achievement analysis
+    binding: src.created_subagents.HealthManager.tools.goal_tracker:goal_tracker
+
+  - tool_name: screening_scheduler
+    description_en: Screening scheduler arranging preventive health screenings
+    description_zh: 筛查调度器，安排预防性健康筛查
+    capabilities:
+      - Preventive screening scheduling
+      - Age-appropriate recommendations
+      - Guideline-based planning
+    binding: src.created_subagents.HealthManager.tools.screening_scheduler:screening_scheduler
+
+  - tool_name: medical_report_parser
+    description_en: Medical report parser interpreting various medical report formats
+    description_zh: 医疗报告解析器，解析各种医疗报告格式
+    capabilities:
+      - Report format parsing
+      - Structured data extraction
+      - Multi-format support
+    binding: src.created_subagents.ReportInterpreter.tools.medical_report_parser:medical_report_parser
+
+  - tool_name: lab_reference
+    description_en: Laboratory reference value query providing test result reference ranges
+    description_zh: 实验室参考值查询，提供检查结果参考值范围
+    capabilities:
+      - Reference range lookup
+      - Abnormal value identification
+      - Age/gender-specific ranges
+    binding: src.created_subagents.ReportInterpreter.tools.lab_reference:lab_reference
+
+  - tool_name: trend_analyzer
+    description_en: Trend analyzer analyzing medical data change trends
+    description_zh: 趋势分析器，分析医疗数据的变化趋势
+    capabilities:
+      - Temporal trend analysis
+      - Longitudinal data visualization
+      - Progression assessment
+    binding: src.created_subagents.ReportInterpreter.tools.trend_analyzer:trend_analyzer
+
+  - tool_name: mental_screening
+    description_en: Mental health screening using validated screening instruments
+    description_zh: 心理健康筛查工具，使用验证的筛查工具进行心理健康评估
+    capabilities:
+      - Validated screening administration
+      - Mental health assessment
+      - Risk level determination
+    binding: src.created_subagents.MentalHealthSupporter.tools.mental_screening:mental_screening
+
+  - tool_name: crisis_hotline
+    description_en: Crisis hotline tool providing emergency resources and support
+    description_zh: 危机热线工具，为危机情况提供紧急资源和支持
+    capabilities:
+      - Crisis resource provision
+      - Emergency contact information
+      - Immediate support guidance
+    binding: src.created_subagents.MentalHealthSupporter.tools.crisis_hotline:crisis_hotline
+
+  - tool_name: coping_library
+    description_en: Coping strategy library providing evidence-based coping techniques
+    description_zh: 应对策略库，提供循证的应对技术和策略
+    capabilities:
+      - Coping strategy recommendation
+      - Evidence-based techniques
+      - Skill-building resources
+    binding: src.created_subagents.MentalHealthSupporter.tools.coping_library:coping_library
+
+  - tool_name: pain_scale
+    description_en: Pain scale assessment for comprehensive pain severity evaluation
+    description_zh: 疼痛量表评估工具，使用验证的测量工具进行全面疼痛严重程度评估
+    capabilities:
+      - Pain severity measurement
+      - Validated scale administration
+      - Multi-dimensional pain assessment
+    binding: src.created_subagents.painanalyzer.tools.pain_scale:pain_scale
+
+  - tool_name: respiratory_assessor
+    description_en: Respiratory assessor conducting comprehensive respiratory function evaluation
+    description_zh: 呼吸评估器，进行全面的呼吸功能评估
+    capabilities:
+      - Respiratory function assessment
+      - Breathing pattern analysis
+      - Oxygen saturation interpretation
+    binding: src.created_subagents.RespiratoryAnalyzer.tools.respiratory_assessor:respiratory_assessor
+
+  - tool_name: nutrition_calculator
+    description_en: Nutrition calculator computing precise nutritional needs
+    description_zh: 营养计算器，基于个人参数计算精确的营养需求
+    capabilities:
+      - Caloric requirement calculation
+      - Macronutrient distribution
+      - Micronutrient needs assessment
+    binding: src.created_subagents.NutritionAdvisor.tools.nutrition_calculator:nutrition_calculator
+
+  - tool_name: food_database
+    description_en: Food database querying accurate nutrition content and food composition data
+    description_zh: 食物数据库，查询准确的营养内容和食物成分数据
+    capabilities:
+      - Nutrition data lookup
+      - Food composition analysis
+      - Dietary planning support
+    binding: src.created_subagents.NutritionAdvisor.tools.food_database:food_database
+
+  - tool_name: meal_planner
+    description_en: Meal planner creating structured meal plans with nutrition balancing
+    description_zh: 膳食计划器，创建结构化的膳食计划并自动营养平衡
+    capabilities:
+      - Meal plan generation
+      - Nutrition balance optimization
+      - Dietary preference accommodation
+    binding: src.created_subagents.NutritionAdvisor.tools.meal_planner:meal_planner
+
+  - tool_name: fitness_assessor
+    description_en: Fitness assessor evaluating current fitness level and exercise quality
+    description_zh: 健身评估器，评估当前健身水平和运动质量
+    capabilities:
+      - Fitness level evaluation
+      - Movement quality assessment
+      - Baseline measurement establishment
+    binding: src.created_subagents.FitnessCoach.tools.fitness_assessor:fitness_assessor
+
+  - tool_name: workout_library
+    description_en: Workout library accessing exercise database with guidance
+    description_zh: 锻炼库，访问包含指导和安全指南的运动数据库
+    capabilities:
+      - Exercise database access
+      - Technique instruction provision
+      - Safety guideline delivery
+    binding: src.created_subagents.FitnessCoach.tools.workout_library:workout_library
+
+  - tool_name: progress_tracker
+    description_en: Progress tracker monitoring key performance indicators
+    description_zh: 进度跟踪器，监测关键绩效指标和目标达成度量
+    capabilities:
+      - Performance metric tracking
+      - Goal achievement monitoring
+      - Progress visualization
+    binding: src.created_subagents.FitnessCoach.tools.progress_tracker:progress_tracker
+
+# === Workflow Configuration ===
+workflow:
+  name: "Medical and Health Consultant Framework"
+  description_en: >-
+    Comprehensive medical health consultation framework providing full-spectrum medical services
+    from emergency triage to specialized health management, including symptom analysis,
+    medication advice, health management, report interpretation, and mental health support.
+  description_zh: >-
+    综合医疗健康咨询框架，提供从紧急分流到专业健康管理的全方位医疗服务，
+    包括症状分析、药物建议、健康管理、报告解释和心理健康支持。
+
+  nodes:
+    # Level 0: Main Coordinator
+    - id: medical_and_health_consultant
+      type: agent
+
+    # Level 1: Primary Specialists
+    - id: SymptomAnalyzer
+      type: agent
+    - id: medicationadvisor
+      type: agent
+    - id: HealthManager
+      type: agent
+    - id: ReportInterpreter
+      type: agent
+    - id: MentalHealthSupporter
+      type: agent
+
+    # Level 2: Sub-Specialists
+    - id: PainAnalyzer
+      type: agent
+    - id: RespiratoryAnalyzer
+      type: agent
+    - id: NutritionAdvisor
+      type: agent
+    - id: FitnessCoach
+      type: agent
+
+  edges:
+    # Level 0 -> Level 1: Main Coordinator delegates to Primary Specialists
+    - from: medical_and_health_consultant
+      to: SymptomAnalyzer
+    - from: medical_and_health_consultant
+      to: medicationadvisor
+    - from: medical_and_health_consultant
+      to: HealthManager
+    - from: medical_and_health_consultant
+      to: ReportInterpreter
+    - from: medical_and_health_consultant
+      to: MentalHealthSupporter
+
+    # Level 1 -> Level 2: Primary Specialists delegate to Sub-Specialists
+    - from: SymptomAnalyzer
+      to: PainAnalyzer
+    - from: SymptomAnalyzer
+      to: RespiratoryAnalyzer
+    - from: HealthManager
+      to: NutritionAdvisor
+    - from: HealthManager
+      to: FitnessCoach

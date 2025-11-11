@@ -1,0 +1,72 @@
+# Copyright (c) Nex-AGI. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# NexAU Configuration Schema Example
+# 基于代码库分析的完整配置结构示例
+
+# ========================================
+# 基础Agent配置（必需）
+# ========================================
+name: <string>                          # Agent名称，作为唯一标识
+max_context: <integer>                  # 最大上下文长度，默认100000
+max_running_subagents: <integer>        # 最大并发子Agent数量，默认5（可选）
+
+# ========================================
+# 系统提示配置（必需）
+# ========================================
+system_prompt: <string|multiline>       # 系统提示内容，支持Jinja2模板变量
+system_prompt_type: <string>           # 提示类型："string"|"file"|"jinja"，默认"string"
+
+# ========================================
+# LLM配置对象（可选，有默认值）
+# ========================================
+llm_config:
+  # 模型配置
+  model: <string>                       # 模型名称，默认从环境变量LLM_MODEL获取
+  base_url: <string|null>              # API基础URL，默认从LLM_BASE_URL获取
+  api_key: <string|null>               # API密钥，默认从LLM_API_KEY获取
+
+  # 生成参数
+  temperature: <float>                  # 温度参数0.0-2.0，默认0.7
+  max_tokens: <integer|null>           # 最大生成tokens，可选
+  top_p: <float|null>                  # Top-p采样参数，可选
+  frequency_penalty: <float|null>       # 频率惩罚-2.0到2.0，可选
+  presence_penalty: <float|null>        # 存在惩罚-2.0到2.0，可选
+
+  # 请求配置
+  timeout: <float|null>                # 请求超时秒数，可选
+  max_retries: <integer>               # 最大重试次数，默认3
+  debug: <boolean>                     # 调试模式，默认false
+
+# ========================================
+# 工具配置数组（可选，默认空）
+# ========================================
+tools:
+  - name: <string>                      # 工具名称，必需
+    yaml_path: <string>                 # 工具YAML配置文件路径，必需
+    binding: <string>                   # 工具绑定路径格式：module.path:function_name，必需
+  - name: <string>
+    yaml_path: <string>
+    binding: <string>
+  # ... 更多工具配置
+
+# ========================================
+# 子Agent配置数组（可选，默认空）
+# ========================================
+sub_agents:
+  - name: <string>                      # 子Agent名称，必需
+    config_path: <string>               # 子Agent配置文件路径，必需
+  - name: <string>
+    config_path: <string>
+  # ... 更多子Agent配置

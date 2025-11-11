@@ -1,0 +1,4 @@
+# Converter Cache Directory
+.cache/
+*.pyc
+__pycache__/

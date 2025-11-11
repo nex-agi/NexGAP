@@ -1,0 +1,1072 @@
+{
+  "framework": "menu_margin_pricing_system",
+  "tree": {
+    "id": "root",
+    "en": "menu_margin_pricing_system",
+    "zh": "菜单利润定价系统",
+    "children": [
+      {
+        "id": "recipe_analysis",
+        "en": "Recipe Analysis",
+        "zh": "食谱分析",
+        "children": [
+          {
+            "id": "recipe_parsing",
+            "en": "Recipe Parsing and Structuring",
+            "zh": "食谱解析与结构化",
+            "children": [
+              {
+                "id": "ingredient_extraction",
+                "en": "Ingredient List Extraction",
+                "zh": "食材清单提取"
+              },
+              {
+                "id": "quantity_parsing",
+                "en": "Quantity and Unit Parsing",
+                "zh": "数量和单位解析"
+              },
+              {
+                "id": "instruction_analysis",
+                "en": "Cooking Instruction Analysis",
+                "zh": "烹饪指令分析"
+              },
+              {
+                "id": "serving_size_determination",
+                "en": "Serving Size Determination",
+                "zh": "份量大小确定"
+              }
+            ]
+          },
+          {
+            "id": "recipe_scaling",
+            "en": "Recipe Scaling",
+            "zh": "食谱缩放",
+            "children": [
+              {
+                "id": "batch_scaling",
+                "en": "Batch Size Scaling",
+                "zh": "批量大小缩放"
+              },
+              {
+                "id": "event_sizing",
+                "en": "Event-Specific Sizing",
+                "zh": "活动特定规模"
+              },
+              {
+                "id": "proportion_adjustment",
+                "en": "Ingredient Proportion Adjustment",
+                "zh": "食材比例调整"
+              }
+            ]
+          },
+          {
+            "id": "recipe_complexity",
+            "en": "Recipe Complexity Assessment",
+            "zh": "食谱复杂度评估",
+            "children": [
+              {
+                "id": "prep_time_estimation",
+                "en": "Preparation Time Estimation",
+                "zh": "准备时间估算"
+              },
+              {
+                "id": "skill_level_assessment",
+                "en": "Skill Level Requirement Assessment",
+                "zh": "技能水平要求评估"
+              },
+              {
+                "id": "equipment_requirements",
+                "en": "Equipment Requirements Analysis",
+                "zh": "设备需求分析"
+              },
+              {
+                "id": "recipe_complexity_ingredient_sourcing_complexity_assessment",
+                "en": "Ingredient Sourcing Complexity Assessment",
+                "zh": "食材采购复杂度评估"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ingredient_management",
+        "en": "Ingredient Management",
+        "zh": "食材管理",
+        "children": [
+          {
+            "id": "ingredient_standardization",
+            "en": "Ingredient Standardization",
+            "zh": "食材标准化",
+            "children": [
+              {
+                "id": "name_normalization",
+                "en": "Ingredient Name Normalization",
+                "zh": "食材名称规范化"
+              },
+              {
+                "id": "unit_conversion",
+                "en": "Unit Conversion to Metric",
+                "zh": "单位转换为公制"
+              },
+              {
+                "id": "synonym_mapping",
+                "en": "Synonym and Alternative Name Mapping",
+                "zh": "同义词和替代名称映射"
+              },
+              {
+                "id": "category_classification",
+                "en": "Store Category Classification",
+                "zh": "商店类别分类"
+              }
+            ]
+          },
+          {
+            "id": "ingredient_sourcing",
+            "en": "Ingredient Sourcing",
+            "zh": "食材采购",
+            "children": [
+              {
+                "id": "store_identification",
+                "en": "Store Identification by Location",
+                "zh": "按地点识别商店"
+              },
+              {
+                "id": "availability_checking",
+                "en": "Ingredient Availability Checking",
+                "zh": "食材可用性检查"
+              },
+              {
+                "id": "seasonal_availability",
+                "en": "Seasonal Availability Analysis",
+                "zh": "季节性可用性分析"
+              },
+              {
+                "id": "bulk_purchasing",
+                "en": "Bulk Purchasing Options",
+                "zh": "大宗采购选项"
+              }
+            ]
+          },
+          {
+            "id": "ingredient_quality",
+            "en": "Ingredient Quality Levels",
+            "zh": "食材质量等级",
+            "children": [
+              {
+                "id": "premium_vs_standard",
+                "en": "Premium vs Standard Quality",
+                "zh": "优质与标准质量"
+              },
+              {
+                "id": "organic_certification",
+                "en": "Organic Certification Options",
+                "zh": "有机认证选项"
+              },
+              {
+                "id": "local_vs_imported",
+                "en": "Local vs Imported Ingredients",
+                "zh": "本地与进口食材"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "price_discovery",
+        "en": "Price Discovery",
+        "zh": "价格发现",
+        "children": [
+          {
+            "id": "location_based_pricing",
+            "en": "Location-Based Price Discovery",
+            "zh": "基于位置的价格发现",
+            "children": [
+              {
+                "id": "local_store_pricing",
+                "en": "Local Store Price Discovery",
+                "zh": "本地商店价格发现"
+              },
+              {
+                "id": "regional_price_variation",
+                "en": "Regional Price Variation Analysis",
+                "zh": "区域价格变化分析"
+              },
+              {
+                "id": "urban_vs_rural",
+                "en": "Urban vs Rural Price Comparison",
+                "zh": "城市与农村价格比较"
+              }
+            ]
+          },
+          {
+            "id": "web_scraping",
+            "en": "Ethical Web Scraping",
+            "zh": "道德网页抓取",
+            "children": [
+              {
+                "id": "store_website_scraping",
+                "en": "Store Website Price Scraping",
+                "zh": "商店网站价格抓取"
+              },
+              {
+                "id": "promotional_pricing",
+                "en": "Promotional Pricing Detection",
+                "zh": "促销定价检测"
+              },
+              {
+                "id": "robots_compliance",
+                "en": "Robots.txt Compliance Verification",
+                "zh": "Robots.txt合规验证"
+              },
+              {
+                "id": "rate_limiting",
+                "en": "Rate Limiting Implementation",
+                "zh": "速率限制实施"
+              }
+            ]
+          },
+          {
+            "id": "price_aggregation",
+            "en": "Price Aggregation",
+            "zh": "价格聚合",
+            "children": [
+              {
+                "id": "multi_source_comparison",
+                "en": "Multi-Source Price Comparison",
+                "zh": "多来源价格比较"
+              },
+              {
+                "id": "best_price_identification",
+                "en": "Best Price Source Identification",
+                "zh": "最佳价格来源识别"
+              },
+              {
+                "id": "bulk_discount_detection",
+                "en": "Bulk Discount Detection",
+                "zh": "批量折扣检测"
+              }
+            ]
+          },
+          {
+            "id": "price_validation",
+            "en": "Price Data Validation",
+            "zh": "价格数据验证",
+            "children": [
+              {
+                "id": "confidence_scoring",
+                "en": "Price Confidence Scoring",
+                "zh": "价格置信度评分",
+                "children": [
+                  {
+                    "id": "confidence_scoring_ingredient_to_product_match_confidence",
+                    "en": "Ingredient-to-Product Match Confidence Scoring",
+                    "zh": "食材-商品匹配置信度评分"
+                  }
+                ]
+              },
+              {
+                "id": "outlier_detection",
+                "en": "Price Outlier Detection",
+                "zh": "价格异常值检测"
+              },
+              {
+                "id": "data_freshness",
+                "en": "Price Data Freshness Verification",
+                "zh": "价格数据新鲜度验证"
+              }
+            ]
+          },
+          {
+            "id": "price_discovery_cross_package_unit_price_normalization",
+            "en": "Cross-Package Unit Price Normalization",
+            "zh": "不同包装规格单位价格归一化"
+          }
+        ]
+      },
+      {
+        "id": "cost_calculation",
+        "en": "Cost Calculation",
+        "zh": "成本计算",
+        "children": [
+          {
+            "id": "ingredient_costing",
+            "en": "Ingredient Cost Calculation",
+            "zh": "食材成本计算",
+            "children": [
+              {
+                "id": "raw_ingredient_cost",
+                "en": "Raw Ingredient Cost",
+                "zh": "原料食材成本"
+              },
+              {
+                "id": "yield_factor_adjustment",
+                "en": "USDA Yield Factor Adjustment",
+                "zh": "USDA产量因子调整"
+              },
+              {
+                "id": "waste_percentage",
+                "en": "Waste Percentage Calculation",
+                "zh": "浪费百分比计算"
+              },
+              {
+                "id": "edible_portion_cost",
+                "en": "Edible Portion Cost",
+                "zh": "可食用部分成本"
+              }
+            ]
+          },
+          {
+            "id": "recipe_costing",
+            "en": "Recipe Cost Aggregation",
+            "zh": "食谱成本汇总",
+            "children": [
+              {
+                "id": "total_recipe_cost",
+                "en": "Total Recipe Cost",
+                "zh": "食谱总成本"
+              },
+              {
+                "id": "per_serving_cost",
+                "en": "Per-Serving Cost Breakdown",
+                "zh": "每份成本明细"
+              },
+              {
+                "id": "pareto_analysis",
+                "en": "Pareto 80/20 Cost Analysis",
+                "zh": "帕累托80/20成本分析"
+              },
+              {
+                "id": "cost_driver_identification",
+                "en": "Cost Driver Identification",
+                "zh": "成本驱动因素识别"
+              }
+            ]
+          },
+          {
+            "id": "operational_costs",
+            "en": "Operational Cost Factors",
+            "zh": "运营成本因素",
+            "children": [
+              {
+                "id": "labor_cost_estimation",
+                "en": "Labor Cost Estimation",
+                "zh": "劳动力成本估算"
+              },
+              {
+                "id": "overhead_allocation",
+                "en": "Overhead Cost Allocation",
+                "zh": "间接成本分摊"
+              },
+              {
+                "id": "packaging_costs",
+                "en": "Packaging and Presentation Costs",
+                "zh": "包装和呈现成本"
+              },
+              {
+                "id": "equipment_depreciation",
+                "en": "Equipment Usage and Depreciation",
+                "zh": "设备使用和折旧"
+              }
+            ]
+          },
+          {
+            "id": "cost_trends",
+            "en": "Cost Trend Analysis",
+            "zh": "成本趋势分析",
+            "children": [
+              {
+                "id": "historical_cost_data",
+                "en": "Historical Cost Data Analysis",
+                "zh": "历史成本数据分析"
+              },
+              {
+                "id": "seasonal_fluctuations",
+                "en": "Seasonal Cost Fluctuations",
+                "zh": "季节性成本波动"
+              },
+              {
+                "id": "inflation_adjustment",
+                "en": "Inflation Adjustment",
+                "zh": "通货膨胀调整"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pricing_strategy",
+        "en": "Pricing Strategy",
+        "zh": "定价策略",
+        "children": [
+          {
+            "id": "margin_based_pricing",
+            "en": "Margin-Based Pricing",
+            "zh": "基于利润率的定价",
+            "children": [
+              {
+                "id": "target_food_cost_ratio",
+                "en": "Target Food Cost Ratio (25-35%)",
+                "zh": "目标食品成本比率（25-35%）"
+              },
+              {
+                "id": "markup_calculation",
+                "en": "Markup Percentage Calculation",
+                "zh": "加价百分比计算"
+              },
+              {
+                "id": "profit_margin_analysis",
+                "en": "Profit Margin Analysis",
+                "zh": "利润率分析"
+              }
+            ]
+          },
+          {
+            "id": "psychological_pricing",
+            "en": "Psychological Pricing",
+            "zh": "心理定价",
+            "children": [
+              {
+                "id": "charm_pricing",
+                "en": "Charm Pricing ($9.99 vs $10)",
+                "zh": "魅力定价（$9.99 vs $10）"
+              },
+              {
+                "id": "prestige_pricing",
+                "en": "Prestige Positioning Pricing",
+                "zh": "声望定位定价"
+              },
+              {
+                "id": "round_number_pricing",
+                "en": "Round Number Pricing Strategy",
+                "zh": "整数定价策略"
+              },
+              {
+                "id": "price_anchoring",
+                "en": "Price Anchoring Techniques",
+                "zh": "价格锚定技术"
+              }
+            ]
+          },
+          {
+            "id": "competitive_pricing",
+            "en": "Competitive Pricing",
+            "zh": "竞争定价",
+            "children": [
+              {
+                "id": "market_positioning",
+                "en": "Market Positioning Strategy",
+                "zh": "市场定位策略"
+              },
+              {
+                "id": "competitor_analysis",
+                "en": "Competitor Price Analysis",
+                "zh": "竞争对手价格分析"
+              },
+              {
+                "id": "value_proposition",
+                "en": "Value Proposition Pricing",
+                "zh": "价值主张定价"
+              }
+            ]
+          },
+          {
+            "id": "sensitivity_analysis",
+            "en": "Sensitivity Analysis",
+            "zh": "敏感性分析",
+            "children": [
+              {
+                "id": "price_volatility_scenarios",
+                "en": "Price Volatility Scenarios (±5%, ±10%, ±15%)",
+                "zh": "价格波动场景（±5%、±10%、±15%）"
+              },
+              {
+                "id": "break_even_analysis",
+                "en": "Break-Even Point Analysis",
+                "zh": "盈亏平衡点分析"
+              },
+              {
+                "id": "elasticity_assessment",
+                "en": "Price Elasticity Assessment",
+                "zh": "价格弹性评估"
+              },
+              {
+                "id": "scenario_comparison",
+                "en": "Multi-Scenario Price Comparison",
+                "zh": "多场景价格比较"
+              }
+            ]
+          },
+          {
+            "id": "dynamic_pricing",
+            "en": "Dynamic Pricing",
+            "zh": "动态定价",
+            "children": [
+              {
+                "id": "event_based_pricing",
+                "en": "Event-Based Pricing Adjustments",
+                "zh": "基于活动的定价调整"
+              },
+              {
+                "id": "seasonal_pricing",
+                "en": "Seasonal Menu Pricing",
+                "zh": "季节性菜单定价"
+              },
+              {
+                "id": "demand_based_pricing",
+                "en": "Demand-Based Price Optimization",
+                "zh": "基于需求的价格优化"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "nutrition_analysis",
+        "en": "Nutrition Analysis",
+        "zh": "营养分析",
+        "children": [
+          {
+            "id": "nutritional_content",
+            "en": "Nutritional Content Calculation",
+            "zh": "营养成分计算",
+            "children": [
+              {
+                "id": "macronutrient_breakdown",
+                "en": "Macronutrient Breakdown (Protein, Carbs, Fat)",
+                "zh": "大量营养素分解（蛋白质、碳水化合物、脂肪）"
+              },
+              {
+                "id": "calorie_calculation",
+                "en": "Calorie Calculation per Serving",
+                "zh": "每份卡路里计算"
+              },
+              {
+                "id": "micronutrient_analysis",
+                "en": "Micronutrient Analysis (Vitamins, Minerals)",
+                "zh": "微量营养素分析（维生素、矿物质）"
+              },
+              {
+                "id": "per_100g_nutrition",
+                "en": "Per-100g Nutrition Data Retrieval",
+                "zh": "每100克营养数据检索"
+              }
+            ]
+          },
+          {
+            "id": "dietary_constraints",
+            "en": "Dietary Constraint Validation",
+            "zh": "饮食限制验证",
+            "children": [
+              {
+                "id": "allergen_identification",
+                "en": "Allergen Identification",
+                "zh": "过敏原识别"
+              },
+              {
+                "id": "dietary_restriction_check",
+                "en": "Dietary Restriction Compliance Check",
+                "zh": "饮食限制合规检查"
+              },
+              {
+                "id": "nutritional_target_validation",
+                "en": "Nutritional Target Validation",
+                "zh": "营养目标验证"
+              },
+              {
+                "id": "health_warning_generation",
+                "en": "Health Warning Generation",
+                "zh": "健康警告生成"
+              }
+            ]
+          },
+          {
+            "id": "nutrition_sources",
+            "en": "Nutrition Data Sources",
+            "zh": "营养数据来源",
+            "children": [
+              {
+                "id": "usda_database",
+                "en": "USDA Nutrition Database Query",
+                "zh": "USDA营养数据库查询"
+              },
+              {
+                "id": "authoritative_sources",
+                "en": "Authoritative Source Validation",
+                "zh": "权威来源验证"
+              },
+              {
+                "id": "nutrition_label_parsing",
+                "en": "Nutrition Label Parsing",
+                "zh": "营养标签解析"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "substitution_planning",
+        "en": "Substitution Planning",
+        "zh": "替代规划",
+        "children": [
+          {
+            "id": "ingredient_alternatives",
+            "en": "Ingredient Alternative Discovery",
+            "zh": "食材替代品发现",
+            "children": [
+              {
+                "id": "similar_ingredient_search",
+                "en": "Similar Ingredient Search",
+                "zh": "相似食材搜索"
+              },
+              {
+                "id": "category_based_substitution",
+                "en": "Category-Based Substitution",
+                "zh": "基于类别的替代"
+              },
+              {
+                "id": "seasonal_substitutes",
+                "en": "Seasonal Substitute Recommendations",
+                "zh": "季节性替代品推荐"
+              }
+            ]
+          },
+          {
+            "id": "substitution_evaluation",
+            "en": "Substitution Evaluation",
+            "zh": "替代品评估",
+            "children": [
+              {
+                "id": "culinary_compatibility",
+                "en": "Culinary Compatibility Scoring",
+                "zh": "烹饪兼容性评分"
+              },
+              {
+                "id": "flavor_profile_matching",
+                "en": "Flavor Profile Matching",
+                "zh": "风味特征匹配",
+                "children": [
+                  {
+                    "id": "flavor_profile_matching_cost_optimized_flavor_preserving_substitution",
+                    "en": "Cost-Optimized Flavor-Preserving Ingredient Substitution",
+                    "zh": "风味等效的成本优化食材替代"
+                  }
+                ]
+              },
+              {
+                "id": "texture_compatibility",
+                "en": "Texture Compatibility Assessment",
+                "zh": "质地兼容性评估"
+              },
+              {
+                "id": "cooking_method_suitability",
+                "en": "Cooking Method Suitability",
+                "zh": "烹饪方法适用性"
+              }
+            ]
+          },
+          {
+            "id": "cost_impact_analysis",
+            "en": "Cost Impact Analysis",
+            "zh": "成本影响分析",
+            "children": [
+              {
+                "id": "cost_savings_calculation",
+                "en": "Cost Savings Calculation",
+                "zh": "成本节约计算"
+              },
+              {
+                "id": "price_comparison",
+                "en": "Original vs Substitute Price Comparison",
+                "zh": "原始与替代品价格比较"
+              },
+              {
+                "id": "profit_margin_impact",
+                "en": "Profit Margin Impact Assessment",
+                "zh": "利润率影响评估"
+              },
+              {
+                "id": "cost_impact_analysis_edible_yield_cost_impact_analysis",
+                "en": "Edible Yield Cost Impact Analysis",
+                "zh": "可食用率成本影响分析"
+              }
+            ]
+          },
+          {
+            "id": "nutritional_impact",
+            "en": "Nutritional Impact Comparison",
+            "zh": "营养影响比较",
+            "children": [
+              {
+                "id": "nutrition_profile_comparison",
+                "en": "Nutrition Profile Comparison",
+                "zh": "营养特征比较"
+              },
+              {
+                "id": "dietary_compliance_check",
+                "en": "Dietary Compliance Check After Substitution",
+                "zh": "替代后饮食合规检查"
+              },
+              {
+                "id": "quality_maintenance",
+                "en": "Quality Maintenance Verification",
+                "zh": "质量维护验证"
+              }
+            ]
+          },
+          {
+            "id": "substitution_planning_waste_optimized_substitution_planning",
+            "en": "Waste-Optimized Substitution Planning",
+            "zh": "可食率优化替代规划"
+          },
+          {
+            "id": "substitution_planning_availability_constrained_substitution_planning",
+            "en": "Availability-Constrained Substitution Planning",
+            "zh": "可得性约束替代规划"
+          }
+        ]
+      },
+      {
+        "id": "price_monitoring",
+        "en": "Price Monitoring",
+        "zh": "价格监控",
+        "children": [
+          {
+            "id": "continuous_monitoring",
+            "en": "Continuous Price Monitoring",
+            "zh": "持续价格监控",
+            "children": [
+              {
+                "id": "periodic_rechecking",
+                "en": "Periodic Price Re-Checking",
+                "zh": "定期价格重新检查"
+              },
+              {
+                "id": "schedule_management",
+                "en": "Monitoring Schedule Management",
+                "zh": "监控计划管理"
+              },
+              {
+                "id": "lightweight_scraping",
+                "en": "Lightweight Re-Scraping",
+                "zh": "轻量级重新抓取"
+              }
+            ]
+          },
+          {
+            "id": "change_detection",
+            "en": "Price Change Detection",
+            "zh": "价格变化检测",
+            "children": [
+              {
+                "id": "baseline_comparison",
+                "en": "Baseline Price Comparison",
+                "zh": "基准价格比较"
+              },
+              {
+                "id": "trend_analysis",
+                "en": "Price Trend Analysis",
+                "zh": "价格趋势分析"
+              },
+              {
+                "id": "volatility_tracking",
+                "en": "Price Volatility Tracking",
+                "zh": "价格波动跟踪"
+              },
+              {
+                "id": "percentage_change_calculation",
+                "en": "Percentage Change Calculation",
+                "zh": "百分比变化计算"
+              }
+            ]
+          },
+          {
+            "id": "alerting",
+            "en": "Threshold-Based Alerting",
+            "zh": "基于阈值的警报",
+            "children": [
+              {
+                "id": "threshold_configuration",
+                "en": "Alert Threshold Configuration (Default >10%)",
+                "zh": "警报阈值配置（默认>10%）"
+              },
+              {
+                "id": "severity_weighting",
+                "en": "Severity-Weighted Alert Generation",
+                "zh": "严重性加权警报生成"
+              },
+              {
+                "id": "notification_delivery",
+                "en": "Alert Notification Delivery",
+                "zh": "警报通知传递"
+              },
+              {
+                "id": "critical_ingredient_flagging",
+                "en": "Critical Ingredient Flagging",
+                "zh": "关键食材标记"
+              }
+            ]
+          },
+          {
+            "id": "prelaunch_monitoring",
+            "en": "Pre-Launch Monitoring",
+            "zh": "预发布监控",
+            "children": [
+              {
+                "id": "launch_date_tracking",
+                "en": "Launch Date-Specific Tracking",
+                "zh": "发布日期特定跟踪"
+              },
+              {
+                "id": "final_price_adjustment",
+                "en": "Final Price Adjustment Recommendations",
+                "zh": "最终价格调整建议"
+              },
+              {
+                "id": "menu_pricing_optimization",
+                "en": "Pre-Launch Menu Pricing Optimization",
+                "zh": "预发布菜单定价优化"
+              }
+            ]
+          },
+          {
+            "id": "price_monitoring_cross_store_price_dispersion_monitoring",
+            "en": "Cross-Store Price Dispersion Monitoring",
+            "zh": "跨门店价差监控"
+          },
+          {
+            "id": "price_monitoring_shrinkflation_detection",
+            "en": "Shrinkflation Detection",
+            "zh": "缩量通胀检测"
+          }
+        ]
+      },
+      {
+        "id": "workflow_orchestration",
+        "en": "Workflow Orchestration",
+        "zh": "工作流编排",
+        "children": [
+          {
+            "id": "phase_management",
+            "en": "Six-Phase Workflow Management",
+            "zh": "六阶段工作流管理",
+            "children": [
+              {
+                "id": "phase1_data_collection",
+                "en": "Phase 1: Data Collection (Location & Ingredients)",
+                "zh": "阶段1：数据收集（位置和食材）"
+              },
+              {
+                "id": "phase2_price_discovery",
+                "en": "Phase 2: Price Discovery with Retry Logic",
+                "zh": "阶段2：带重试逻辑的价格发现"
+              },
+              {
+                "id": "phase3_cost_pricing_analysis",
+                "en": "Phase 3: Cost Calculation & Pricing Analysis",
+                "zh": "阶段3：成本计算和定价分析"
+              },
+              {
+                "id": "phase4_optimization",
+                "en": "Phase 4: Optimization (Conditional Substitution)",
+                "zh": "阶段4：优化（条件性替代）",
+                "children": [
+                  {
+                    "id": "phase4_optimization_food_cost_ratio_compliance_conditional_substitution",
+                    "en": "Food Cost Ratio Compliance via Conditional Substitution",
+                    "zh": "通过条件性替代实现食材成本比例达标"
+                  }
+                ]
+              },
+              {
+                "id": "phase5_monitoring",
+                "en": "Phase 5: Pre-Launch Monitoring Loop",
+                "zh": "阶段5：预发布监控循环"
+              },
+              {
+                "id": "phase6_reporting",
+                "en": "Phase 6: Final Report Synthesis",
+                "zh": "阶段6：最终报告合成"
+              }
+            ]
+          },
+          {
+            "id": "state_management",
+            "en": "State Management",
+            "zh": "状态管理",
+            "children": [
+              {
+                "id": "cross_agent_state",
+                "en": "Cross-Agent State Tracking",
+                "zh": "跨代理状态跟踪"
+              },
+              {
+                "id": "partial_result_handling",
+                "en": "Partial Result Handling",
+                "zh": "部分结果处理"
+              },
+              {
+                "id": "checkpoint_recovery",
+                "en": "Checkpoint and Recovery",
+                "zh": "检查点和恢复"
+              }
+            ]
+          },
+          {
+            "id": "error_handling",
+            "en": "Error Handling",
+            "zh": "错误处理",
+            "children": [
+              {
+                "id": "retry_logic",
+                "en": "Retry Logic for Failed Operations",
+                "zh": "失败操作的重试逻辑"
+              },
+              {
+                "id": "fallback_strategies",
+                "en": "Fallback Strategies",
+                "zh": "后备策略"
+              },
+              {
+                "id": "error_reporting",
+                "en": "Error Reporting and Logging",
+                "zh": "错误报告和日志记录"
+              }
+            ]
+          },
+          {
+            "id": "conditional_branching",
+            "en": "Conditional Branching",
+            "zh": "条件分支",
+            "children": [
+              {
+                "id": "high_cost_detection",
+                "en": "High-Cost Item Detection for Substitution",
+                "zh": "用于替代的高成本项目检测"
+              },
+              {
+                "id": "nutrition_violation_handling",
+                "en": "Nutrition Violation Handling",
+                "zh": "营养违规处理"
+              },
+              {
+                "id": "parallel_execution",
+                "en": "Parallel Agent Execution Coordination",
+                "zh": "并行代理执行协调"
+              }
+            ]
+          },
+          {
+            "id": "workflow_orchestration_inter_agent_handoff_orchestration",
+            "en": "Inter-Agent Handoff Orchestration",
+            "zh": "跨代理交接编排"
+          }
+        ]
+      },
+      {
+        "id": "reporting",
+        "en": "Reporting and Analytics",
+        "zh": "报告和分析",
+        "children": [
+          {
+            "id": "cost_reports",
+            "en": "Cost Analysis Reports",
+            "zh": "成本分析报告",
+            "children": [
+              {
+                "id": "ingredient_cost_breakdown",
+                "en": "Ingredient-Level Cost Breakdown",
+                "zh": "食材级成本明细"
+              },
+              {
+                "id": "recipe_cost_summary",
+                "en": "Recipe-Level Cost Summary",
+                "zh": "食谱级成本摘要"
+              },
+              {
+                "id": "menu_cost_overview",
+                "en": "Full Menu Cost Overview",
+                "zh": "完整菜单成本概览"
+              }
+            ]
+          },
+          {
+            "id": "pricing_recommendations",
+            "en": "Pricing Recommendation Reports",
+            "zh": "定价建议报告",
+            "children": [
+              {
+                "id": "suggested_pricing",
+                "en": "Suggested Menu Pricing",
+                "zh": "建议菜单定价"
+              },
+              {
+                "id": "margin_analysis",
+                "en": "Profit Margin Analysis by Item",
+                "zh": "按项目的利润率分析"
+              },
+              {
+                "id": "competitive_positioning",
+                "en": "Competitive Positioning Report",
+                "zh": "竞争定位报告"
+              }
+            ]
+          },
+          {
+            "id": "monitoring_reports",
+            "en": "Price Monitoring Reports",
+            "zh": "价格监控报告",
+            "children": [
+              {
+                "id": "price_change_summary",
+                "en": "Price Change Summary",
+                "zh": "价格变化摘要"
+              },
+              {
+                "id": "alert_history",
+                "en": "Alert History and Trends",
+                "zh": "警报历史和趋势"
+              },
+              {
+                "id": "volatility_report",
+                "en": "Market Volatility Report",
+                "zh": "市场波动报告"
+              }
+            ]
+          },
+          {
+            "id": "actionable_insights",
+            "en": "Actionable Business Insights",
+            "zh": "可操作的业务洞察",
+            "children": [
+              {
+                "id": "profitability_ranking",
+                "en": "Menu Item Profitability Ranking",
+                "zh": "菜单项盈利能力排名"
+              },
+              {
+                "id": "optimization_opportunities",
+                "en": "Cost Optimization Opportunities",
+                "zh": "成本优化机会"
+              },
+              {
+                "id": "substitution_recommendations",
+                "en": "Substitution Recommendations with Impact",
+                "zh": "带影响的替代建议"
+              },
+              {
+                "id": "risk_assessment",
+                "en": "Price Risk Assessment",
+                "zh": "价格风险评估"
+              }
+            ]
+          },
+          {
+            "id": "reporting_nutritional_compliance_reports",
+            "en": "Nutritional Compliance Reports",
+            "zh": "营养合规报告"
+          }
+        ]
+      }
+    ]
+  }
+}

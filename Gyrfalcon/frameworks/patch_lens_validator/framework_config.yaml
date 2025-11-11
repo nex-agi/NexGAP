@@ -1,0 +1,606 @@
+# Copyright (c) Nex-AGI. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Framework Configuration for patch_lens_validator
+# Multi-Language Game Mechanics Validation System
+
+# === Framework Description ===
+framework:
+  name: PatchLens Validator
+  description_en: "PatchLens is a comprehensive framework for multi-language game mechanics validation and documentation maintenance. It solves critical challenges for small localization teams and community volunteers: (1) Automated continuous monitoring of official patch notes, developer blogs, community wikis, and forums to extract quantifiable mechanics data including damage values, cooldown durations, trigger conditions, ability effects, and item interactions; (2) Cross-source validation with confidence scoring by aggregating data from multiple sources, weighting by authority level, and detecting conflicts between official sources, community wikis, and forum discussions to ensure accuracy; (3) Multi-language consistency checking across English, Chinese, Japanese, Korean, and other languages to detect translation lags where one language version falls behind others by days or weeks, identify mistranslations where terminology or numeric values are incorrectly translated, and flag terminology inconsistencies where the same concept is expressed differently; (4) Version change tracking with detailed diff reporting between game patches to identify mechanics modifications including buffs, nerfs, and balance changes, new mechanics additions, and removed mechanics, with side-by-side comparison and impact scoring for competitive balance assessment; (5) Automated generation of reproducible Python validation scripts containing executable assertions that can independently verify extracted mechanics data, enabling community verification and quality assurance; (6) Comprehensive traceability linking every extracted mechanic to source URLs with timestamps for independent verification and audit trails. The framework enables localization teams to reduce manual monitoring effort by 80% through automated content discovery and extraction, helps community translators maintain accurate fan-made wikis with cross-validated data, supports game data miners in tracking mechanics evolution across patches, assists quality assurance engineers in identifying translation errors before release, and empowers esports analysts to quickly understand meta-shifting balance changes. Typical use cases include validating that Hero_Aria's passive ability trigger condition changed from 4 to 5 basic attacks in Patch 3.2.1 across all language versions, detecting that Japanese patch notes are 3 days behind English with 12 untranslated mechanics changes, generating weekly digests highlighting top 5 high-impact balance changes for competitive players, maintaining community wiki accuracy through multi-source cross-validation, and producing executable test scripts that verify item stacking rules match official documentation. The framework performs ethical web scraping with robots.txt compliance and rate limiting, processes HTML content with noise removal and deduplication, uses pattern matching for data extraction, applies voting mechanisms for consensus building, tracks historical snapshots for version comparison, detects cross-language inconsistencies, generates templated validation scripts, and outputs multi-format reports in JSON, Markdown, and executable Python formats."
+  description_zh: "PatchLens是一个用于多语言游戏机制验证和文档维护的综合框架。它为小型本地化团队和社区志愿者解决了关键挑战：(1) 自动持续监控官方补丁说明、开发者博客、社区维基和论坛，提取可量化的机制数据，包括伤害值、冷却时间、触发条件、技能效果和物品交互；(2) 通过聚合多个来源的数据、按权威级别加权、检测官方来源、社区维基和论坛讨论之间的冲突，进行跨来源验证和置信度评分以确保准确性；(3) 跨英语、中文、日语、韩语等多语言的一致性检查，检测一种语言版本比其他版本滞后数天或数周的翻译滞后，识别术语或数值错误翻译的误译，标记同一概念在不同来源表达不同的术语不一致；(4) 版本变更跟踪和详细差异报告，识别游戏补丁之间的机制修改（包括增强、削弱和平衡变化）、新机制添加和移除的机制，提供并排比较和竞技平衡影响评分；(5) 自动生成可重现的Python验证脚本，包含可执行断言以独立验证提取的机制数据，实现社区验证和质量保证；(6) 全面的可追溯性，将每个提取的机制链接到带时间戳的源URL，以便独立验证和审计追踪。该框架使本地化团队通过自动化内容发现和提取将人工监控工作减少80%，帮助社区翻译者通过交叉验证的数据维护准确的粉丝制作维基，支持游戏数据挖掘者跟踪各补丁的机制演变，协助质量保证工程师在发布前识别翻译错误，赋能电子竞技分析师快速理解改变元游戏的平衡变化。典型用例包括验证Hero_Aria的被动技能触发条件在补丁3.2.1中从4次普通攻击改为5次，所有语言版本一致；检测日文补丁说明比英文晚3天，有12个未翻译的机制变化；生成每周摘要，突出显示竞技玩家关注的前5个高影响平衡变化；通过多来源交叉验证维护社区维基准确性；生成可执行测试脚本验证物品叠加规则与官方文档匹配。该框架执行符合robots.txt和速率限制的道德网页抓取，处理包含噪声去除和去重的HTML内容，使用模式匹配进行数据提取，应用投票机制构建共识，跟踪历史快照进行版本比较，检测跨语言不一致，生成模板化验证脚本，输出JSON、Markdown和可执行Python格式的多格式报告。"
+
+# === Agent Definitions ===
+agents:
+- agent_name: PatchLensScheduler
+  description: Master scheduler coordinating 12-step iterative workflow for game mechanics validation
+  sysprompt_path: PatchLensScheduler.yaml
+  llm_config: default_llm
+  tools: []
+
+- agent_name: TaskConfigurationManager
+  description: Configuration parsing, validation, and storage for validation tasks
+  sysprompt_path: TaskConfigurationManager.yaml
+  llm_config: default_llm
+  tools:
+  - config_parser_tool
+  - config_validator_tool
+  - config_storage_tool
+
+- agent_name: WebContentAcquisitor
+  description: Web search, URL filtering, and content acquisition with robots.txt compliance
+  sysprompt_path: WebContentAcquisitor.yaml
+  llm_config: default_llm
+  tools:
+  - web_search_tool
+  - url_filter_tool
+  - html_storage_tool
+
+- agent_name: ContentProcessor
+  description: HTML parsing, noise removal, and content deduplication
+  sysprompt_path: ContentProcessor.yaml
+  llm_config: default_llm
+  tools:
+  - html_parser_tool
+  - content_filter_tool
+  - text_normalizer_tool
+
+- agent_name: MechanicsExtractor
+  description: Structured mechanics data extraction with pattern matching
+  sysprompt_path: MechanicsExtractor.yaml
+  llm_config: default_llm
+  tools:
+  - pattern_library_loader_tool
+  - terminology_loader_tool
+  - value_extractor_tool
+  - structured_data_generator_tool
+
+- agent_name: CrossSourceValidator
+  description: Multi-source validation with confidence scoring and conflict detection
+  sysprompt_path: CrossSourceValidator.yaml
+  llm_config: default_llm
+  tools:
+  - voting_aggregator_tool
+  - source_weighting_tool
+  - conflict_detector_tool
+
+- agent_name: VersionTracker
+  description: Change detection and version history tracking for game mechanics
+  sysprompt_path: VersionTracker.yaml
+  llm_config: default_llm
+  tools:
+  - change_detector_tool
+  - snapshot_loader_tool
+  - diff_calculator_tool
+
+- agent_name: LocalizationAdvisor
+  description: Cross-language consistency checking and mistranslation detection
+  sysprompt_path: LocalizationAdvisor.yaml
+  llm_config: default_llm
+  tools:
+  - terminology_reference_tool
+  - suggestion_formatter_tool
+
+- agent_name: PythonScriptGenerator
+  description: Python script generation for validation and transformation tasks
+  sysprompt_path: PythonScriptGenerator.yaml
+  llm_config: default_llm
+  tools:
+  - script_writer_tool
+  - template_loader_tool
+  - python_runner_tool
+
+- agent_name: ReportAssembler
+  description: Final report generation in JSON and Markdown formats
+  sysprompt_path: ReportAssembler.yaml
+  llm_config: default_llm
+  tools:
+  - json_writer_tool
+  - markdown_formatter_tool
+  - digest_template_tool
+
+- agent_name: RobotsTxtChecker
+  description: Robots.txt compliance verification for ethical web scraping
+  sysprompt_path: RobotsTxtChecker.yaml
+  llm_config: default_llm
+  tools:
+  - robots_checker_tool
+  - rate_limiter_tool
+
+- agent_name: ContentCrawler
+  description: HTTP content fetching with rate limiting and caching
+  sysprompt_path: ContentCrawler.yaml
+  llm_config: default_llm
+  tools:
+  - http_fetcher_tool
+  - html_storage_tool
+
+- agent_name: NoiseRemover
+  description: HTML noise detection and removal (ads, navigation, boilerplate)
+  sysprompt_path: NoiseRemover.yaml
+  llm_config: default_llm
+  tools:
+  - noise_detection_tool
+  - content_filter_tool
+
+- agent_name: DeduplicatorAgent
+  description: Content deduplication and similarity detection across sources
+  sysprompt_path: DeduplicatorAgent.yaml
+  llm_config: default_llm
+  tools:
+  - similarity_calculator_tool
+  - content_filter_tool
+
+- agent_name: RegexPatternMatcher
+  description: Regex-based pattern matching for mechanics value extraction
+  sysprompt_path: RegexPatternMatcher.yaml
+  llm_config: default_llm
+  tools:
+  - pattern_matching_tool
+  - pattern_applier_tool
+
+- agent_name: TerminologyNormalizer
+  description: Game terminology normalization across languages and sources
+  sysprompt_path: TerminologyNormalizer.yaml
+  llm_config: default_llm
+  tools:
+  - term_mapper_tool
+  - terminology_loader_tool
+
+- agent_name: ConfidenceCalculator
+  description: Confidence score calculation based on source agreement and authority
+  sysprompt_path: ConfidenceCalculator.yaml
+  llm_config: default_llm
+  tools:
+  - confidence_formula_tool
+  - voting_aggregator_tool
+
+- agent_name: MistranslationDetector
+  description: Cross-language mistranslation and inconsistency detection
+  sysprompt_path: MistranslationDetector.yaml
+  llm_config: default_llm
+  tools:
+  - multi_language_snippet_tool
+  - terminology_reference_tool
+
+- agent_name: ScriptTemplateBuilder
+  description: Python script template generation for validation rules
+  sysprompt_path: ScriptTemplateBuilder.yaml
+  llm_config: default_llm
+  tools:
+  - template_engine_tool
+  - script_writer_tool
+
+- agent_name: ScriptExecutor
+  description: Safe execution of generated Python validation scripts
+  sysprompt_path: ScriptExecutor.yaml
+  llm_config: default_llm
+  tools:
+  - python_runner_tool
+
+- agent_name: JSONPackager
+  description: Structured JSON report packaging with validation results
+  sysprompt_path: JSONPackager.yaml
+  llm_config: default_llm
+  tools:
+  - json_writer_tool
+  - json_serializer_tool
+
+- agent_name: MarkdownGenerator
+  description: Human-readable Markdown report generation
+  sysprompt_path: MarkdownGenerator.yaml
+  llm_config: default_llm
+  tools:
+  - markdown_formatter_tool
+  - markdown_template_tool
+
+- agent_name: DigestGenerator
+  description: Executive summary and digest generation for validation reports
+  sysprompt_path: DigestGenerator.yaml
+  llm_config: default_llm
+  tools:
+  - digest_template_tool
+  - impact_scorer_tool
+
+- agent_name: AssertionGenerator
+  description: Validation assertion generation for game mechanics rules
+  sysprompt_path: AssertionGenerator.yaml
+  llm_config: default_llm
+  tools:
+  - assertion_builder_tool
+  - assertion_encoder_tool
+
+- agent_name: StandardExpressionGenerator
+  description: Standard expression generation for mechanics formulas and rules
+  sysprompt_path: StandardExpressionGenerator.yaml
+  llm_config: default_llm
+  tools:
+  - expression_template_tool
+  - pattern_library_loader_tool
+
+# === LLM Configurations ===
+llm_configs:
+- llm_name: default_llm
+  provider: openai
+  model: nex
+  api_key: ${LLM_API_KEY}
+  base_url: ${LLM_BASE_URL}
+  max_tokens: 8000
+  temperature: 0.6
+  timeout: 300
+
+# === Tool Configurations ===
+tools:
+# Configuration Management Tools
+- tool_name: config_parser_tool
+  description: Parse and structure validation task configuration
+  config_path: tools/config_parser_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.config_parser_tool:config_parser_tool
+
+- tool_name: config_validator_tool
+  description: Validate configuration schema and required fields
+  config_path: tools/config_validator_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.config_validator_tool:config_validator_tool
+
+- tool_name: config_storage_tool
+  description: Store and retrieve configuration data
+  config_path: tools/config_storage_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.config_storage_tool:config_storage_tool
+
+# Web Content Acquisition Tools
+- tool_name: web_search_tool
+  description: Multi-language web search for game mechanics sources
+  config_path: tools/web_search_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.web_search_tool:web_search_tool
+
+- tool_name: url_filter_tool
+  description: Filter and rank URLs by relevance and authority
+  config_path: tools/url_filter_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.url_filter_tool:url_filter_tool
+
+- tool_name: html_storage_tool
+  description: Store and retrieve HTML content with metadata
+  config_path: tools/html_storage_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.html_storage_tool:html_storage_tool
+
+- tool_name: robots_checker_tool
+  description: Check robots.txt compliance before crawling
+  config_path: tools/robots_checker_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.robots_checker_tool:robots_checker_tool
+
+- tool_name: rate_limiter_tool
+  description: Enforce rate limiting for ethical web scraping
+  config_path: tools/rate_limiter_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.rate_limiter_tool:rate_limiter_tool
+
+- tool_name: http_fetcher_tool
+  description: HTTP content fetching with headers and error handling
+  config_path: tools/http_fetcher_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.http_fetcher_tool:http_fetcher_tool
+
+# Content Processing Tools
+- tool_name: html_parser_tool
+  description: Parse HTML and extract structured content
+  config_path: tools/html_parser_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.html_parser_tool:html_parser_tool
+
+- tool_name: content_filter_tool
+  description: Filter and clean content based on rules
+  config_path: tools/content_filter_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.content_filter_tool:content_filter_tool
+
+- tool_name: text_normalizer_tool
+  description: Normalize text formatting and whitespace
+  config_path: tools/text_normalizer_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.text_normalizer_tool:text_normalizer_tool
+
+- tool_name: noise_detection_tool
+  description: Detect and flag noisy content (ads, navigation)
+  config_path: tools/noise_detection_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.noise_detection_tool:noise_detection_tool
+
+- tool_name: similarity_calculator_tool
+  description: Calculate content similarity for deduplication
+  config_path: tools/similarity_calculator_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.similarity_calculator_tool:similarity_calculator_tool
+
+# Mechanics Extraction Tools
+- tool_name: pattern_library_loader_tool
+  description: Load predefined patterns for mechanics extraction
+  config_path: tools/pattern_library_loader_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.pattern_library_loader_tool:pattern_library_loader_tool
+
+- tool_name: terminology_loader_tool
+  description: Load game-specific terminology dictionaries
+  config_path: tools/terminology_loader_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.terminology_loader_tool:terminology_loader_tool
+
+- tool_name: value_extractor_tool
+  description: Extract numeric values and mechanics parameters
+  config_path: tools/value_extractor_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.value_extractor_tool:value_extractor_tool
+
+- tool_name: structured_data_generator_tool
+  description: Generate structured mechanics data from raw content
+  config_path: tools/structured_data_generator_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.structured_data_generator_tool:structured_data_generator_tool
+
+- tool_name: pattern_matching_tool
+  description: Apply regex patterns for value extraction
+  config_path: tools/pattern_matching_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.pattern_matching_tool:pattern_matching_tool
+
+- tool_name: pattern_applier_tool
+  description: Apply multiple patterns and aggregate results
+  config_path: tools/pattern_applier_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.pattern_applier_tool:pattern_applier_tool
+
+- tool_name: term_mapper_tool
+  description: Map terms across languages and sources
+  config_path: tools/term_mapper_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.term_mapper_tool:term_mapper_tool
+
+# Validation Tools
+- tool_name: voting_aggregator_tool
+  description: Aggregate values using voting mechanisms
+  config_path: tools/voting_aggregator_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.voting_aggregator_tool:voting_aggregator_tool
+
+- tool_name: source_weighting_tool
+  description: Weight sources by authority and reliability
+  config_path: tools/source_weighting_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.source_weighting_tool:source_weighting_tool
+
+- tool_name: conflict_detector_tool
+  description: Detect conflicts between different sources
+  config_path: tools/conflict_detector_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.conflict_detector_tool:conflict_detector_tool
+
+- tool_name: confidence_formula_tool
+  description: Calculate confidence scores using predefined formulas
+  config_path: tools/confidence_formula_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.confidence_formula_tool:confidence_formula_tool
+
+# Version Tracking Tools
+- tool_name: change_detector_tool
+  description: Detect changes between versions
+  config_path: tools/change_detector_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.change_detector_tool:change_detector_tool
+
+- tool_name: snapshot_loader_tool
+  description: Load historical snapshots for comparison
+  config_path: tools/snapshot_loader_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.snapshot_loader_tool:snapshot_loader_tool
+
+- tool_name: diff_calculator_tool
+  description: Calculate detailed diffs between versions
+  config_path: tools/diff_calculator_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.diff_calculator_tool:diff_calculator_tool
+
+- tool_name: lag_detector_tool
+  description: Detect update lag between different language versions
+  config_path: tools/lag_detector_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.lag_detector_tool:lag_detector_tool
+
+# Localization Tools
+- tool_name: terminology_reference_tool
+  description: Reference terminology databases for consistency
+  config_path: tools/terminology_reference_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.terminology_reference_tool:terminology_reference_tool
+
+- tool_name: suggestion_formatter_tool
+  description: Format localization suggestions and corrections
+  config_path: tools/suggestion_formatter_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.suggestion_formatter_tool:suggestion_formatter_tool
+
+- tool_name: multi_language_snippet_tool
+  description: Generate multi-language code snippets for comparison
+  config_path: tools/multi_language_snippet_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.multi_language_snippet_tool:multi_language_snippet_tool
+
+# Python Script Generation Tools
+- tool_name: script_writer_tool
+  description: Generate Python validation scripts
+  config_path: tools/script_writer_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.script_writer_tool:script_writer_tool
+
+- tool_name: template_loader_tool
+  description: Load script templates from library
+  config_path: tools/template_loader_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.template_loader_tool:template_loader_tool
+
+- tool_name: template_engine_tool
+  description: Render templates with dynamic data
+  config_path: tools/template_engine_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.template_engine_tool:template_engine_tool
+
+- tool_name: python_runner_tool
+  description: Execute Python scripts in safe sandbox
+  config_path: tools/python_runner_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.python_runner_tool:python_runner_tool
+
+# Report Generation Tools
+- tool_name: json_writer_tool
+  description: Write structured JSON reports
+  config_path: tools/json_writer_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.json_writer_tool:json_writer_tool
+
+- tool_name: json_serializer_tool
+  description: Serialize complex objects to JSON
+  config_path: tools/json_serializer_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.json_serializer_tool:json_serializer_tool
+
+- tool_name: markdown_formatter_tool
+  description: Format content as Markdown
+  config_path: tools/markdown_formatter_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.markdown_formatter_tool:markdown_formatter_tool
+
+- tool_name: markdown_template_tool
+  description: Use Markdown templates for consistent formatting
+  config_path: tools/markdown_template_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.markdown_template_tool:markdown_template_tool
+
+- tool_name: digest_template_tool
+  description: Generate executive summaries using templates
+  config_path: tools/digest_template_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.digest_template_tool:digest_template_tool
+
+- tool_name: impact_scorer_tool
+  description: Score impact of validation findings
+  config_path: tools/impact_scorer_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.impact_scorer_tool:impact_scorer_tool
+
+# Assertion and Expression Tools
+- tool_name: assertion_builder_tool
+  description: Build validation assertions
+  config_path: tools/assertion_builder_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.assertion_builder_tool:assertion_builder_tool
+
+- tool_name: assertion_encoder_tool
+  description: Encode assertions in standard format
+  config_path: tools/assertion_encoder_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.assertion_encoder_tool:assertion_encoder_tool
+
+- tool_name: expression_template_tool
+  description: Generate standard expressions for mechanics formulas
+  config_path: tools/expression_template_tool.py
+  binding: src.created_frameworks.patch_lens_validator.tools.expression_template_tool:expression_template_tool
+
+# === Workflow Configuration ===
+workflow:
+  name: patch_lens_validator_workflow
+  description: 12-step iterative validation workflow for game mechanics across languages
+
+  nodes:
+  - id: PatchLensScheduler
+    type: agent
+  - id: TaskConfigurationManager
+    type: agent
+  - id: WebContentAcquisitor
+    type: agent
+  - id: ContentProcessor
+    type: agent
+  - id: MechanicsExtractor
+    type: agent
+  - id: CrossSourceValidator
+    type: agent
+  - id: VersionTracker
+    type: agent
+  - id: LocalizationAdvisor
+    type: agent
+  - id: PythonScriptGenerator
+    type: agent
+  - id: ReportAssembler
+    type: agent
+  - id: RobotsTxtChecker
+    type: agent
+  - id: ContentCrawler
+    type: agent
+  - id: NoiseRemover
+    type: agent
+  - id: DeduplicatorAgent
+    type: agent
+  - id: RegexPatternMatcher
+    type: agent
+  - id: TerminologyNormalizer
+    type: agent
+  - id: ConfidenceCalculator
+    type: agent
+  - id: MistranslationDetector
+    type: agent
+  - id: ScriptTemplateBuilder
+    type: agent
+  - id: ScriptExecutor
+    type: agent
+  - id: JSONPackager
+    type: agent
+  - id: MarkdownGenerator
+    type: agent
+  - id: DigestGenerator
+    type: agent
+  - id: AssertionGenerator
+    type: agent
+  - id: StandardExpressionGenerator
+    type: agent
+
+  edges:
+  - from: PatchLensScheduler
+    to: TaskConfigurationManager
+    description: Configure validation task
+  - from: PatchLensScheduler
+    to: WebContentAcquisitor
+    description: Acquire web content
+  - from: PatchLensScheduler
+    to: ContentProcessor
+    description: Process and clean content
+  - from: PatchLensScheduler
+    to: MechanicsExtractor
+    description: Extract mechanics data
+  - from: PatchLensScheduler
+    to: CrossSourceValidator
+    description: Validate across sources
+  - from: PatchLensScheduler
+    to: VersionTracker
+    description: Track version changes
+  - from: PatchLensScheduler
+    to: LocalizationAdvisor
+    description: Check localization consistency
+  - from: PatchLensScheduler
+    to: PythonScriptGenerator
+    description: Generate validation scripts
+  - from: PatchLensScheduler
+    to: ReportAssembler
+    description: Assemble final report
+  - from: WebContentAcquisitor
+    to: RobotsTxtChecker
+    description: Check robots.txt compliance
+  - from: WebContentAcquisitor
+    to: ContentCrawler
+    description: Fetch web content
+  - from: ContentProcessor
+    to: NoiseRemover
+    description: Remove noise from content
+  - from: ContentProcessor
+    to: DeduplicatorAgent
+    description: Deduplicate content
+  - from: MechanicsExtractor
+    to: RegexPatternMatcher
+    description: Match patterns
+  - from: MechanicsExtractor
+    to: TerminologyNormalizer
+    description: Normalize terminology
+  - from: CrossSourceValidator
+    to: ConfidenceCalculator
+    description: Calculate confidence scores
+  - from: LocalizationAdvisor
+    to: MistranslationDetector
+    description: Detect mistranslations
+  - from: PythonScriptGenerator
+    to: ScriptTemplateBuilder
+    description: Build script templates
+  - from: PythonScriptGenerator
+    to: ScriptExecutor
+    description: Execute validation scripts
+  - from: ReportAssembler
+    to: JSONPackager
+    description: Package JSON report
+  - from: ReportAssembler
+    to: MarkdownGenerator
+    description: Generate Markdown report
+  - from: ReportAssembler
+    to: DigestGenerator
+    description: Generate digest summary
+
+framework_name: patch_lens_validator
+framework_entrance_agent: PatchLensScheduler

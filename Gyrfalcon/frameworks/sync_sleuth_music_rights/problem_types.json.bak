@@ -1,0 +1,962 @@
+{
+  "framework": "sync_sleuth_music_rights",
+  "tree": {
+    "id": "root",
+    "en": "sync_sleuth_music_rights",
+    "zh": "音乐版权清查系统",
+    "children": [
+      {
+        "id": "rights_attribution",
+        "en": "Music Rights Attribution Research",
+        "zh": "音乐版权归属研究",
+        "children": [
+          {
+            "id": "master_rights",
+            "en": "Master Recording Rights Identification",
+            "zh": "母带录音版权识别",
+            "children": [
+              {
+                "id": "label_ownership",
+                "en": "Record Label Ownership",
+                "zh": "唱片公司所有权"
+              },
+              {
+                "id": "distributor_relationships",
+                "en": "Distributor Relationships",
+                "zh": "发行商关系"
+              },
+              {
+                "id": "regional_rights_variations",
+                "en": "Regional Rights Variations",
+                "zh": "地区版权差异"
+              },
+              {
+                "id": "catalog_acquisitions",
+                "en": "Catalog Acquisitions",
+                "zh": "目录收购"
+              },
+              {
+                "id": "master_rights_version_specific_master_attribution",
+                "en": "Version-Specific Master Attribution",
+                "zh": "版本特定母带权归属识别"
+              }
+            ]
+          },
+          {
+            "id": "composition_rights",
+            "en": "Composition Rights Attribution",
+            "zh": "作曲版权归属",
+            "children": [
+              {
+                "id": "songwriter_identification",
+                "en": "Songwriter Identification",
+                "zh": "词曲作者识别"
+              },
+              {
+                "id": "publisher_affiliations",
+                "en": "Publisher Affiliations",
+                "zh": "出版商附属关系"
+              },
+              {
+                "id": "work_registration_codes",
+                "en": "Work Registration Codes",
+                "zh": "作品注册代码"
+              },
+              {
+                "id": "ownership_splits",
+                "en": "Ownership Split Percentages",
+                "zh": "所有权份额百分比"
+              }
+            ]
+          },
+          {
+            "id": "pro_research",
+            "en": "Performing Rights Organization Research",
+            "zh": "表演权组织研究",
+            "children": [
+              {
+                "id": "pro_affiliations",
+                "en": "PRO Affiliations",
+                "zh": "PRO附属关系"
+              },
+              {
+                "id": "composition_registrations",
+                "en": "Composition Registrations",
+                "zh": "作曲注册"
+              },
+              {
+                "id": "international_pro_agreements",
+                "en": "International PRO Agreements",
+                "zh": "国际PRO协议"
+              }
+            ]
+          },
+          {
+            "id": "rights_chain",
+            "en": "Rights Chain Construction",
+            "zh": "版权链构建",
+            "children": [
+              {
+                "id": "ownership_chain_tracking",
+                "en": "Ownership Chain Tracking",
+                "zh": "所有权链跟踪"
+              },
+              {
+                "id": "historical_transfers",
+                "en": "Historical Rights Transfers",
+                "zh": "历史版权转移"
+              },
+              {
+                "id": "territorial_splits",
+                "en": "Territorial Rights Splits",
+                "zh": "地区版权分割"
+              }
+            ]
+          },
+          {
+            "id": "rights_attribution_territorial_rights_variance_analysis",
+            "en": "Territorial Rights Variance Analysis",
+            "zh": "地域权利差异分析"
+          }
+        ]
+      },
+      {
+        "id": "sync_licensing",
+        "en": "Sync Licensing Clearance Guidance",
+        "zh": "同步授权清查指导",
+        "children": [
+          {
+            "id": "film_tv_sync",
+            "en": "Film and Television Sync Research",
+            "zh": "电影和电视同步研究",
+            "children": [
+              {
+                "id": "indie_film_licensing",
+                "en": "Independent Film Licensing",
+                "zh": "独立电影授权"
+              },
+              {
+                "id": "tv_series_clearance",
+                "en": "Television Series Clearance",
+                "zh": "电视系列清查"
+              },
+              {
+                "id": "documentary_budgets",
+                "en": "Documentary Music Budgets",
+                "zh": "纪录片音乐预算"
+              },
+              {
+                "id": "streaming_original_content",
+                "en": "Streaming Platform Original Content",
+                "zh": "流媒体平台原创内容"
+              },
+              {
+                "id": "festival_screening",
+                "en": "Festival Screening Requirements",
+                "zh": "电影节放映要求"
+              }
+            ]
+          },
+          {
+            "id": "advertising_sync",
+            "en": "Advertising Sync Clearance",
+            "zh": "广告同步清查",
+            "children": [
+              {
+                "id": "tv_commercials",
+                "en": "Television Commercial Licensing",
+                "zh": "电视广告授权"
+              },
+              {
+                "id": "brand_campaigns",
+                "en": "Brand Campaign Placements",
+                "zh": "品牌活动植入"
+              },
+              {
+                "id": "budget_ranges",
+                "en": "Budget Range Estimation",
+                "zh": "预算范围估算"
+              },
+              {
+                "id": "multi_territory_licensing",
+                "en": "Multi-Territory Licensing",
+                "zh": "多地区授权"
+              }
+            ]
+          },
+          {
+            "id": "digital_platform_licensing",
+            "en": "Digital Content Platform Licensing",
+            "zh": "数字内容平台授权",
+            "children": [
+              {
+                "id": "youtube_monetization",
+                "en": "YouTube Monetized Content",
+                "zh": "YouTube货币化内容"
+              },
+              {
+                "id": "tiktok_commercial",
+                "en": "TikTok Commercial Usage",
+                "zh": "TikTok商业使用"
+              },
+              {
+                "id": "podcast_licensing",
+                "en": "Podcast Music Licensing",
+                "zh": "播客音乐授权"
+              },
+              {
+                "id": "social_media_branded",
+                "en": "Social Media Branded Content",
+                "zh": "社交媒体品牌内容"
+              }
+            ]
+          },
+          {
+            "id": "video_game_licensing",
+            "en": "Video Game Soundtrack Licensing",
+            "zh": "视频游戏配乐授权",
+            "children": [
+              {
+                "id": "indie_game_music",
+                "en": "Indie Game Music Licensing",
+                "zh": "独立游戏音乐授权"
+              },
+              {
+                "id": "aaa_game_soundtracks",
+                "en": "AAA Game Soundtrack Placements",
+                "zh": "AAA游戏配乐植入"
+              },
+              {
+                "id": "interactive_media",
+                "en": "Interactive Media Requirements",
+                "zh": "互动媒体要求"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "contact_extraction",
+        "en": "Contact Information Extraction",
+        "zh": "联系信息提取",
+        "children": [
+          {
+            "id": "label_contacts",
+            "en": "Record Label Contact Research",
+            "zh": "唱片公司联系研究",
+            "children": [
+              {
+                "id": "major_label_sync",
+                "en": "Major Label Sync Contacts",
+                "zh": "主要厂牌同步联系人"
+              },
+              {
+                "id": "indie_label_portals",
+                "en": "Independent Label Portals",
+                "zh": "独立厂牌门户"
+              },
+              {
+                "id": "licensing_departments",
+                "en": "Licensing Department Contacts",
+                "zh": "授权部门联系人"
+              }
+            ]
+          },
+          {
+            "id": "publisher_contacts",
+            "en": "Music Publisher Contact Identification",
+            "zh": "音乐出版商联系识别",
+            "children": [
+              {
+                "id": "sync_representatives",
+                "en": "Sync Licensing Representatives",
+                "zh": "同步授权代表"
+              },
+              {
+                "id": "mechanical_licensing",
+                "en": "Mechanical Licensing Contacts",
+                "zh": "机械授权联系人"
+              },
+              {
+                "id": "sub_publisher_contacts",
+                "en": "Sub-Publisher Contacts",
+                "zh": "分出版商联系人"
+              }
+            ]
+          },
+          {
+            "id": "artist_songwriter_outreach",
+            "en": "Artist and Songwriter Outreach",
+            "zh": "艺术家和词曲作者联系",
+            "children": [
+              {
+                "id": "artist_management",
+                "en": "Artist Management Contacts",
+                "zh": "艺术家管理联系人"
+              },
+              {
+                "id": "songwriter_representation",
+                "en": "Songwriter Representation",
+                "zh": "词曲作者代表"
+              },
+              {
+                "id": "independent_artist_licensing",
+                "en": "Independent Artist Direct Licensing",
+                "zh": "独立艺术家直接授权"
+              }
+            ]
+          },
+          {
+            "id": "platform_integration",
+            "en": "Licensing Platform Integration",
+            "zh": "授权平台整合",
+            "children": [
+              {
+                "id": "licensing_platform_reps",
+                "en": "Licensing Platform Representatives",
+                "zh": "授权平台代表"
+              },
+              {
+                "id": "catalog_aggregators",
+                "en": "Catalog Aggregator Contacts",
+                "zh": "目录聚合器联系人"
+              },
+              {
+                "id": "production_music_libraries",
+                "en": "Production Music Library Contacts",
+                "zh": "制作音乐库联系人"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "claim_verification",
+        "en": "Claim Verification and Fact-Checking",
+        "zh": "声明验证和事实核查",
+        "children": [
+          {
+            "id": "catalog_acquisitions_verification",
+            "en": "Catalog Acquisition Verification",
+            "zh": "目录收购验证",
+            "children": [
+              {
+                "id": "acquisition_announcements",
+                "en": "Catalog Sale Announcements",
+                "zh": "目录销售公告"
+              },
+              {
+                "id": "ownership_transfer_dates",
+                "en": "Ownership Transfer Completion",
+                "zh": "所有权转移完成"
+              },
+              {
+                "id": "acquisition_deal_structure",
+                "en": "Acquisition Deal Structure",
+                "zh": "收购交易结构"
+              },
+              {
+                "id": "rights_reversion_events",
+                "en": "Rights Reversion Events",
+                "zh": "版权回归事件"
+              }
+            ]
+          },
+          {
+            "id": "label_switch_verification",
+            "en": "Label Switch and Deal Changes",
+            "zh": "厂牌转换和交易变更",
+            "children": [
+              {
+                "id": "artist_label_switches",
+                "en": "Artist Label Switch Verification",
+                "zh": "艺术家厂牌转换验证"
+              },
+              {
+                "id": "recording_contract_changes",
+                "en": "Recording Contract Changes",
+                "zh": "录音合同变更"
+              },
+              {
+                "id": "distribution_deal_updates",
+                "en": "Distribution Deal Updates",
+                "zh": "发行交易更新"
+              }
+            ]
+          },
+          {
+            "id": "rerecording_verification",
+            "en": "Re-Recording and Master Ownership",
+            "zh": "重新录制和母带所有权",
+            "children": [
+              {
+                "id": "rerecording_projects",
+                "en": "Artist Re-Recording Projects",
+                "zh": "艺术家重新录制项目"
+              },
+              {
+                "id": "master_rights_reversion",
+                "en": "Master Rights Reversion",
+                "zh": "母带版权回归"
+              },
+              {
+                "id": "new_master_ownership",
+                "en": "New Master Recording Ownership",
+                "zh": "新母带录音所有权"
+              }
+            ]
+          },
+          {
+            "id": "rights_termination",
+            "en": "Rights Reversion and Termination",
+            "zh": "版权回归和终止",
+            "children": [
+              {
+                "id": "copyright_reversion_milestones",
+                "en": "Copyright Reversion Milestones",
+                "zh": "版权回归里程碑"
+              },
+              {
+                "id": "termination_rights_exercise",
+                "en": "Termination Rights Exercise",
+                "zh": "终止权行使"
+              },
+              {
+                "id": "statutory_termination",
+                "en": "Statutory Termination Eligibility",
+                "zh": "法定终止资格"
+              }
+            ]
+          },
+          {
+            "id": "claim_verification_songwriter_credits_publishing_split_verification",
+            "en": "Songwriter Credits and Publishing Split Verification",
+            "zh": "词曲作者署名与出版分成验证"
+          }
+        ]
+      },
+      {
+        "id": "budget_planning",
+        "en": "Budget Planning and Cost Research",
+        "zh": "预算规划和成本研究",
+        "children": [
+          {
+            "id": "fee_estimation",
+            "en": "Sync Licensing Fee Estimation",
+            "zh": "同步授权费用估算",
+            "children": [
+              {
+                "id": "licensing_fee_ranges",
+                "en": "Licensing Fee Range Research",
+                "zh": "授权费用范围研究"
+              },
+              {
+                "id": "budget_requirements",
+                "en": "Budget Requirement Estimation",
+                "zh": "预算需求估算"
+              },
+              {
+                "id": "pricing_factors",
+                "en": "Pricing Factor Analysis",
+                "zh": "定价因素分析"
+              }
+            ]
+          },
+          {
+            "id": "territory_pricing",
+            "en": "Territory-Specific Pricing Research",
+            "zh": "地区特定定价研究",
+            "children": [
+              {
+                "id": "multi_territory_bundles",
+                "en": "Multi-Territory Bundle Pricing",
+                "zh": "多地区捆绑定价"
+              },
+              {
+                "id": "regional_availability",
+                "en": "Regional Rights Availability",
+                "zh": "地区版权可用性"
+              },
+              {
+                "id": "international_distribution_costs",
+                "en": "International Distribution Costs",
+                "zh": "国际分发成本"
+              }
+            ]
+          },
+          {
+            "id": "usage_scope_budgeting",
+            "en": "Usage Duration and Scope Budgeting",
+            "zh": "使用期限和范围预算",
+            "children": [
+              {
+                "id": "perpetuity_vs_term",
+                "en": "Perpetuity vs Term Licenses",
+                "zh": "永久与定期许可"
+              },
+              {
+                "id": "renewal_fees",
+                "en": "Renewal and Extension Fees",
+                "zh": "续约和延期费用"
+              },
+              {
+                "id": "multi_use_scenarios",
+                "en": "Multi-Use Budget Allocation",
+                "zh": "多用途预算分配"
+              }
+            ]
+          },
+          {
+            "id": "alternative_options",
+            "en": "Alternative Music Budget Options",
+            "zh": "替代音乐预算选项",
+            "children": [
+              {
+                "id": "production_library_costs",
+                "en": "Production Music Library Costs",
+                "zh": "制作音乐库成本"
+              },
+              {
+                "id": "royalty_free_licensing",
+                "en": "Royalty-Free Licensing Options",
+                "zh": "免版税授权选项"
+              },
+              {
+                "id": "custom_composition_costs",
+                "en": "Custom Composition vs Licensing",
+                "zh": "自定义作曲与授权"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "compliance_diligence",
+        "en": "Compliance and Legal Due Diligence",
+        "zh": "合规和法律尽职调查",
+        "children": [
+          {
+            "id": "chain_of_title",
+            "en": "Chain of Title Verification",
+            "zh": "产权链验证",
+            "children": [
+              {
+                "id": "ownership_documentation",
+                "en": "Ownership Chain Documentation",
+                "zh": "所有权链文档"
+              },
+              {
+                "id": "encumbrance_verification",
+                "en": "Encumbrance Verification",
+                "zh": "产权负担验证"
+              },
+              {
+                "id": "title_defects",
+                "en": "Title Defect Research",
+                "zh": "产权缺陷研究"
+              }
+            ]
+          },
+          {
+            "id": "eo_insurance",
+            "en": "Errors and Omissions Insurance",
+            "zh": "错误和遗漏保险",
+            "children": [
+              {
+                "id": "clearance_documentation",
+                "en": "Clearance Documentation Requirements",
+                "zh": "清查文档要求"
+              },
+              {
+                "id": "authorization_documentation",
+                "en": "Authorization Documentation",
+                "zh": "授权文档"
+              },
+              {
+                "id": "insurance_carrier_standards",
+                "en": "Insurance Carrier Standards",
+                "zh": "保险承运人标准"
+              }
+            ]
+          },
+          {
+            "id": "distribution_compliance",
+            "en": "Distribution Agreement Compliance",
+            "zh": "分发协议合规",
+            "children": [
+              {
+                "id": "theatrical_distribution",
+                "en": "Theatrical Distribution Rights",
+                "zh": "戏剧发行版权"
+              },
+              {
+                "id": "streaming_platform_clearance",
+                "en": "Streaming Platform Clearance",
+                "zh": "流媒体平台清查"
+              },
+              {
+                "id": "international_distribution",
+                "en": "International Distribution Rights",
+                "zh": "国际分发版权"
+              },
+              {
+                "id": "festival_screening_obligations",
+                "en": "Festival Screening Obligations",
+                "zh": "电影节放映义务"
+              }
+            ]
+          },
+          {
+            "id": "platform_policy_compliance",
+            "en": "Platform Content Policy Compliance",
+            "zh": "平台内容政策合规",
+            "children": [
+              {
+                "id": "youtube_content_id",
+                "en": "YouTube Content ID Requirements",
+                "zh": "YouTube内容ID要求"
+              },
+              {
+                "id": "tiktok_music_policies",
+                "en": "TikTok Commercial Music Policies",
+                "zh": "TikTok商业音乐政策"
+              },
+              {
+                "id": "streaming_licensing_standards",
+                "en": "Streaming Platform Licensing Standards",
+                "zh": "流媒体平台授权标准"
+              },
+              {
+                "id": "social_media_guidelines",
+                "en": "Social Media Music Guidelines",
+                "zh": "社交媒体音乐指南"
+              }
+            ]
+          },
+          {
+            "id": "compliance_diligence_sample_and_interpolation_clearance_risk_screening",
+            "en": "Sample and Interpolation Clearance Risk Screening",
+            "zh": "采样与旋律借用授权风险筛查"
+          }
+        ]
+      },
+      {
+        "id": "competitive_intelligence",
+        "en": "Competitive Intelligence and Market Research",
+        "zh": "竞争情报和市场研究",
+        "children": [
+          {
+            "id": "catalog_valuation",
+            "en": "Catalog Valuation Research",
+            "zh": "目录估值研究",
+            "children": [
+              {
+                "id": "transaction_multiples",
+                "en": "Transaction Multiple Analysis",
+                "zh": "交易倍数分析"
+              },
+              {
+                "id": "comparable_sales",
+                "en": "Comparable Sales Estimation",
+                "zh": "可比销售估算"
+              },
+              {
+                "id": "revenue_generation",
+                "en": "Revenue Generation Analysis",
+                "zh": "收入生成分析"
+              }
+            ]
+          },
+          {
+            "id": "placement_analysis",
+            "en": "Competitive Placement Analysis",
+            "zh": "竞争性植入分析",
+            "children": [
+              {
+                "id": "competitor_strategies",
+                "en": "Competitor Placement Strategies",
+                "zh": "竞争对手植入策略"
+              },
+              {
+                "id": "licensing_preferences",
+                "en": "Licensing Preference Trends",
+                "zh": "授权偏好趋势"
+              },
+              {
+                "id": "genre_era_trends",
+                "en": "Genre and Era Placement Trends",
+                "zh": "类型和时代植入趋势"
+              }
+            ]
+          },
+          {
+            "id": "consolidation_tracking",
+            "en": "Industry Consolidation Tracking",
+            "zh": "行业整合跟踪",
+            "children": [
+              {
+                "id": "acquisition_announcements",
+                "en": "Catalog Acquisition Monitoring",
+                "zh": "目录收购监控"
+              },
+              {
+                "id": "merger_activities",
+                "en": "Publisher and Label Mergers",
+                "zh": "出版商和厂牌合并"
+              },
+              {
+                "id": "catalog_availability_impact",
+                "en": "Consolidation Impact on Availability",
+                "zh": "整合对可用性的影响"
+              }
+            ]
+          },
+          {
+            "id": "emerging_rights_holders",
+            "en": "Emerging Rights Holder Identification",
+            "zh": "新兴版权持有者识别",
+            "children": [
+              {
+                "id": "new_market_entrants",
+                "en": "New Publisher and Label Entrants",
+                "zh": "新出版商和厂牌进入者"
+              },
+              {
+                "id": "emerging_artist_catalogs",
+                "en": "Emerging Artist Catalog Opportunities",
+                "zh": "新兴艺术家目录机会"
+              },
+              {
+                "id": "licensing_platform_launches",
+                "en": "New Licensing Platform Launches",
+                "zh": "新授权平台发布"
+              }
+            ]
+          },
+          {
+            "id": "competitive_intelligence_territory_specific_rights_holder_mapping",
+            "en": "Territory-Specific Rights Holder Mapping",
+            "zh": "地域权利持有人映射"
+          }
+        ]
+      },
+      {
+        "id": "historical_archival",
+        "en": "Historical and Archival Music Research",
+        "zh": "历史和档案音乐研究",
+        "children": [
+          {
+            "id": "classic_recordings",
+            "en": "Classic Recording Rights Research",
+            "zh": "经典录音版权研究",
+            "children": [
+              {
+                "id": "vintage_recordings",
+                "en": "Vintage Recording Rights",
+                "zh": "复古录音版权"
+              },
+              {
+                "id": "pre_digital_masters",
+                "en": "Pre-Digital Era Masters",
+                "zh": "前数字时代母带"
+              },
+              {
+                "id": "historical_compilations",
+                "en": "Historical Compilation Rights",
+                "zh": "历史汇编版权"
+              },
+              {
+                "id": "public_domain_music",
+                "en": "Public Domain Music Clearance",
+                "zh": "公共领域音乐清查"
+              }
+            ]
+          },
+          {
+            "id": "estate_legacy_rights",
+            "en": "Estate and Legacy Rights Management",
+            "zh": "遗产和传承版权管理",
+            "children": [
+              {
+                "id": "deceased_artist_estates",
+                "en": "Deceased Artist Estate Rights",
+                "zh": "已故艺术家遗产版权"
+              },
+              {
+                "id": "executor_heir_contacts",
+                "en": "Executor and Heir Contacts",
+                "zh": "执行人和继承人联系"
+              },
+              {
+                "id": "legacy_catalog_licensing",
+                "en": "Legacy Catalog Licensing Procedures",
+                "zh": "遗产目录授权程序"
+              }
+            ]
+          },
+          {
+            "id": "catalog_reissue",
+            "en": "Catalog Reissue and Restoration Rights",
+            "zh": "目录再发行和修复版权",
+            "children": [
+              {
+                "id": "remastered_recordings",
+                "en": "Remastered Recording Rights",
+                "zh": "重新母带化录音版权",
+                "children": [
+                  {
+                    "id": "remastered_recordings_territory_specific_remastered_master_rights_mapping",
+                    "en": "Territory-Specific Remastered Master Rights Mapping",
+                    "zh": "重新母带版母带版权分区映射"
+                  }
+                ]
+              },
+              {
+                "id": "restoration_licensing",
+                "en": "Restoration and Remix Licensing",
+                "zh": "修复和混音授权"
+              },
+              {
+                "id": "anniversary_editions",
+                "en": "Anniversary Edition Clearance",
+                "zh": "周年纪念版清查"
+              }
+            ]
+          },
+          {
+            "id": "historical_footage_music",
+            "en": "Historical Footage Music Clearance",
+            "zh": "历史镜头音乐清查",
+            "children": [
+              {
+                "id": "archival_footage_music",
+                "en": "Archival Footage Incidental Music",
+                "zh": "档案镜头附带音乐"
+              },
+              {
+                "id": "broadcast_archive_clearance",
+                "en": "Historical Broadcast Music Clearance",
+                "zh": "历史广播音乐清查"
+              },
+              {
+                "id": "documentary_archival_usage",
+                "en": "Documentary Archival Usage",
+                "zh": "纪录片档案使用"
+              },
+              {
+                "id": "historical_footage_music_newsreel_archive_production_music_clearance",
+                "en": "Newsreel Archive Production Music Clearance",
+                "zh": "新闻片档案制作音乐清查"
+              }
+            ]
+          },
+          {
+            "id": "historical_archival_defunct_label_catalog_rights_lineage_mapping",
+            "en": "Defunct Label Catalog Rights Lineage Mapping",
+            "zh": "停业唱片厂牌目录权利传承溯源"
+          }
+        ]
+      },
+      {
+        "id": "international_licensing",
+        "en": "Multi-Territory and International Licensing",
+        "zh": "多地区和国际授权",
+        "children": [
+          {
+            "id": "regional_variations",
+            "en": "Regional Rights Variation Research",
+            "zh": "地区版权差异研究",
+            "children": [
+              {
+                "id": "territory_specific_holders",
+                "en": "Territory-Specific Rights Holders",
+                "zh": "地区特定版权持有者"
+              },
+              {
+                "id": "regional_publisher_variations",
+                "en": "Regional Publisher Variations",
+                "zh": "地区出版商差异"
+              },
+              {
+                "id": "multi_territory_bundles",
+                "en": "Multi-Territory Bundle Availability",
+                "zh": "多地区捆绑可用性"
+              },
+              {
+                "id": "regional_variations_territory_specific_pro_registration_discrepancies",
+                "en": "Territory-Specific PRO Registration Discrepancies",
+                "zh": "地区特定表演权组织注册差异"
+              }
+            ]
+          },
+          {
+            "id": "coproduction_clearance",
+            "en": "International Co-Production Clearance",
+            "zh": "国际合作制作清查",
+            "children": [
+              {
+                "id": "multi_country_requirements",
+                "en": "Multi-Country Production Requirements",
+                "zh": "多国制作要求"
+              },
+              {
+                "id": "coproduction_treaties",
+                "en": "Co-Production Treaty Implications",
+                "zh": "合作制作条约影响"
+              },
+              {
+                "id": "bilateral_coverage",
+                "en": "Bilateral Rights Coverage",
+                "zh": "双边版权覆盖"
+              }
+            ]
+          },
+          {
+            "id": "adaptation_rights",
+            "en": "Language and Cultural Adaptation Rights",
+            "zh": "语言和文化改编版权",
+            "children": [
+              {
+                "id": "translation_localization",
+                "en": "Translation and Localization Rights",
+                "zh": "翻译和本地化版权"
+              },
+              {
+                "id": "derivative_work_permissions",
+                "en": "Derivative Work Permissions",
+                "zh": "衍生作品许可"
+              },
+              {
+                "id": "multi_language_versions",
+                "en": "Multi-Language Version Licensing",
+                "zh": "多语言版本授权"
+              }
+            ]
+          },
+          {
+            "id": "global_streaming_compliance",
+            "en": "Global Streaming Platform Compliance",
+            "zh": "全球流媒体平台合规",
+            "children": [
+              {
+                "id": "worldwide_streaming_rights",
+                "en": "Worldwide Streaming Rights Coverage",
+                "zh": "全球流媒体版权覆盖"
+              },
+              {
+                "id": "multi_territory_platform_licensing",
+                "en": "Multi-Territory Platform Licensing",
+                "zh": "多地区平台授权"
+              },
+              {
+                "id": "regional_content_restrictions",
+                "en": "Regional Content Availability Restrictions",
+                "zh": "地区内容可用性限制"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

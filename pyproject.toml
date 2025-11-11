@@ -1,0 +1,88 @@
+# Copyright (c) Nex-AGI. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+[project]
+name = "nexgap"
+version = "0.1.0"
+description = "NexGAP: Nex-based General Agentic Data Pipeline"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "agent4agent",
+    "langfuse>=3.3.5",
+    "tqdm>=4.67.1",
+    "playwright>=1.40.0",
+    "anthropic>=0.71.0",
+    "opentelemetry-instrumentation-anthropic>=0.47.5",
+]
+
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+exclude = ["converter*", "Gyrfalcon*"]
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0",
+    "isort>=5.0",
+    "flake8>=5.0",
+    "mypy>=1.0",
+    "pre-commit>=3.0",
+]
+
+[tool.uv.sources]
+agent4agent = { workspace = true }
+
+[tool.uv.workspace]
+members = [
+    "NexA4A",
+    "Gyrfalcon"
+]
+
+[project.scripts]
+nexgap = "agent4agent:main"
+agent4agent = "agent4agent:main"
+
+[tool.black]
+line-length = 88
+target-version = ['py312']
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = false
+warn_unused_configs = true
+disallow_untyped_defs = false
+no_implicit_optional = false
+warn_unused_ignores = false
+
+# 排除特定文件或目录
+[[tool.mypy.overrides]]
+module = "converter.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "Gyrfalcon.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "run_end_to_end"
+ignore_errors = true

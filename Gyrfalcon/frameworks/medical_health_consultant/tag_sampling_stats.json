@@ -1,0 +1,18 @@
+{
+  "framework": "medical_health_consultant",
+  "path_counts": {
+    "root→emergency_triage→urgent_care_needs→moderate_pain": 1,
+    "root→preventive_health→vaccination_guidance→adult_vaccination": 1,
+    "root→nutrition_fitness→nutrition_counseling→nutrient_deficiency": 1,
+    "root→nutrition_fitness→weight_management→weight_maintenance": 1,
+    "root→mental_health_support→mental_health_screening→mental_health_screening_ptsd_screening_pc_ptsd_5": 1
+  },
+  "total_samples": 5,
+  "last_updated": 1759735664.4621332,
+  "statistics": {
+    "total_paths_tracked": 5,
+    "min_count": 1,
+    "max_count": 1,
+    "avg_count": 1.0
+  }
+}

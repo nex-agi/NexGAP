@@ -1,0 +1,800 @@
+{
+  "framework": "consignal_cn",
+  "tree": {
+    "id": "root",
+    "en": "consignal_cn",
+    "zh": "consignal_cn",
+    "children": [
+      {
+        "id": "constitutional_monitoring",
+        "en": "Constitutional Monitoring",
+        "zh": "宪法监控",
+        "children": [
+          {
+            "id": "source_discovery",
+            "en": "Legal Source Discovery",
+            "zh": "法律来源发现",
+            "children": [
+              {
+                "id": "court_monitoring",
+                "en": "Court Case Monitoring",
+                "zh": "法院案件监控",
+                "children": [
+                  {
+                    "id": "supreme_court_cases",
+                    "en": "Supreme People's Court Cases",
+                    "zh": "最高人民法院案例"
+                  },
+                  {
+                    "id": "local_court_decisions",
+                    "en": "Local Court Decisions",
+                    "zh": "地方法院判决"
+                  },
+                  {
+                    "id": "guiding_cases",
+                    "en": "Guiding Cases Analysis",
+                    "zh": "指导性案例分析"
+                  },
+                  {
+                    "id": "court_monitoring_constitutional_citation_tracking_in_court_judgments",
+                    "en": "Constitutional Citation Tracking in Court Judgments",
+                    "zh": "法院裁判宪法援引监测"
+                  },
+                  {
+                    "id": "court_monitoring_constitutional_case_progress_appeals_tracking",
+                    "en": "Constitutional Case Progress and Appeals Tracking",
+                    "zh": "宪法相关案件进程与上诉跟踪"
+                  }
+                ]
+              },
+              {
+                "id": "legislative_monitoring",
+                "en": "Legislative Monitoring",
+                "zh": "立法监控",
+                "children": [
+                  {
+                    "id": "npc_legislation",
+                    "en": "NPC Legislation Tracking",
+                    "zh": "全国人大立法追踪"
+                  },
+                  {
+                    "id": "local_legislation",
+                    "en": "Local Legislation Monitoring",
+                    "zh": "地方立法监控"
+                  },
+                  {
+                    "id": "draft_laws",
+                    "en": "Draft Law Analysis",
+                    "zh": "法律草案分析"
+                  }
+                ]
+              },
+              {
+                "id": "regulatory_monitoring",
+                "en": "Regulatory Agency Monitoring",
+                "zh": "监管机构监控",
+                "children": [
+                  {
+                    "id": "cac_regulations",
+                    "en": "CAC Regulations Tracking",
+                    "zh": "网信办法规追踪"
+                  },
+                  {
+                    "id": "miit_rules",
+                    "en": "MIIT Rules Monitoring",
+                    "zh": "工信部规则监控"
+                  },
+                  {
+                    "id": "enforcement_actions",
+                    "en": "Enforcement Action Analysis",
+                    "zh": "执法行动分析"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "content_acquisition",
+            "en": "Content Acquisition",
+            "zh": "内容获取",
+            "children": [
+              {
+                "id": "web_scraping",
+                "en": "Web Scraping Operations",
+                "zh": "网页抓取操作",
+                "children": [
+                  {
+                    "id": "ethical_scraping",
+                    "en": "Ethical Scraping Compliance",
+                    "zh": "伦理抓取合规"
+                  },
+                  {
+                    "id": "page_template_analysis",
+                    "en": "Page Template Analysis",
+                    "zh": "页面模板分析"
+                  },
+                  {
+                    "id": "web_scraping_incremental_update_deduplication",
+                    "en": "Incremental Update Detection and Deduplication",
+                    "zh": "增量更新检测与去重"
+                  }
+                ]
+              },
+              {
+                "id": "document_extraction",
+                "en": "Document Extraction",
+                "zh": "文档提取",
+                "children": [
+                  {
+                    "id": "pdf_extraction",
+                    "en": "PDF Document Extraction",
+                    "zh": "PDF文档提取"
+                  },
+                  {
+                    "id": "structured_data_extraction",
+                    "en": "Structured Data Extraction",
+                    "zh": "结构化数据提取"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "constitutional_monitoring_constitutional_signal_extraction_and_normalization",
+            "en": "Constitutional Signal Extraction and Normalization",
+            "zh": "宪法信号提取与规范化"
+          }
+        ]
+      },
+      {
+        "id": "rights_analysis",
+        "en": "Constitutional Rights Analysis",
+        "zh": "宪法权利分析",
+        "children": [
+          {
+            "id": "privacy_rights",
+            "en": "Privacy Rights",
+            "zh": "隐私权",
+            "children": [
+              {
+                "id": "data_protection",
+                "en": "Data Protection Analysis",
+                "zh": "数据保护分析",
+                "children": [
+                  {
+                    "id": "pipl_compliance",
+                    "en": "Personal Information Protection Law Compliance",
+                    "zh": "个人信息保护法合规"
+                  },
+                  {
+                    "id": "cross_border_data",
+                    "en": "Cross-border Data Transfer",
+                    "zh": "跨境数据传输"
+                  },
+                  {
+                    "id": "data_localization",
+                    "en": "Data Localization Requirements",
+                    "zh": "数据本地化要求"
+                  }
+                ]
+              },
+              {
+                "id": "personal_information",
+                "en": "Personal Information Protection",
+                "zh": "个人信息保护",
+                "children": [
+                  {
+                    "id": "consent_requirements",
+                    "en": "Consent Requirements Analysis",
+                    "zh": "同意要求分析"
+                  },
+                  {
+                    "id": "sensitive_data",
+                    "en": "Sensitive Data Handling",
+                    "zh": "敏感数据处理"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "expression_rights",
+            "en": "Freedom of Expression",
+            "zh": "表达自由",
+            "children": [
+              {
+                "id": "online_speech",
+                "en": "Online Speech Regulation",
+                "zh": "在线言论监管",
+                "children": [
+                  {
+                    "id": "content_moderation",
+                    "en": "Content Moderation Requirements",
+                    "zh": "内容审核要求"
+                  },
+                  {
+                    "id": "platform_liability",
+                    "en": "Platform Content Liability",
+                    "zh": "平台内容责任"
+                  }
+                ]
+              },
+              {
+                "id": "media_regulation",
+                "en": "Media Regulation",
+                "zh": "媒体监管",
+                "children": [
+                  {
+                    "id": "news_content",
+                    "en": "News Content Regulation",
+                    "zh": "新闻内容监管"
+                  },
+                  {
+                    "id": "social_media",
+                    "en": "Social Media Governance",
+                    "zh": "社交媒体治理",
+                    "children": [
+                      {
+                        "id": "social_media_algorithmic_recommendation_governance_compliance_tracking",
+                        "en": "Algorithmic Recommendation Governance Compliance Tracking",
+                        "zh": "算法推荐治理合规跟踪"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "expression_rights_academic_and_campus_speech_regulation",
+                "en": "Academic and Campus Speech Regulation",
+                "zh": "学术与校园言论监管"
+              }
+            ]
+          },
+          {
+            "id": "digital_rights",
+            "en": "Digital Rights",
+            "zh": "数字权利",
+            "children": [
+              {
+                "id": "algorithm_regulation",
+                "en": "Algorithm Regulation",
+                "zh": "算法监管",
+                "children": [
+                  {
+                    "id": "algorithmic_transparency",
+                    "en": "Algorithmic Transparency",
+                    "zh": "算法透明度"
+                  },
+                  {
+                    "id": "algorithmic_fairness",
+                    "en": "Algorithmic Fairness",
+                    "zh": "算法公平性"
+                  }
+                ]
+              },
+              {
+                "id": "platform_economy",
+                "en": "Platform Economy Regulation",
+                "zh": "平台经济监管",
+                "children": [
+                  {
+                    "id": "monopoly_regulation",
+                    "en": "Anti-monopoly Regulation",
+                    "zh": "反垄断监管"
+                  },
+                  {
+                    "id": "platform_worker_rights",
+                    "en": "Platform Worker Rights",
+                    "zh": "平台劳动者权利"
+                  },
+                  {
+                    "id": "platform_economy_cross_border_data_transfer_and_localization_compliance",
+                    "en": "Cross-border Data Transfer and Localization Compliance",
+                    "zh": "数据出境与本地化合规"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "property_rights",
+            "en": "Property Rights",
+            "zh": "财产权",
+            "children": [
+              {
+                "id": "intellectual_property",
+                "en": "Intellectual Property",
+                "zh": "知识产权",
+                "children": [
+                  {
+                    "id": "copyright_enforcement",
+                    "en": "Copyright Enforcement",
+                    "zh": "版权执法"
+                  },
+                  {
+                    "id": "trademark_protection",
+                    "en": "Trademark Protection",
+                    "zh": "商标保护"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "rights_analysis_due_process_and_procedural_rights",
+            "en": "Due Process and Procedural Rights",
+            "zh": "正当程序与程序性权利"
+          }
+        ]
+      },
+      {
+        "id": "signal_processing",
+        "en": "Signal Processing & Analysis",
+        "zh": "信号处理与分析",
+        "children": [
+          {
+            "id": "signal_extraction",
+            "en": "Constitutional Signal Extraction",
+            "zh": "宪法信号提取",
+            "children": [
+              {
+                "id": "legal_term_matching",
+                "en": "Legal Term Matching",
+                "zh": "法律术语匹配",
+                "children": [
+                  {
+                    "id": "constitutional_keywords",
+                    "en": "Constitutional Keyword Detection",
+                    "zh": "宪法关键词检测"
+                  },
+                  {
+                    "id": "rights_terminology",
+                    "en": "Rights Terminology Recognition",
+                    "zh": "权利术语识别"
+                  }
+                ]
+              },
+              {
+                "id": "citation_analysis",
+                "en": "Citation Analysis",
+                "zh": "引用分析",
+                "children": [
+                  {
+                    "id": "law_citations",
+                    "en": "Law Citation Detection",
+                    "zh": "法律引用检测"
+                  },
+                  {
+                    "id": "case_references",
+                    "en": "Case Reference Extraction",
+                    "zh": "案例引用提取"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "metadata_normalization",
+            "en": "Metadata Normalization",
+            "zh": "元数据规范化",
+            "children": [
+              {
+                "id": "date_parsing",
+                "en": "Date Parsing & Normalization",
+                "zh": "日期解析与规范化"
+              },
+              {
+                "id": "jurisdiction_classification",
+                "en": "Jurisdiction Classification",
+                "zh": "管辖区分类"
+              },
+              {
+                "id": "document_type_detection",
+                "en": "Document Type Detection",
+                "zh": "文档类型检测"
+              }
+            ]
+          },
+          {
+            "id": "bilingual_processing",
+            "en": "Bilingual Content Processing",
+            "zh": "双语内容处理",
+            "children": [
+              {
+                "id": "translation",
+                "en": "Legal Translation",
+                "zh": "法律翻译",
+                "children": [
+                  {
+                    "id": "terminology_preservation",
+                    "en": "Legal Terminology Preservation",
+                    "zh": "法律术语保留"
+                  },
+                  {
+                    "id": "parallel_formatting",
+                    "en": "Parallel Text Formatting",
+                    "zh": "平行文本格式化"
+                  }
+                ]
+              },
+              {
+                "id": "summarization",
+                "en": "Bilingual Summarization",
+                "zh": "双语摘要生成"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intelligence_production",
+        "en": "Intelligence Production",
+        "zh": "情报生成",
+        "children": [
+          {
+            "id": "relevance_scoring",
+            "en": "Relevance Scoring",
+            "zh": "相关性评分",
+            "children": [
+              {
+                "id": "authority_scoring",
+                "en": "Authority Level Scoring",
+                "zh": "权威级别评分",
+                "children": [
+                  {
+                    "id": "source_hierarchy",
+                    "en": "Legal Source Hierarchy",
+                    "zh": "法律来源层级"
+                  },
+                  {
+                    "id": "judicial_authority",
+                    "en": "Judicial Authority Assessment",
+                    "zh": "司法权威评估"
+                  }
+                ]
+              },
+              {
+                "id": "impact_scoring",
+                "en": "Business Impact Scoring",
+                "zh": "商业影响评分",
+                "children": [
+                  {
+                    "id": "tech_platform_impact",
+                    "en": "Tech Platform Impact Assessment",
+                    "zh": "科技平台影响评估"
+                  },
+                  {
+                    "id": "compliance_urgency",
+                    "en": "Compliance Urgency Rating",
+                    "zh": "合规紧迫性评级"
+                  }
+                ]
+              },
+              {
+                "id": "timeliness_scoring",
+                "en": "Timeliness Scoring",
+                "zh": "时效性评分"
+              }
+            ]
+          },
+          {
+            "id": "report_generation",
+            "en": "Intelligence Report Generation",
+            "zh": "情报报告生成",
+            "children": [
+              {
+                "id": "daily_briefs",
+                "en": "Daily Constitutional Briefs",
+                "zh": "每日宪法简报",
+                "children": [
+                  {
+                    "id": "urgent_alerts",
+                    "en": "Urgent Alert Generation",
+                    "zh": "紧急警报生成"
+                  },
+                  {
+                    "id": "priority_flagging",
+                    "en": "High-Priority Signal Flagging",
+                    "zh": "高优先级信号标记"
+                  }
+                ]
+              },
+              {
+                "id": "weekly_handbooks",
+                "en": "Weekly Intelligence Handbooks",
+                "zh": "每周情报手册",
+                "children": [
+                  {
+                    "id": "comprehensive_coverage",
+                    "en": "Comprehensive Domain Coverage",
+                    "zh": "全面领域覆盖"
+                  },
+                  {
+                    "id": "trend_summary",
+                    "en": "Trend Summary Reports",
+                    "zh": "趋势摘要报告"
+                  }
+                ]
+              },
+              {
+                "id": "deep_dive_reports",
+                "en": "Deep Dive Analysis Reports",
+                "zh": "深度分析报告",
+                "children": [
+                  {
+                    "id": "topic_focused",
+                    "en": "Topic-Focused Analysis",
+                    "zh": "主题专注分析"
+                  },
+                  {
+                    "id": "historical_context",
+                    "en": "Historical Context Analysis",
+                    "zh": "历史背景分析"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "trend_analysis",
+            "en": "Trend Analysis & Visualization",
+            "zh": "趋势分析与可视化",
+            "children": [
+              {
+                "id": "temporal_trends",
+                "en": "Temporal Trend Analysis",
+                "zh": "时间趋势分析",
+                "children": [
+                  {
+                    "id": "quarterly_trends",
+                    "en": "Quarterly Trend Reports",
+                    "zh": "季度趋势报告"
+                  },
+                  {
+                    "id": "annual_summaries",
+                    "en": "Annual Constitutional Summaries",
+                    "zh": "年度宪法总结"
+                  }
+                ]
+              },
+              {
+                "id": "domain_trends",
+                "en": "Domain-Specific Trends",
+                "zh": "领域特定趋势",
+                "children": [
+                  {
+                    "id": "privacy_trends",
+                    "en": "Privacy Law Trend Analysis",
+                    "zh": "隐私法趋势分析"
+                  },
+                  {
+                    "id": "expression_trends",
+                    "en": "Expression Rights Trend Analysis",
+                    "zh": "表达权利趋势分析"
+                  }
+                ]
+              },
+              {
+                "id": "visualization",
+                "en": "Data Visualization",
+                "zh": "数据可视化",
+                "children": [
+                  {
+                    "id": "charts",
+                    "en": "Chart Generation",
+                    "zh": "图表生成"
+                  },
+                  {
+                    "id": "heatmaps",
+                    "en": "Trend Heatmaps",
+                    "zh": "趋势热图"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "compliance_intelligence",
+        "en": "Compliance Intelligence",
+        "zh": "合规情报",
+        "children": [
+          {
+            "id": "risk_assessment",
+            "en": "Legal Risk Assessment",
+            "zh": "法律风险评估",
+            "children": [
+              {
+                "id": "compliance_gap_analysis",
+                "en": "Compliance Gap Analysis",
+                "zh": "合规差距分析",
+                "children": [
+                  {
+                    "id": "current_compliance_status",
+                    "en": "Current Compliance Status Assessment",
+                    "zh": "当前合规状态评估"
+                  },
+                  {
+                    "id": "upcoming_requirements",
+                    "en": "Upcoming Requirement Identification",
+                    "zh": "即将到来的要求识别"
+                  }
+                ]
+              },
+              {
+                "id": "impact_assessment",
+                "en": "Regulatory Impact Assessment",
+                "zh": "监管影响评估",
+                "children": [
+                  {
+                    "id": "operational_impact",
+                    "en": "Operational Impact Analysis",
+                    "zh": "运营影响分析"
+                  },
+                  {
+                    "id": "cost_impact",
+                    "en": "Compliance Cost Estimation",
+                    "zh": "合规成本估算"
+                  },
+                  {
+                    "id": "impact_assessment_regulatory_enforcement_risk_assessment",
+                    "en": "Regulatory Enforcement Risk Assessment",
+                    "zh": "监管执法风险评估"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "compliance_guidance",
+            "en": "Compliance Guidance",
+            "zh": "合规指导",
+            "children": [
+              {
+                "id": "action_recommendations",
+                "en": "Actionable Recommendations",
+                "zh": "可操作建议",
+                "children": [
+                  {
+                    "id": "immediate_actions",
+                    "en": "Immediate Action Items",
+                    "zh": "立即行动事项"
+                  },
+                  {
+                    "id": "long_term_strategy",
+                    "en": "Long-term Compliance Strategy",
+                    "zh": "长期合规策略"
+                  }
+                ]
+              },
+              {
+                "id": "best_practices",
+                "en": "Compliance Best Practices",
+                "zh": "合规最佳实践",
+                "children": [
+                  {
+                    "id": "industry_benchmarks",
+                    "en": "Industry Benchmark Analysis",
+                    "zh": "行业基准分析"
+                  },
+                  {
+                    "id": "case_studies",
+                    "en": "Compliance Case Studies",
+                    "zh": "合规案例研究"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "enforcement_monitoring",
+            "en": "Enforcement Monitoring",
+            "zh": "执法监控",
+            "children": [
+              {
+                "id": "enforcement_actions",
+                "en": "Enforcement Action Tracking",
+                "zh": "执法行动追踪",
+                "children": [
+                  {
+                    "id": "penalties",
+                    "en": "Penalty Analysis",
+                    "zh": "处罚分析"
+                  },
+                  {
+                    "id": "enforcement_patterns",
+                    "en": "Enforcement Pattern Recognition",
+                    "zh": "执法模式识别"
+                  }
+                ]
+              },
+              {
+                "id": "enforcement_monitoring_administrative_penalty_decision_monitoring",
+                "en": "Administrative Penalty Decision Monitoring",
+                "zh": "行政处罚决定监测"
+              }
+            ]
+          },
+          {
+            "id": "compliance_intelligence_regulatory_draft_consultation_tracking",
+            "en": "Regulatory Draft and Consultation Tracking",
+            "zh": "法规草案与征求意见跟踪"
+          }
+        ]
+      },
+      {
+        "id": "feedback_integration",
+        "en": "Continuous Improvement",
+        "zh": "持续改进",
+        "children": [
+          {
+            "id": "feedback_processing",
+            "en": "Feedback Processing",
+            "zh": "反馈处理",
+            "children": [
+              {
+                "id": "legal_team_feedback",
+                "en": "Legal Team Feedback Integration",
+                "zh": "法律团队反馈整合",
+                "children": [
+                  {
+                    "id": "relevance_feedback",
+                    "en": "Relevance Feedback Processing",
+                    "zh": "相关性反馈处理",
+                    "children": [
+                      {
+                        "id": "relevance_feedback_conflicting_feedback_resolution",
+                        "en": "Conflicting Feedback Resolution",
+                        "zh": "冲突反馈裁决"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "false_positive_correction",
+                    "en": "False Positive Correction",
+                    "zh": "误报纠正"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "parameter_adjustment",
+            "en": "Parameter Adjustment",
+            "zh": "参数调整",
+            "children": [
+              {
+                "id": "scoring_weights",
+                "en": "Scoring Weight Adjustment",
+                "zh": "评分权重调整"
+              },
+              {
+                "id": "keyword_updates",
+                "en": "Keyword List Updates",
+                "zh": "关键词列表更新"
+              }
+            ]
+          },
+          {
+            "id": "quality_tracking",
+            "en": "Quality Tracking",
+            "zh": "质量跟踪",
+            "children": [
+              {
+                "id": "accuracy_metrics",
+                "en": "Accuracy Metrics Monitoring",
+                "zh": "准确性指标监控"
+              },
+              {
+                "id": "coverage_metrics",
+                "en": "Coverage Metrics Analysis",
+                "zh": "覆盖率指标分析"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

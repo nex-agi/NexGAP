@@ -1,0 +1,728 @@
+{
+  "description": "SyncSleuth is a comprehensive music rights clearance intelligence system designed for independent production teams, small advertising agencies, and sync licensing professionals who need to quickly understand music rights ownership without access to expensive proprietary clearance platforms. The framework addresses the critical challenge of researching music rights attribution using only publicly available sources to deliver actionable licensing guidance for sync licensing use cases including television advertising, film needle-drops, YouTube content monetization, TikTok commercial usage, and pre-licensing budget planning. It researches complete rights attribution covering both master recording rights with label ownership chains and composition publishing rights with songwriter splits and publisher affiliations, providing confidence-scored findings with high medium low confidence levels based on source authority consistency and recency, contact information for labels publishers and performing rights organizations with inquiry email templates, claim verification for fast-changing industry events such as label switches catalog acquisitions re-recording projects and rights reversion milestones, multi-format output delivery in machine-readable JSON and human-readable clearance brief formats, and full transparency with every claim linked to source URLs with content excerpts and access timestamps for independent verification and audit trails. The system performs multi-language web search orchestration across official sources including performing rights organization registries ASCAP BMI SESAC databases, major label and independent label rosters and press releases, music publisher catalogs and songwriter rosters, verified music databases MusicBrainz Discogs AllMusic, streaming platform metadata Spotify Apple Music credits, and industry media Billboard Variety Music Business Worldwide plus secondary sources like fan wikis community forums and artist social media. It conducts ethical web scraping with strict robots.txt compliance and configurable rate limiting to avoid server overload, intelligently normalizes entity data across sources using fuzzy matching for artist name variations romanization and transliteration handling for non-Latin scripts, label name disambiguation Sony Music versus Sony/ATV Publishing, songwriter credit consolidation across multiple spellings and stage names, and conflict detection when sources disagree on attribution percentages ownership timelines or territory-specific rights. The framework constructs structured rights chains combining master rights analysis identifying record labels and distributors detecting regional rights variations North America versus Europe versus Asia and tracking ownership transfers through mergers acquisitions, composition rights analysis extracting songwriters and composers mapping publishing affiliations identifying work registration codes ISWC PRO IDs and calculating ownership splits when available, and confidence scoring assigning numerical confidence based on source authority score weighing PRO databases highest then official labels then verified community sources, cross-source consistency bonus when multiple independent sources agree, recency score preferring information updated within the past year, and contradiction penalty when authoritative sources provide conflicting information. Claim verification capabilities validate user-provided claims about rights attribution checking assertions like specific songwriter ownership percentages or recent label transfers, classify claim types as routine facts songwriter identity publisher affiliation or fast-changing events label switches masters ownership disputes, search for corroborating evidence prioritizing official press releases verified news articles and regulatory filings, timestamp all evidence with access dates and last-modified headers to establish verification recency, and highlight remaining uncertainties flagging unverifiable claims missing information and contradictory evidence. Contact extraction delivers actionable next steps by extracting contact information from discovered sources including label and publisher submission portals email addresses phone numbers and physical addresses, generating inquiry email templates customized for different stakeholder types labels publishers PROs with placeholder fields for user customization, mapping entities to contacts linking specific rights holders to their contact information with role specification master rights versus publishing rights, and suggesting alternative steps when direct contact is unavailable such as contacting parent companies intermediary aggregators or music licensing platforms. The framework generates comprehensive clearance packages in multiple formats including JSON export with complete structured data suitable for CMS integration automated licensing workflows and database storage, human-readable text briefs with executive summary highlighting key findings and confidence levels, rights breakdown by category master versus composition with detailed attribution, key contacts with templated inquiry emails, recommended next steps prioritized by likelihood of success, and uncertainty highlights calling attention to information gaps contradictions and low-confidence findings, plus generation metadata documenting execution timestamp framework version agent execution log source count and overall confidence score. Typical use cases include independent film and television licensing researching rights for needle-drop music placements in indie films documentaries and streaming series, advertising sync identifying rights holders for 30-second to 60-second commercial music use with budget tier planning, YouTube and TikTok content understanding rights before using music in monetized digital content including educational use fair use assessment and platform-specific licensing programs, label change verification validating fast-changing industry claims about artist catalog ownership label switches re-recording projects and rights reversion events, and pre-licensing due diligence conducting rights landscape research for budget planning understanding rights complexity before formal clearance and competitive bidding intelligence. Performance characteristics typically include completion time of 8 to 12 minutes for comprehensive research, sources analyzed ranging from 10 to 15 authoritative public sources per query, confidence levels scored as HIGH greater than 80 percent when multiple authoritative recent consistent sources agree MEDIUM 50 to 80 percent when some authority limited consistency moderate recency or LOW less than 50 percent for single source low authority old data or contradictions, output size of 50 to 200 kilobytes JSON and 10 to 50 kilobytes text format, and parallel execution support through multi-agent parallelization for improved performance. The system uses a confidence scoring methodology combining base authority scores from 0 to 10 points based on source tier with performing rights organization registries scoring 9 to 10 points official labels and publishers 7 to 8 points verified databases and streaming platforms 5 to 6 points major music media 3 to 4 points and community sources 1 to 2 points, cross-source consistency bonuses adding 0 to 5 points when multiple independent sources corroborate the same information, recency scores adding 0 to 3 points for information updated within the past year with diminishing value for older data, contradiction penalties subtracting up to 5 points when authoritative sources provide conflicting information, and special bonuses adding 2 points for information from performing rights organization registries due to their high reliability. Important limitations include that the system cannot access proprietary databases like Harry Fox Agency HFA Songview RightsFlow or other commercial clearance platforms, cannot provide legal advice or guarantees about clearance success or pricing, cannot negotiate licenses or facilitate payment transactions, cannot access private or paywalled content behind authentication walls, and cannot guarantee 100 percent completeness as it relies solely on publicly available sources which may not capture privately-held catalogs recent ownership transfers or territory-specific nuances. Known information gaps include inability to access proprietary clearance databases, potential missing data for privately-held catalogs with minimal public presence, incomplete regional rights variations for non-US territories, and limited historical ownership change tracking when acquisition details are not publicly documented. The framework handles ambiguous scenarios through fuzzy entity matching using Python difflib for name similarity scoring, multi-language search query generation with romanization and transliteration support, intelligent conflict resolution preferring higher-authority sources and more recent information, and transparent uncertainty highlighting showing users exactly what information could not be verified. Data sources prioritize authoritative public sources including ASCAP BMI SESAC performing rights organization databases for composition credits and publisher affiliations, official record label websites press releases and artist rosters for master rights and distribution deals, music publisher websites for songwriter rosters and catalog information, verified community databases like MusicBrainz Discogs AllMusic for comprehensive metadata and cross-referenced information, streaming platform credits from Spotify Apple Music for songwriter and producer attribution, and industry media outlets Billboard Variety Music Business Worldwide for news about catalog sales label deals and rights transfers. Output transparency ensures every claim is linked to source URLs with content excerpts showing exact passages supporting each assertion, access timestamps recording when each source was retrieved for verification timeliness, confidence scores explaining numerical confidence with detailed scoring breakdown, alternative sources listing all discovered sources even those with lower confidence for user manual review, and contradiction documentation explicitly calling out when sources disagree with explanation of discrepancies. The system serves independent filmmakers and video producers needing rights research for documentary needle-drops short films and web series, advertising agency creatives and producers planning commercial music budgets and identifying rights holders for client campaigns, YouTube creators and TikTok influencers understanding rights before monetized content creation and fair use assessment, music supervisors conducting preliminary research before formal clearance processes and validating client-provided rights information, sync licensing professionals performing competitive intelligence and tracking catalog ownership changes, and legal teams conducting due diligence for rights verification in litigation support and catalog valuation. Best practices for using the framework include providing complete metadata with accurate track name artist name release year and genre to improve search precision, specifying use case context including media type duration territory and distribution channel for targeted rights research, validating findings against official sources by manually checking provided source URLs especially for high-stakes licensing, consulting legal counsel for final clearance decisions as framework output is informational research only not legal advice, and cross-referencing with proprietary databases when available for critical commercial uses requiring guaranteed accuracy.",
+  "subagents": [
+    {
+      "name": "SyncSleuthOrchestrator",
+      "description": "Main coordinator managing complete music rights clearance workflow",
+      "role": "orchestrator",
+      "capabilities": [
+        "workflow_coordination",
+        "stage_progression",
+        "result_aggregation",
+        "error_handling",
+        "report_delivery"
+      ],
+      "tools": []
+    },
+    {
+      "name": "InputValidator",
+      "description": "Input validation and normalization for track and artist metadata",
+      "role": "content_creator",
+      "capabilities": [
+        "schema_validation",
+        "field_normalization",
+        "input_sanitization",
+        "metadata_enrichment",
+        "error_reporting"
+      ],
+      "tools": [
+        "input_schema_validator",
+        "field_normalizer"
+      ]
+    },
+    {
+      "name": "PublicSourceDiscoverer",
+      "description": "Multi-language web search orchestration for authoritative sources",
+      "role": "researcher",
+      "capabilities": [
+        "search_orchestration",
+        "multi_language_support",
+        "source_prioritization",
+        "result_ranking",
+        "authority_assessment"
+      ],
+      "tools": [
+        "bash",
+        "ls",
+        "file_read",
+        "web_search",
+        "file_write"
+      ]
+    },
+    {
+      "name": "QueryGenerator",
+      "description": "Search query generation with artist and track aliases",
+      "role": "researcher",
+      "capabilities": [
+        "alias_expansion",
+        "query_template_building",
+        "multi_language_queries",
+        "romanization_support",
+        "query_optimization"
+      ],
+      "tools": [
+        "alias_expander",
+        "query_template_builder"
+      ]
+    },
+    {
+      "name": "SourceRanker",
+      "description": "Search result ranking by authority and relevance",
+      "role": "researcher",
+      "capabilities": [
+        "domain_authority_scoring",
+        "relevance_calculation",
+        "source_tier_classification",
+        "result_prioritization",
+        "quality_filtering"
+      ],
+      "tools": [
+        "domain_authority_scorer",
+        "relevance_calculator"
+      ]
+    },
+    {
+      "name": "ContentHarvester",
+      "description": "Ethical web scraping with compliance and rate limiting",
+      "role": "researcher",
+      "capabilities": [
+        "robots_txt_compliance",
+        "rate_limiting",
+        "html_extraction",
+        "content_storage",
+        "ethical_scraping"
+      ],
+      "tools": [
+        "bash",
+        "file_read",
+        "file_write",
+        "web_read",
+        "robots_txt_checker",
+        "rate_limiter",
+        "html_extractor"
+      ]
+    },
+    {
+      "name": "DataNormalizer",
+      "description": "Python-based entity normalization orchestration",
+      "role": "technical_specialist",
+      "capabilities": [
+        "entity_normalization",
+        "conflict_detection",
+        "data_standardization",
+        "script_generation_coordination",
+        "quality_assurance"
+      ],
+      "tools": []
+    },
+    {
+      "name": "PythonToolGenerator",
+      "description": "Custom Python normalization script generation",
+      "role": "technical_specialist",
+      "capabilities": [
+        "script_generation",
+        "fuzzy_matching_logic",
+        "entity_extraction_code",
+        "conflict_detection_algorithms",
+        "standard_library_usage"
+      ],
+      "tools": [
+        "bash",
+        "ls",
+        "file_read",
+        "file_write",
+        "difflib_matcher_generator",
+        "entity_extractor_generator",
+        "conflict_detector_generator"
+      ]
+    },
+    {
+      "name": "PythonToolExecutor",
+      "description": "Safe sandboxed execution of Python scripts",
+      "role": "technical_specialist",
+      "capabilities": [
+        "sandboxed_execution",
+        "result_validation",
+        "error_handling",
+        "security_enforcement",
+        "output_processing"
+      ],
+      "tools": [
+        "bash",
+        "ls",
+        "file_read",
+        "file_write",
+        "file_edit",
+        "sandbox_executor",
+        "result_validator"
+      ]
+    },
+    {
+      "name": "RightsChainBuilder",
+      "description": "Structured rights attribution construction",
+      "role": "content_creator",
+      "capabilities": [
+        "rights_chain_construction",
+        "attribution_structuring",
+        "confidence_coordination",
+        "rights_categorization",
+        "chain_validation"
+      ],
+      "tools": []
+    },
+    {
+      "name": "MasterRightsAnalyzer",
+      "description": "Master recording rights and label ownership analysis",
+      "role": "technical_specialist",
+      "capabilities": [
+        "label_identification",
+        "ownership_tracking",
+        "regional_variance_detection",
+        "master_rights_attribution",
+        "distributor_mapping"
+      ],
+      "tools": [
+        "label_identifier",
+        "regional_variance_detector"
+      ]
+    },
+    {
+      "name": "CompositionRightsAnalyzer",
+      "description": "Composition and publishing rights analysis",
+      "role": "technical_specialist",
+      "capabilities": [
+        "songwriter_extraction",
+        "publisher_mapping",
+        "work_code_extraction",
+        "split_calculation",
+        "composition_attribution"
+      ],
+      "tools": [
+        "composer_extractor",
+        "publisher_mapper",
+        "work_code_extractor"
+      ]
+    },
+    {
+      "name": "ConfidenceScorer",
+      "description": "Confidence level assignment based on source quality",
+      "role": "technical_specialist",
+      "capabilities": [
+        "authority_ranking",
+        "cross_source_validation",
+        "recency_scoring",
+        "confidence_calculation",
+        "consistency_assessment"
+      ],
+      "tools": [
+        "source_authority_ranker",
+        "cross_source_validator",
+        "recency_scorer"
+      ]
+    },
+    {
+      "name": "ClaimVerifier",
+      "description": "Fast-changing claim verification with timestamped evidence",
+      "role": "researcher",
+      "capabilities": [
+        "claim_classification",
+        "official_source_search",
+        "media_corroboration",
+        "evidence_timestamping",
+        "verification_reporting"
+      ],
+      "tools": [
+        "web_search",
+        "web_read",
+        "claim_type_classifier",
+        "official_source_searcher",
+        "media_corroboration_finder",
+        "evidence_timestamper"
+      ]
+    },
+    {
+      "name": "ContactExtractor",
+      "description": "Contact information extraction and inquiry template generation",
+      "role": "content_creator",
+      "capabilities": [
+        "contact_extraction",
+        "entity_contact_mapping",
+        "template_generation",
+        "next_step_suggestion",
+        "actionable_output_creation"
+      ],
+      "tools": [
+        "web_read",
+        "contact_info_extractor",
+        "entity_contact_mapper",
+        "template_generator",
+        "next_step_suggester"
+      ]
+    },
+    {
+      "name": "ReportGenerator",
+      "description": "Final clearance brief generation in multiple formats",
+      "role": "content_creator",
+      "capabilities": [
+        "json_formatting",
+        "human_readable_formatting",
+        "evidence_linking",
+        "uncertainty_highlighting",
+        "multi_format_export"
+      ],
+      "tools": [
+        "json_formatter",
+        "human_readable_formatter",
+        "evidence_linker",
+        "uncertainty_highlighter"
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "alias_expander",
+      "description": "Generate name aliases including romanization and transliteration",
+      "capabilities": [
+        "romanization",
+        "transliteration",
+        "stage_name_expansion",
+        "spelling_variations",
+        "multi_language_support"
+      ]
+    },
+    {
+      "name": "query_template_builder",
+      "description": "Build search query templates for rights research",
+      "capabilities": [
+        "template_generation",
+        "query_optimization",
+        "multi_source_targeting",
+        "language_specific_formatting",
+        "wildcard_expansion"
+      ]
+    },
+    {
+      "name": "domain_authority_scorer",
+      "description": "Score domain authority for source reliability",
+      "capabilities": [
+        "authority_scoring",
+        "domain_classification",
+        "tier_assignment",
+        "reliability_assessment",
+        "official_source_detection"
+      ]
+    },
+    {
+      "name": "relevance_calculator",
+      "description": "Calculate search result relevance to query",
+      "capabilities": [
+        "relevance_scoring",
+        "keyword_matching",
+        "content_analysis",
+        "ranking_calculation",
+        "quality_filtering"
+      ]
+    },
+    {
+      "name": "robots_txt_checker",
+      "description": "Validate robots.txt compliance before crawling",
+      "capabilities": [
+        "robots_txt_parsing",
+        "permission_checking",
+        "user_agent_compliance",
+        "crawl_delay_detection",
+        "ethical_scraping_enforcement"
+      ]
+    },
+    {
+      "name": "rate_limiter",
+      "description": "Enforce rate limiting for ethical web requests",
+      "capabilities": [
+        "request_throttling",
+        "delay_enforcement",
+        "concurrent_request_management",
+        "server_protection",
+        "adaptive_rate_control"
+      ]
+    },
+    {
+      "name": "html_extractor",
+      "description": "Extract clean text from HTML content",
+      "capabilities": [
+        "html_parsing",
+        "text_extraction",
+        "noise_removal",
+        "structure_preservation",
+        "metadata_extraction"
+      ]
+    },
+    {
+      "name": "input_schema_validator",
+      "description": "Validate input schema for track metadata",
+      "capabilities": [
+        "schema_validation",
+        "required_field_checking",
+        "type_validation",
+        "format_enforcement",
+        "error_reporting"
+      ]
+    },
+    {
+      "name": "field_normalizer",
+      "description": "Normalize text fields to standard format",
+      "capabilities": [
+        "text_normalization",
+        "whitespace_trimming",
+        "case_standardization",
+        "encoding_fixing",
+        "format_consistency"
+      ]
+    },
+    {
+      "name": "difflib_matcher_generator",
+      "description": "Generate fuzzy matching scripts using difflib",
+      "capabilities": [
+        "fuzzy_matching_code",
+        "similarity_scoring",
+        "name_variant_detection",
+        "threshold_configuration",
+        "batch_comparison"
+      ]
+    },
+    {
+      "name": "entity_extractor_generator",
+      "description": "Generate entity extraction scripts",
+      "capabilities": [
+        "extraction_logic_generation",
+        "pattern_matching_code",
+        "regex_generation",
+        "structured_output_formatting",
+        "validation_logic"
+      ]
+    },
+    {
+      "name": "conflict_detector_generator",
+      "description": "Generate conflict detection scripts",
+      "capabilities": [
+        "conflict_detection_logic",
+        "comparison_algorithms",
+        "discrepancy_identification",
+        "resolution_suggestion",
+        "reporting_code"
+      ]
+    },
+    {
+      "name": "sandbox_executor",
+      "description": "Execute Python scripts safely in sandbox",
+      "capabilities": [
+        "sandboxed_execution",
+        "security_enforcement",
+        "resource_limiting",
+        "error_isolation",
+        "output_capture"
+      ]
+    },
+    {
+      "name": "result_validator",
+      "description": "Validate script execution results",
+      "capabilities": [
+        "result_validation",
+        "format_checking",
+        "completeness_verification",
+        "quality_assessment",
+        "error_detection"
+      ]
+    },
+    {
+      "name": "label_identifier",
+      "description": "Identify record labels and master rights holders",
+      "capabilities": [
+        "label_detection",
+        "distributor_identification",
+        "imprint_recognition",
+        "parent_company_mapping",
+        "ownership_tracking"
+      ]
+    },
+    {
+      "name": "regional_variance_detector",
+      "description": "Detect regional rights differences across territories",
+      "capabilities": [
+        "territory_detection",
+        "regional_rights_mapping",
+        "variance_identification",
+        "geographic_splitting",
+        "licensing_territory_analysis"
+      ]
+    },
+    {
+      "name": "composer_extractor",
+      "description": "Extract songwriters and composers from content",
+      "capabilities": [
+        "songwriter_extraction",
+        "composer_identification",
+        "credit_parsing",
+        "role_assignment",
+        "co_writer_detection"
+      ]
+    },
+    {
+      "name": "publisher_mapper",
+      "description": "Map publishers to writers and compositions",
+      "capabilities": [
+        "publisher_identification",
+        "writer_publisher_mapping",
+        "affiliation_detection",
+        "catalog_assignment",
+        "sub_publisher_handling"
+      ]
+    },
+    {
+      "name": "work_code_extractor",
+      "description": "Extract work registration codes like ISWC and PRO IDs",
+      "capabilities": [
+        "iswc_extraction",
+        "pro_id_detection",
+        "registration_code_parsing",
+        "code_validation",
+        "database_linking"
+      ]
+    },
+    {
+      "name": "source_authority_ranker",
+      "description": "Rank source authority for confidence scoring",
+      "capabilities": [
+        "authority_ranking",
+        "tier_classification",
+        "reliability_scoring",
+        "official_source_weighting",
+        "credibility_assessment"
+      ]
+    },
+    {
+      "name": "cross_source_validator",
+      "description": "Validate consistency across multiple sources",
+      "capabilities": [
+        "cross_validation",
+        "consistency_checking",
+        "corroboration_detection",
+        "conflict_identification",
+        "agreement_scoring"
+      ]
+    },
+    {
+      "name": "recency_scorer",
+      "description": "Score information freshness and recency",
+      "capabilities": [
+        "recency_scoring",
+        "timestamp_analysis",
+        "update_detection",
+        "staleness_assessment",
+        "temporal_weighting"
+      ]
+    },
+    {
+      "name": "claim_type_classifier",
+      "description": "Classify claim types for targeted verification",
+      "capabilities": [
+        "claim_classification",
+        "type_detection",
+        "priority_assignment",
+        "verification_strategy_selection",
+        "complexity_assessment"
+      ]
+    },
+    {
+      "name": "official_source_searcher",
+      "description": "Search for official announcements and press releases",
+      "capabilities": [
+        "official_source_targeting",
+        "press_release_search",
+        "regulatory_filing_detection",
+        "verified_announcement_finding",
+        "primary_source_prioritization"
+      ]
+    },
+    {
+      "name": "media_corroboration_finder",
+      "description": "Find corroborating media reports for claims",
+      "capabilities": [
+        "media_search",
+        "corroboration_detection",
+        "news_article_finding",
+        "independent_verification",
+        "source_diversity_checking"
+      ]
+    },
+    {
+      "name": "evidence_timestamper",
+      "description": "Extract timestamps from evidence sources",
+      "capabilities": [
+        "timestamp_extraction",
+        "publication_date_detection",
+        "last_modified_parsing",
+        "access_time_recording",
+        "temporal_context_capturing"
+      ]
+    },
+    {
+      "name": "contact_info_extractor",
+      "description": "Extract contact information from web content",
+      "capabilities": [
+        "contact_extraction",
+        "email_detection",
+        "phone_parsing",
+        "address_extraction",
+        "submission_portal_finding"
+      ]
+    },
+    {
+      "name": "entity_contact_mapper",
+      "description": "Map contacts to entities with role specification",
+      "capabilities": [
+        "entity_mapping",
+        "role_assignment",
+        "contact_categorization",
+        "stakeholder_linking",
+        "relationship_structuring"
+      ]
+    },
+    {
+      "name": "template_generator",
+      "description": "Generate email inquiry templates for stakeholders",
+      "capabilities": [
+        "template_generation",
+        "stakeholder_customization",
+        "placeholder_insertion",
+        "professional_formatting",
+        "use_case_targeting"
+      ]
+    },
+    {
+      "name": "next_step_suggester",
+      "description": "Suggest next steps when contact unavailable",
+      "capabilities": [
+        "alternative_suggestion",
+        "fallback_strategy",
+        "workaround_identification",
+        "escalation_path_recommendation",
+        "action_prioritization"
+      ]
+    },
+    {
+      "name": "json_formatter",
+      "description": "Format data as structured JSON for machine consumption",
+      "capabilities": [
+        "json_serialization",
+        "schema_compliance",
+        "structured_formatting",
+        "nested_data_handling",
+        "validation_friendly_output"
+      ]
+    },
+    {
+      "name": "human_readable_formatter",
+      "description": "Format clearance brief as readable text",
+      "capabilities": [
+        "text_formatting",
+        "section_structuring",
+        "executive_summary_creation",
+        "readability_optimization",
+        "professional_presentation"
+      ]
+    },
+    {
+      "name": "evidence_linker",
+      "description": "Link claims to evidence sources with excerpts",
+      "capabilities": [
+        "source_linking",
+        "excerpt_extraction",
+        "citation_formatting",
+        "reference_tracking",
+        "transparency_documentation"
+      ]
+    },
+    {
+      "name": "uncertainty_highlighter",
+      "description": "Highlight uncertainties and information gaps",
+      "capabilities": [
+        "gap_identification",
+        "uncertainty_flagging",
+        "contradiction_highlighting",
+        "low_confidence_marking",
+        "risk_communication"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "author": "SyncSleuth Development Team",
+    "created_date": "2024-10-24",
+    "framework_type": "music_rights_clearance",
+    "base_architecture": "Multi-agent hierarchical system with 16 specialized agents and 40 tools",
+    "primary_llm": "Nex",
+    "use_cases": [
+      "independent_film_licensing",
+      "television_advertising_sync",
+      "youtube_content_monetization",
+      "tiktok_commercial_usage",
+      "label_change_verification",
+      "rights_due_diligence",
+      "sync_licensing_research",
+      "catalog_ownership_tracking",
+      "budget_planning",
+      "competitive_intelligence"
+    ],
+    "strengths": [
+      "comprehensive_public_source_research",
+      "16_specialized_agents_hierarchy",
+      "40_custom_and_builtin_tools",
+      "multi_language_search_support",
+      "ethical_web_scraping_compliance",
+      "fuzzy_entity_matching",
+      "confidence_scored_findings",
+      "master_and_composition_rights",
+      "contact_information_extraction",
+      "claim_verification_capability",
+      "multi_format_output_json_text",
+      "full_source_transparency",
+      "inquiry_email_templates",
+      "regional_rights_detection",
+      "ownership_chain_tracking",
+      "contradiction_detection",
+      "uncertainty_highlighting",
+      "parallel_execution_support",
+      "complete_audit_trails",
+      "actionable_next_steps"
+    ],
+    "limitations": [
+      "public_sources_only_no_proprietary_databases",
+      "no_access_to_hfa_songview_rightsflow",
+      "cannot_provide_legal_advice",
+      "cannot_negotiate_licenses",
+      "cannot_access_paywalled_content",
+      "completeness_not_guaranteed",
+      "privately_held_catalogs_may_be_missing",
+      "regional_variations_incomplete_non_us",
+      "historical_ownership_changes_limited",
+      "execution_time_8_to_12_minutes"
+    ],
+    "optimal_scenarios": [
+      "indie_film_tv_licensing",
+      "advertising_agency_sync",
+      "youtube_creator_monetization",
+      "tiktok_influencer_commercial",
+      "music_supervisor_preliminary_research",
+      "sync_licensing_professional_intel",
+      "label_switch_verification",
+      "catalog_acquisition_validation",
+      "re_recording_project_tracking",
+      "rights_reversion_confirmation",
+      "budget_tier_planning",
+      "competitive_bidding_intelligence",
+      "legal_team_due_diligence",
+      "catalog_valuation_support",
+      "litigation_rights_verification"
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+# Copyright (c) Nex-AGI. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# 统一多Agent框架配置格式（规范化版本）
+# 包含完整的类型定义和选项说明
+
+# === Agent定义 ===
+agents:
+  - agent_name: str # Agent名称（作为唯一标识）
+    description: str # Agent描述（可选）
+    sysprompt_path: str # 系统提示文件路径
+    llm_config: str # Agent使用的LLM配置
+    tools: List[str] # 可用工具列表（工具名称引用）
+
+# === LLM配置 ===
+llm_configs:
+  - llm_name: str # 该配置名称（作为唯一标识）
+    provider:
+      str # LLM提供商
+      # 可选值: "openai", "anthropic", "huggingface", "ollama", "azure", "google", "NexAGI"
+    model:
+      str # 模型名称
+      # 示例: "gpt-4", "claude-3", "llama-2-70b", "gemini-pro", "nex"
+    api_key: str # API密钥（可选，支持环境变量引用）
+    base_url: str # 自定义基础URL（可选）
+    max_tokens: int # 最大Token数 (范围: 1-200000)
+    temperature: float # 温度参数 (范围: 0.0-2.0)
+    timeout: int # 请求超时时间（秒）(范围: 1-300)
+
+# === 工具配置 ===
+tools:
+  - tool_name: str # 工具名称（作为唯一标识）
+    description: str # 工具用途描述
+    config_path: str # 工具YAML配置文件路径（相对于当前配置文件）
+    binding: str # Python函数绑定信息（module.path:function_name）
+
+# === 工作流配置 ===
+workflow:
+  name: str # 工作流名称（建议添加）
+  description: str # 工作流描述（建议添加）
+
+  nodes: # 工作流节点定义 (List[Dict])
+    - id: str # 节点ID（必须唯一）
+      type:
+        str # 节点类型
+        # 可选值: "agent", "tool", "mcp"
+
+  edges: # 工作流边定义 (List[Dict])
+    - from: str # 起始节点ID
+      to: str # 目标节点ID

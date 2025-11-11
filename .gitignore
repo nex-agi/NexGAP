@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+*.log
+.DS_Store
+
+# Environment
+.env
+.venv
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+.claude/
+my_output/
+NexAgent4Agent/llm_logs/*
+.github
+Dockerfile

@@ -1,0 +1,411 @@
+# Copyright (c) Nex-AGI. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Framework Configuration for pitlane_proof
+# Electric Vehicle Industry Fact-Checking Framework
+
+# === Framework Description ===
+framework:
+  name: PitLane Proof
+  description_en: "PitLane Proof is a specialized fact-checking framework for time-constrained editors and writers in the electric vehicle industry. It addresses the critical challenge of rapidly verifying high-risk claims using only publicly available web sources, focusing on three claim categories where misinformation carries significant reputational and legal risk: (1) Executive Information including corporate titles, professional credentials, educational backgrounds, and career histories requiring precision verification to avoid defamation risks and maintain journalistic credibility; (2) Product Superlatives such as best-selling rankings, performance records including fastest, most efficient, longest range claims, and market position statements requiring multi-source validation to avoid misleading consumer information and potential regulatory issues; (3) Event Schedules covering conference dates and venues, racing event schedules, product launch events, and industry gatherings where incorrect information can damage media relationships and reader trust. The framework employs systematic verification methodology starting with intelligent claim parsing to extract entities, relationships, and temporal context from natural language claims, performs entity disambiguation through web search to resolve ambiguities between similarly named executives, companies, or products, conducts ethical web scraping with strict robots.txt compliance and rate limiting to collect evidence from authoritative sources including official corporate websites, verified press releases, investor relations pages, and reputable industry publications. It automatically generates custom Python parsers tailored to each source's HTML structure for precise data extraction, executes parsers in sandboxed environments to safely extract structured information, normalizes field values across different formats including standardizing dates, degree abbreviations, and company name variations. Multi-source validation compares data from independent sources with field-by-field comparison, detects meaningful conflicts versus formatting differences, calculates confidence scores based on source agreement and authority, applies intelligent conflict resolution strategies preferring higher authority sources or more recent information depending on claim type. The framework generates publication-ready outputs including human-readable fact cards with comprehensive citations, JSON exports for CMS integration with structured claim metadata, CSV exports for spreadsheet analysis and batch processing, performs pre-publication verification by re-checking sources before final publication to detect last-minute changes, provides change alerts when source information has been updated or removed since initial verification. It enables editorial teams to reduce fact-checking time by 70 percent through automated evidence collection and validation while maintaining high accuracy standards, helps journalists avoid defamation risks by verifying executive information against multiple authoritative sources with complete citation chains, supports compliance teams in validating product marketing claims with traceable evidence packages suitable for regulatory review, assists content teams in maintaining reader trust through systematic verification of event information and publication schedules. Typical use cases include verifying specific executive positions at companies by cross-referencing corporate leadership pages, investor relations documents, and press releases; validating best-selling vehicle claims by comparing sales rankings across automotive industry reports, manufacturer announcements, and market research publications; confirming conference dates and venues before publication by checking official event websites, venue calendars, and organizer announcements; generating publication-ready fact cards with complete citation chains for editorial review and CMS integration; performing batch verification of multiple claims in draft articles to identify potential issues before publication; conducting pre-publication source checks to ensure no information has changed since initial verification. The framework handles ambiguous entity references by constructing targeted search queries and ranking results by domain authority, manages conflicting information across sources through transparent resolution strategies with human-readable explanations, processes information from various web formats while maintaining ethical scraping standards, maintains complete audit trails linking every verified fact to specific source URLs with access timestamps and relevant content snippets for independent verification and potential legal defense."
+  description_zh: "PitLane Proof是一个专为电动汽车行业时间紧迫的编辑和作者设计的专业事实核查框架。它解决了仅使用公开网络资源快速验证高风险声明的关键挑战，专注于三类错误信息会带来重大声誉和法律风险的声明类别：(1) 高管信息，包括公司职位、专业资格、教育背景和职业历史，需要精确验证以避免诽谤风险并保持新闻可信度；(2) 产品最高级声明，如最畅销排名、性能记录（包括最快、最高效、最长续航里程声称）和市场地位声明，需要多源验证以避免误导消费者信息和潜在监管问题；(3) 活动时间表，涵盖会议日期和地点、赛车活动日程、产品发布活动和行业聚会，其中错误信息可能损害媒体关系和读者信任。该框架采用系统化验证方法，从智能声明解析开始，从自然语言声明中提取实体、关系和时间上下文，通过网络搜索执行实体消歧以解决同名高管、公司或产品之间的歧义，进行严格遵守robots.txt和速率限制的道德网页抓取，从权威来源收集证据，包括官方企业网站、经验证的新闻稿、投资者关系页面和知名行业出版物。它自动生成针对每个来源HTML结构量身定制的Python解析器以实现精确数据提取，在沙箱环境中执行解析器以安全提取结构化信息，规范化不同格式的字段值，包括标准化日期、学位缩写和公司名称变体。多源验证通过字段逐一比较独立来源的数据，检测有意义的冲突与格式差异，基于来源一致性和权威性计算置信度分数，应用智能冲突解决策略，根据声明类型优先选择更高权威来源或更新信息。该框架生成发布就绪的输出，包括带有全面引用的人类可读事实卡、用于CMS集成的带有结构化声明元数据的JSON导出、用于电子表格分析和批处理的CSV导出，通过在最终发布前重新检查来源执行发布前验证以检测最后一刻的更改，在来源信息自初始验证以来已更新或删除时提供更改警报。它使编辑团队通过自动化证据收集和验证将事实核查时间减少70%，同时保持高准确性标准，帮助记者通过根据多个权威来源验证高管信息并提供完整引用链来避免诽谤风险，支持合规团队验证产品营销声明并提供适合监管审查的可追溯证据包，协助内容团队通过系统化验证活动信息和发布时间表来维护读者信任。典型用例包括通过交叉引用公司领导页面、投资者关系文件和新闻稿来验证特定高管在公司的职位；通过比较汽车行业报告、制造商公告和市场研究出版物的销售排名来验证最畅销车辆声明；在发布前通过检查官方活动网站、场地日历和组织者公告来确认会议日期和地点；生成带有完整引用链的发布就绪事实卡供编辑审查和CMS集成；对草稿文章中的多个声明进行批量验证以在发布前识别潜在问题；进行发布前来源检查以确保自初始验证以来没有信息更改。该框架通过构建有针对性的搜索查询并按域权威性排名结果来处理模糊的实体引用，通过透明的解决策略和人类可读的解释来管理来源之间的冲突信息，在保持道德抓取标准的同时处理各种网络格式的信息，维护完整的审计追踪，将每个验证的事实链接到特定来源URL，并提供访问时间戳和相关内容片段以供独立验证和潜在法律辩护。"
+
+# === Agent Definitions ===
+agents:
+# Layer 3: Entry Point
+- agent_name: pitlane_proof
+  description: Main orchestrator for EV industry fact-checking
+  sysprompt_path: pitlane_proof.yaml
+  llm_config: default_llm
+  tools: []
+
+# Layer 2: Intermediate Capabilities
+- agent_name: verification_pipeline
+  description: Complete claim verification workflow orchestrator
+  sysprompt_path: verification_pipeline.yaml
+  llm_config: default_llm
+  tools: []
+
+- agent_name: publication_processor
+  description: Publication preparation coordinator
+  sysprompt_path: publication_processor.yaml
+  llm_config: default_llm
+  tools: []
+
+# Layer 1: Basic Capabilities
+- agent_name: claim_analyzer
+  description: Comprehensive claim analysis and entity disambiguation
+  sysprompt_path: claim_analyzer.yaml
+  llm_config: default_llm
+  tools: []
+
+- agent_name: evidence_collector
+  description: Web data collection orchestration
+  sysprompt_path: evidence_collector.yaml
+  llm_config: default_llm
+  tools: []
+
+- agent_name: data_validator
+  description: Multi-source validation orchestrator
+  sysprompt_path: data_validator.yaml
+  llm_config: default_llm
+  tools: []
+
+- agent_name: output_generator
+  description: Publication output orchestrator
+  sysprompt_path: output_generator.yaml
+  llm_config: default_llm
+  tools: []
+
+- agent_name: pre_publication_monitor
+  description: Pre-publication verification orchestrator
+  sysprompt_path: pre_publication_monitor.yaml
+  llm_config: default_llm
+  tools: []
+
+# Layer 0: Atomic Agents
+- agent_name: claim_parser
+  description: Intelligent claim parsing and classification
+  sysprompt_path: claim_parser.yaml
+  llm_config: default_llm
+  tools:
+  - extract_claim_entities
+  - classify_claim_type
+  - parse_temporal_context
+
+- agent_name: entity_disambiguator
+  description: Entity resolution through web search
+  sysprompt_path: entity_disambiguator.yaml
+  llm_config: default_llm
+  tools:
+  - construct_search_queries
+  - fetch_search_results
+  - rank_sources_by_authority
+
+- agent_name: web_content_collector
+  description: Ethical web page fetching
+  sysprompt_path: web_content_collector.yaml
+  llm_config: default_llm
+  tools:
+  - check_robots_txt
+  - fetch_webpage
+  - cache_content
+  - normalize_url
+
+- agent_name: parser_generator
+  description: Automatic Python parser generation
+  sysprompt_path: parser_generator.yaml
+  llm_config: default_llm
+  tools:
+  - analyze_html_structure
+  - generate_parser_code
+  - validate_parser_syntax
+
+- agent_name: data_extractor
+  description: Safe parser execution and data normalization
+  sysprompt_path: data_extractor.yaml
+  llm_config: default_llm
+  tools:
+  - execute_parser_sandbox
+  - extract_structured_data
+  - normalize_field_values
+
+- agent_name: cross_validator
+  description: Multi-source data comparison
+  sysprompt_path: cross_validator.yaml
+  llm_config: default_llm
+  tools:
+  - compare_sources
+  - detect_conflicts
+  - calculate_confidence_score
+
+- agent_name: conflict_resolver
+  description: Intelligent conflict resolution
+  sysprompt_path: conflict_resolver.yaml
+  llm_config: default_llm
+  tools:
+  - apply_authority_strategy
+  - apply_recency_strategy
+  - generate_resolution_explanation
+
+- agent_name: fact_card_generator
+  description: Structured fact card creation
+  sysprompt_path: fact_card_generator.yaml
+  llm_config: default_llm
+  tools:
+  - format_fact_card
+  - generate_citation
+  - create_evidence_package
+
+- agent_name: output_formatter
+  description: Multi-format export with schema validation
+  sysprompt_path: output_formatter.yaml
+  llm_config: default_llm
+  tools:
+  - export_json
+  - export_csv
+  - validate_export_schema
+
+# === LLM Configurations ===
+llm_configs:
+- llm_name: default_llm
+  provider: openai
+  model: nex
+  api_key: ${LLM_API_KEY}
+  base_url: ${LLM_BASE_URL}
+  max_tokens: 8000
+  temperature: 0.6
+  timeout: 300
+
+# === Tool Configurations ===
+tools:
+# Claim Parser Tools
+- tool_name: extract_claim_entities
+  description: Extract named entities and relationships from claim text
+  config_path: tools/extract_claim_entities.py
+  binding: src.created_frameworks.pitlane_proof.tools.extract_claim_entities:extract_claim_entities
+
+- tool_name: classify_claim_type
+  description: Classify claims into predefined categories
+  config_path: tools/classify_claim_type.py
+  binding: src.created_frameworks.pitlane_proof.tools.classify_claim_type:classify_claim_type
+
+- tool_name: parse_temporal_context
+  description: Extract and normalize temporal expressions
+  config_path: tools/parse_temporal_context.py
+  binding: src.created_frameworks.pitlane_proof.tools.parse_temporal_context:parse_temporal_context
+
+# Entity Disambiguator Tools
+- tool_name: construct_search_queries
+  description: Generate optimized search query variations
+  config_path: tools/construct_search_queries.py
+  binding: src.created_frameworks.pitlane_proof.tools.construct_search_queries:construct_search_queries
+
+- tool_name: fetch_search_results
+  description: Execute web searches and retrieve metadata
+  config_path: tools/fetch_search_results.py
+  binding: src.created_frameworks.pitlane_proof.tools.fetch_search_results:fetch_search_results
+
+- tool_name: rank_sources_by_authority
+  description: Score sources by domain authority
+  config_path: tools/rank_sources_by_authority.py
+  binding: src.created_frameworks.pitlane_proof.tools.rank_sources_by_authority:rank_sources_by_authority
+
+# Web Content Collector Tools
+- tool_name: check_robots_txt
+  description: Validate URL crawlability per robots.txt
+  config_path: tools/check_robots_txt.py
+  binding: src.created_frameworks.pitlane_proof.tools.check_robots_txt:check_robots_txt
+
+- tool_name: fetch_webpage
+  description: Retrieve HTML content with headers
+  config_path: tools/fetch_webpage.py
+  binding: src.created_frameworks.pitlane_proof.tools.fetch_webpage:fetch_webpage
+
+- tool_name: cache_content
+  description: Store and retrieve cached web content
+  config_path: tools/cache_content.py
+  binding: src.created_frameworks.pitlane_proof.tools.cache_content:cache_content
+
+- tool_name: normalize_url
+  description: Standardize URL format
+  config_path: tools/normalize_url.py
+  binding: src.created_frameworks.pitlane_proof.tools.normalize_url:normalize_url
+
+# Parser Generator Tools
+- tool_name: analyze_html_structure
+  description: Parse HTML to identify content patterns
+  config_path: tools/analyze_html_structure.py
+  binding: src.created_frameworks.pitlane_proof.tools.analyze_html_structure:analyze_html_structure
+
+- tool_name: generate_parser_code
+  description: Create Python parsing script
+  config_path: tools/generate_parser_code.py
+  binding: src.created_frameworks.pitlane_proof.tools.generate_parser_code:generate_parser_code
+
+- tool_name: validate_parser_syntax
+  description: Check Python code for errors
+  config_path: tools/validate_parser_syntax.py
+  binding: src.created_frameworks.pitlane_proof.tools.validate_parser_syntax:validate_parser_syntax
+
+# Data Extractor Tools
+- tool_name: execute_parser_sandbox
+  description: Safely execute Python parser code
+  config_path: tools/execute_parser_sandbox.py
+  binding: src.created_frameworks.pitlane_proof.tools.execute_parser_sandbox:execute_parser_sandbox
+
+- tool_name: extract_structured_data
+  description: Run parser and extract target fields
+  config_path: tools/extract_structured_data.py
+  binding: src.created_frameworks.pitlane_proof.tools.extract_structured_data:extract_structured_data
+
+- tool_name: normalize_field_values
+  description: Standardize field formats
+  config_path: tools/normalize_field_values.py
+  binding: src.created_frameworks.pitlane_proof.tools.normalize_field_values:normalize_field_values
+
+# Cross Validator Tools
+- tool_name: compare_sources
+  description: Field-by-field source comparison
+  config_path: tools/compare_sources.py
+  binding: src.created_frameworks.pitlane_proof.tools.compare_sources:compare_sources
+
+- tool_name: detect_conflicts
+  description: Identify meaningful discrepancies
+  config_path: tools/detect_conflicts.py
+  binding: src.created_frameworks.pitlane_proof.tools.detect_conflicts:detect_conflicts
+
+- tool_name: calculate_confidence_score
+  description: Compute confidence from agreement
+  config_path: tools/calculate_confidence_score.py
+  binding: src.created_frameworks.pitlane_proof.tools.calculate_confidence_score:calculate_confidence_score
+
+# Conflict Resolver Tools
+- tool_name: apply_authority_strategy
+  description: Resolve conflicts by authority
+  config_path: tools/apply_authority_strategy.py
+  binding: src.created_frameworks.pitlane_proof.tools.apply_authority_strategy:apply_authority_strategy
+
+- tool_name: apply_recency_strategy
+  description: Resolve conflicts by recency
+  config_path: tools/apply_recency_strategy.py
+  binding: src.created_frameworks.pitlane_proof.tools.apply_recency_strategy:apply_recency_strategy
+
+- tool_name: generate_resolution_explanation
+  description: Create justification for decisions
+  config_path: tools/generate_resolution_explanation.py
+  binding: src.created_frameworks.pitlane_proof.tools.generate_resolution_explanation:generate_resolution_explanation
+
+# Fact Card Generator Tools
+- tool_name: format_fact_card
+  description: Structure data into fact card format
+  config_path: tools/format_fact_card.py
+  binding: src.created_frameworks.pitlane_proof.tools.format_fact_card:format_fact_card
+
+- tool_name: generate_citation
+  description: Create proper citations
+  config_path: tools/generate_citation.py
+  binding: src.created_frameworks.pitlane_proof.tools.generate_citation:generate_citation
+
+- tool_name: create_evidence_package
+  description: Bundle supporting evidence
+  config_path: tools/create_evidence_package.py
+  binding: src.created_frameworks.pitlane_proof.tools.create_evidence_package:create_evidence_package
+
+# Output Formatter Tools
+- tool_name: export_json
+  description: Export to JSON format
+  config_path: tools/export_json.py
+  binding: src.created_frameworks.pitlane_proof.tools.export_json:export_json
+
+- tool_name: export_csv
+  description: Export to CSV format
+  config_path: tools/export_csv.py
+  binding: src.created_frameworks.pitlane_proof.tools.export_csv:export_csv
+
+- tool_name: validate_export_schema
+  description: Check export against schema
+  config_path: tools/validate_export_schema.py
+  binding: src.created_frameworks.pitlane_proof.tools.validate_export_schema:validate_export_schema
+
+# === Workflow Configuration ===
+workflow:
+  name: pitlane_proof_workflow
+  description: Bottom-up aggregation workflow for EV industry fact-checking
+
+  nodes:
+  - id: pitlane_proof
+    type: agent
+  - id: verification_pipeline
+    type: agent
+  - id: publication_processor
+    type: agent
+  - id: claim_analyzer
+    type: agent
+  - id: evidence_collector
+    type: agent
+  - id: data_validator
+    type: agent
+  - id: output_generator
+    type: agent
+  - id: pre_publication_monitor
+    type: agent
+  - id: claim_parser
+    type: agent
+  - id: entity_disambiguator
+    type: agent
+  - id: web_content_collector
+    type: agent
+  - id: parser_generator
+    type: agent
+  - id: data_extractor
+    type: agent
+  - id: cross_validator
+    type: agent
+  - id: conflict_resolver
+    type: agent
+  - id: fact_card_generator
+    type: agent
+  - id: output_formatter
+    type: agent
+
+  edges:
+  - from: pitlane_proof
+    to: verification_pipeline
+    description: Route to verification workflow
+  - from: pitlane_proof
+    to: publication_processor
+    description: Route to publication workflow
+  - from: verification_pipeline
+    to: claim_analyzer
+    description: Analyze claim
+  - from: verification_pipeline
+    to: evidence_collector
+    description: Collect evidence
+  - from: verification_pipeline
+    to: data_validator
+    description: Validate data
+  - from: publication_processor
+    to: output_generator
+    description: Generate outputs
+  - from: publication_processor
+    to: pre_publication_monitor
+    description: Monitor sources
+  - from: claim_analyzer
+    to: claim_parser
+    description: Parse claim
+  - from: claim_analyzer
+    to: entity_disambiguator
+    description: Disambiguate entities
+  - from: evidence_collector
+    to: web_content_collector
+    description: Collect web content
+  - from: evidence_collector
+    to: parser_generator
+    description: Generate parsers
+  - from: evidence_collector
+    to: data_extractor
+    description: Extract data
+  - from: data_validator
+    to: cross_validator
+    description: Cross-validate sources
+  - from: output_generator
+    to: fact_card_generator
+    description: Generate fact cards
+  - from: output_generator
+    to: output_formatter
+    description: Format outputs
+
+framework_name: pitlane_proof
+framework_entrance_agent: pitlane_proof

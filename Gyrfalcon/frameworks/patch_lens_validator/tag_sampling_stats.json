@@ -1,0 +1,12 @@
+{
+  "framework": "patch_lens_validator",
+  "path_counts": {},
+  "total_samples": 0,
+  "last_updated": 1761378157.5425766,
+  "statistics": {
+    "total_paths_tracked": 0,
+    "min_count": 0,
+    "max_count": 0,
+    "avg_count": 0
+  }
+}

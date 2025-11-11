@@ -1,0 +1,857 @@
+{
+  "framework": "patch_lens_validator",
+  "tree": {
+    "id": "root",
+    "en": "patch_lens_validator",
+    "zh": "patch_lens_validator",
+    "children": [
+      {
+        "id": "mechanics_validation",
+        "en": "Game Mechanics Validation",
+        "zh": "游戏机制验证",
+        "children": [
+          {
+            "id": "data_extraction",
+            "en": "Mechanics Data Extraction",
+            "zh": "机制数据提取",
+            "children": [
+              {
+                "id": "numeric_values",
+                "en": "Numeric Value Extraction",
+                "zh": "数值提取",
+                "children": [
+                  {
+                    "id": "damage_values",
+                    "en": "Damage Value Extraction",
+                    "zh": "伤害数值提取"
+                  },
+                  {
+                    "id": "cooldown_values",
+                    "en": "Cooldown Duration Extraction",
+                    "zh": "冷却时间提取"
+                  },
+                  {
+                    "id": "trigger_conditions",
+                    "en": "Trigger Condition Extraction",
+                    "zh": "触发条件提取"
+                  },
+                  {
+                    "id": "range_values",
+                    "en": "Range and Area Values",
+                    "zh": "范围和区域数值"
+                  }
+                ]
+              },
+              {
+                "id": "ability_mechanics",
+                "en": "Ability Mechanics Extraction",
+                "zh": "技能机制提取",
+                "children": [
+                  {
+                    "id": "passive_abilities",
+                    "en": "Passive Ability Mechanics",
+                    "zh": "被动技能机制"
+                  },
+                  {
+                    "id": "active_abilities",
+                    "en": "Active Ability Mechanics",
+                    "zh": "主动技能机制"
+                  },
+                  {
+                    "id": "ultimate_abilities",
+                    "en": "Ultimate Ability Mechanics",
+                    "zh": "终极技能机制"
+                  }
+                ]
+              },
+              {
+                "id": "item_mechanics",
+                "en": "Item Mechanics Extraction",
+                "zh": "物品机制提取",
+                "children": [
+                  {
+                    "id": "item_effects",
+                    "en": "Item Effect Extraction",
+                    "zh": "物品效果提取"
+                  },
+                  {
+                    "id": "item_stacking",
+                    "en": "Item Stacking Rules",
+                    "zh": "物品叠加规则"
+                  },
+                  {
+                    "id": "item_interactions",
+                    "en": "Item Interaction Mechanics",
+                    "zh": "物品交互机制"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "cross_source_validation",
+            "en": "Cross-Source Validation",
+            "zh": "跨来源验证",
+            "children": [
+              {
+                "id": "multi_source_aggregation",
+                "en": "Multi-Source Data Aggregation",
+                "zh": "多来源数据聚合",
+                "children": [
+                  {
+                    "id": "official_sources",
+                    "en": "Official Source Validation",
+                    "zh": "官方来源验证"
+                  },
+                  {
+                    "id": "community_sources",
+                    "en": "Community Wiki Validation",
+                    "zh": "社区维基验证"
+                  },
+                  {
+                    "id": "forum_sources",
+                    "en": "Forum Discussion Validation",
+                    "zh": "论坛讨论验证"
+                  }
+                ]
+              },
+              {
+                "id": "confidence_scoring",
+                "en": "Confidence Scoring",
+                "zh": "置信度评分",
+                "children": [
+                  {
+                    "id": "source_authority",
+                    "en": "Source Authority Weighting",
+                    "zh": "来源权威性加权"
+                  },
+                  {
+                    "id": "consensus_detection",
+                    "en": "Multi-Source Consensus Detection",
+                    "zh": "多来源共识检测"
+                  },
+                  {
+                    "id": "conflict_resolution",
+                    "en": "Conflicting Data Resolution",
+                    "zh": "冲突数据解决"
+                  },
+                  {
+                    "id": "confidence_scoring_recency_version_alignment_confidence_scoring",
+                    "en": "Recency and Version Alignment Confidence Scoring",
+                    "zh": "时效性与版本对齐置信度评分"
+                  }
+                ]
+              },
+              {
+                "id": "assertion_generation",
+                "en": "Validation Assertion Generation",
+                "zh": "验证断言生成",
+                "children": [
+                  {
+                    "id": "testable_claims",
+                    "en": "Testable Claim Generation",
+                    "zh": "可测试声明生成"
+                  },
+                  {
+                    "id": "assertion_verification",
+                    "en": "Assertion Verification",
+                    "zh": "断言验证"
+                  }
+                ]
+              },
+              {
+                "id": "cross_source_validation_authority_weighted_consensus_arbitration",
+                "en": "Authority-Weighted Consensus Arbitration",
+                "zh": "基于权威加权的共识裁定"
+              }
+            ]
+          },
+          {
+            "id": "mechanics_validation_cross_language_consistency_validation",
+            "en": "Cross-Language Consistency Validation",
+            "zh": "跨语言一致性验证"
+          }
+        ]
+      },
+      {
+        "id": "multilanguage_consistency",
+        "en": "Multi-Language Consistency",
+        "zh": "多语言一致性",
+        "children": [
+          {
+            "id": "translation_validation",
+            "en": "Translation Validation",
+            "zh": "翻译验证",
+            "children": [
+              {
+                "id": "mistranslation_detection",
+                "en": "Mistranslation Detection",
+                "zh": "误译检测",
+                "children": [
+                  {
+                    "id": "terminology_errors",
+                    "en": "Terminology Error Detection",
+                    "zh": "术语错误检测"
+                  },
+                  {
+                    "id": "numeric_mistranslation",
+                    "en": "Numeric Value Mistranslation",
+                    "zh": "数值误译检测"
+                  },
+                  {
+                    "id": "mechanics_mistranslation",
+                    "en": "Mechanics Description Mistranslation",
+                    "zh": "机制描述误译"
+                  }
+                ]
+              },
+              {
+                "id": "terminology_normalization",
+                "en": "Terminology Normalization",
+                "zh": "术语规范化",
+                "children": [
+                  {
+                    "id": "cross_language_mapping",
+                    "en": "Cross-Language Term Mapping",
+                    "zh": "跨语言术语映射"
+                  },
+                  {
+                    "id": "standard_expressions",
+                    "en": "Standard Expression Generation",
+                    "zh": "标准表达生成"
+                  },
+                  {
+                    "id": "synonym_resolution",
+                    "en": "Synonym Resolution",
+                    "zh": "同义词解析"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "synchronization_tracking",
+            "en": "Language Synchronization Tracking",
+            "zh": "语言同步跟踪",
+            "children": [
+              {
+                "id": "update_lag_detection",
+                "en": "Update Lag Detection",
+                "zh": "更新滞后检测",
+                "children": [
+                  {
+                    "id": "english_chinese_sync",
+                    "en": "English-Chinese Synchronization",
+                    "zh": "英中同步检测"
+                  },
+                  {
+                    "id": "english_japanese_sync",
+                    "en": "English-Japanese Synchronization",
+                    "zh": "英日同步检测"
+                  },
+                  {
+                    "id": "english_korean_sync",
+                    "en": "English-Korean Synchronization",
+                    "zh": "英韩同步检测"
+                  }
+                ]
+              },
+              {
+                "id": "priority_recommendations",
+                "en": "Localization Priority Recommendations",
+                "zh": "本地化优先级建议",
+                "children": [
+                  {
+                    "id": "critical_updates",
+                    "en": "Critical Update Identification",
+                    "zh": "关键更新识别"
+                  },
+                  {
+                    "id": "impact_assessment",
+                    "en": "Translation Impact Assessment",
+                    "zh": "翻译影响评估"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "consistency_checking",
+            "en": "Cross-Language Consistency Checking",
+            "zh": "跨语言一致性检查",
+            "children": [
+              {
+                "id": "numeric_consistency",
+                "en": "Numeric Value Consistency",
+                "zh": "数值一致性检查",
+                "children": [
+                  {
+                    "id": "damage_consistency",
+                    "en": "Damage Value Consistency",
+                    "zh": "伤害值一致性"
+                  },
+                  {
+                    "id": "cooldown_consistency",
+                    "en": "Cooldown Consistency",
+                    "zh": "冷却时间一致性"
+                  },
+                  {
+                    "id": "numeric_consistency_resource_cost_consistency",
+                    "en": "Resource Cost Consistency",
+                    "zh": "资源消耗一致性"
+                  }
+                ]
+              },
+              {
+                "id": "mechanics_consistency",
+                "en": "Mechanics Description Consistency",
+                "zh": "机制描述一致性"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "version_tracking",
+        "en": "Version Change Tracking",
+        "zh": "版本变更跟踪",
+        "children": [
+          {
+            "id": "change_detection",
+            "en": "Mechanics Change Detection",
+            "zh": "机制变更检测",
+            "children": [
+              {
+                "id": "value_changes",
+                "en": "Value Modification Detection",
+                "zh": "数值修改检测",
+                "children": [
+                  {
+                    "id": "buff_detection",
+                    "en": "Buff Detection",
+                    "zh": "增强检测"
+                  },
+                  {
+                    "id": "nerf_detection",
+                    "en": "Nerf Detection",
+                    "zh": "削弱检测"
+                  },
+                  {
+                    "id": "balance_changes",
+                    "en": "Balance Change Analysis",
+                    "zh": "平衡性变更分析"
+                  }
+                ]
+              },
+              {
+                "id": "mechanics_changes",
+                "en": "Mechanics Modification Detection",
+                "zh": "机制修改检测",
+                "children": [
+                  {
+                    "id": "ability_rework",
+                    "en": "Ability Rework Detection",
+                    "zh": "技能重做检测"
+                  },
+                  {
+                    "id": "new_mechanics",
+                    "en": "New Mechanics Addition",
+                    "zh": "新机制添加"
+                  },
+                  {
+                    "id": "removed_mechanics",
+                    "en": "Removed Mechanics Detection",
+                    "zh": "移除机制检测"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "diff_reporting",
+            "en": "Diff Report Generation",
+            "zh": "差异报告生成",
+            "children": [
+              {
+                "id": "patch_comparison",
+                "en": "Patch-to-Patch Comparison",
+                "zh": "补丁间比较",
+                "children": [
+                  {
+                    "id": "side_by_side",
+                    "en": "Side-by-Side Comparison",
+                    "zh": "并排比较"
+                  },
+                  {
+                    "id": "impact_scoring",
+                    "en": "Change Impact Scoring",
+                    "zh": "变更影响评分"
+                  }
+                ]
+              },
+              {
+                "id": "historical_tracking",
+                "en": "Historical Change Tracking",
+                "zh": "历史变更跟踪",
+                "children": [
+                  {
+                    "id": "version_snapshots",
+                    "en": "Version Snapshot Management",
+                    "zh": "版本快照管理"
+                  },
+                  {
+                    "id": "evolution_analysis",
+                    "en": "Mechanics Evolution Analysis",
+                    "zh": "机制演变分析"
+                  }
+                ]
+              },
+              {
+                "id": "diff_reporting_cross_language_same_patch_diff",
+                "en": "Cross-Language Same-Patch Diff",
+                "zh": "同补丁跨语言差异对比"
+              }
+            ]
+          },
+          {
+            "id": "high_impact_identification",
+            "en": "High-Impact Change Identification",
+            "zh": "高影响变更识别",
+            "children": [
+              {
+                "id": "meta_impact",
+                "en": "Meta Game Impact Assessment",
+                "zh": "元游戏影响评估"
+              },
+              {
+                "id": "competitive_impact",
+                "en": "Competitive Balance Impact",
+                "zh": "竞技平衡影响"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "web_content_acquisition",
+        "en": "Web Content Acquisition",
+        "zh": "网页内容获取",
+        "children": [
+          {
+            "id": "source_discovery",
+            "en": "Source Discovery",
+            "zh": "来源发现",
+            "children": [
+              {
+                "id": "patch_notes_discovery",
+                "en": "Patch Notes Discovery",
+                "zh": "补丁说明发现",
+                "children": [
+                  {
+                    "id": "official_patch_notes",
+                    "en": "Official Patch Notes",
+                    "zh": "官方补丁说明"
+                  },
+                  {
+                    "id": "developer_blogs",
+                    "en": "Developer Blog Posts",
+                    "zh": "开发者博客"
+                  }
+                ]
+              },
+              {
+                "id": "community_sources",
+                "en": "Community Source Discovery",
+                "zh": "社区来源发现",
+                "children": [
+                  {
+                    "id": "wiki_pages",
+                    "en": "Community Wiki Pages",
+                    "zh": "社区维基页面"
+                  },
+                  {
+                    "id": "forum_posts",
+                    "en": "Forum Discussion Posts",
+                    "zh": "论坛讨论帖"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ethical_scraping",
+            "en": "Ethical Web Scraping",
+            "zh": "道德网页抓取",
+            "children": [
+              {
+                "id": "robots_compliance",
+                "en": "Robots.txt Compliance",
+                "zh": "Robots.txt合规",
+                "children": [
+                  {
+                    "id": "permission_checking",
+                    "en": "Crawl Permission Checking",
+                    "zh": "爬取权限检查"
+                  },
+                  {
+                    "id": "rate_limiting",
+                    "en": "Request Rate Limiting",
+                    "zh": "请求速率限制"
+                  }
+                ]
+              },
+              {
+                "id": "content_storage",
+                "en": "Content Storage and Caching",
+                "zh": "内容存储和缓存",
+                "children": [
+                  {
+                    "id": "html_archiving",
+                    "en": "HTML Content Archiving",
+                    "zh": "HTML内容归档"
+                  },
+                  {
+                    "id": "metadata_tracking",
+                    "en": "Metadata and Timestamp Tracking",
+                    "zh": "元数据和时间戳跟踪"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "content_processing",
+            "en": "Content Processing",
+            "zh": "内容处理",
+            "children": [
+              {
+                "id": "noise_removal",
+                "en": "Noise Removal",
+                "zh": "噪声去除",
+                "children": [
+                  {
+                    "id": "ad_removal",
+                    "en": "Advertisement Removal",
+                    "zh": "广告去除"
+                  },
+                  {
+                    "id": "navigation_stripping",
+                    "en": "Navigation Element Stripping",
+                    "zh": "导航元素剥离"
+                  },
+                  {
+                    "id": "boilerplate_removal",
+                    "en": "Boilerplate Content Removal",
+                    "zh": "样板内容去除"
+                  }
+                ]
+              },
+              {
+                "id": "deduplication",
+                "en": "Content Deduplication",
+                "zh": "内容去重",
+                "children": [
+                  {
+                    "id": "similarity_detection",
+                    "en": "Similarity Detection",
+                    "zh": "相似度检测"
+                  },
+                  {
+                    "id": "duplicate_filtering",
+                    "en": "Duplicate Content Filtering",
+                    "zh": "重复内容过滤"
+                  }
+                ]
+              },
+              {
+                "id": "content_processing_unit_numeric_format_normalization",
+                "en": "Unit and Numeric Format Normalization",
+                "zh": "单位与数值格式规范化"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "automation_generation",
+        "en": "Automation and Script Generation",
+        "zh": "自动化和脚本生成",
+        "children": [
+          {
+            "id": "validation_scripts",
+            "en": "Validation Script Generation",
+            "zh": "验证脚本生成",
+            "children": [
+              {
+                "id": "python_scripts",
+                "en": "Python Validation Scripts",
+                "zh": "Python验证脚本",
+                "children": [
+                  {
+                    "id": "assertion_encoding",
+                    "en": "Assertion Encoding",
+                    "zh": "断言编码"
+                  },
+                  {
+                    "id": "test_generation",
+                    "en": "Test Case Generation",
+                    "zh": "测试用例生成"
+                  },
+                  {
+                    "id": "executable_verification",
+                    "en": "Executable Verification Scripts",
+                    "zh": "可执行验证脚本"
+                  }
+                ]
+              },
+              {
+                "id": "template_based_generation",
+                "en": "Template-Based Script Generation",
+                "zh": "基于模板的脚本生成",
+                "children": [
+                  {
+                    "id": "script_templates",
+                    "en": "Script Template Management",
+                    "zh": "脚本模板管理"
+                  },
+                  {
+                    "id": "dynamic_rendering",
+                    "en": "Dynamic Script Rendering",
+                    "zh": "动态脚本渲染"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "script_execution",
+            "en": "Safe Script Execution",
+            "zh": "安全脚本执行",
+            "children": [
+              {
+                "id": "sandbox_execution",
+                "en": "Sandboxed Execution Environment",
+                "zh": "沙箱执行环境"
+              },
+              {
+                "id": "result_verification",
+                "en": "Execution Result Verification",
+                "zh": "执行结果验证"
+              },
+              {
+                "id": "script_execution_pre_execution_safety_compliance",
+                "en": "Pre-execution Safety Policy Compliance",
+                "zh": "执行前安全策略合规性"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "reporting_output",
+        "en": "Reporting and Output",
+        "zh": "报告和输出",
+        "children": [
+          {
+            "id": "structured_reports",
+            "en": "Structured Report Generation",
+            "zh": "结构化报告生成",
+            "children": [
+              {
+                "id": "json_output",
+                "en": "JSON Report Output",
+                "zh": "JSON报告输出",
+                "children": [
+                  {
+                    "id": "mechanics_data",
+                    "en": "Mechanics Data JSON",
+                    "zh": "机制数据JSON"
+                  },
+                  {
+                    "id": "validation_results",
+                    "en": "Validation Results JSON",
+                    "zh": "验证结果JSON"
+                  }
+                ]
+              },
+              {
+                "id": "markdown_reports",
+                "en": "Markdown Report Generation",
+                "zh": "Markdown报告生成",
+                "children": [
+                  {
+                    "id": "diff_reports",
+                    "en": "Diff Reports with Citations",
+                    "zh": "带引用的差异报告"
+                  },
+                  {
+                    "id": "human_readable",
+                    "en": "Human-Readable Documentation",
+                    "zh": "人类可读文档"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "digest_generation",
+            "en": "Executive Digest Generation",
+            "zh": "执行摘要生成",
+            "children": [
+              {
+                "id": "daily_summaries",
+                "en": "Daily Change Summaries",
+                "zh": "每日变更摘要"
+              },
+              {
+                "id": "weekly_digests",
+                "en": "Weekly Mechanics Digests",
+                "zh": "每周机制摘要"
+              },
+              {
+                "id": "impact_highlights",
+                "en": "High-Impact Change Highlights",
+                "zh": "高影响变更重点"
+              }
+            ]
+          },
+          {
+            "id": "traceability",
+            "en": "Traceability and Citation",
+            "zh": "可追溯性和引用",
+            "children": [
+              {
+                "id": "source_linking",
+                "en": "Source URL Linking",
+                "zh": "来源URL链接",
+                "children": [
+                  {
+                    "id": "timestamp_tracking",
+                    "en": "Timestamp Tracking",
+                    "zh": "时间戳跟踪"
+                  },
+                  {
+                    "id": "citation_formatting",
+                    "en": "Citation Formatting",
+                    "zh": "引用格式化"
+                  }
+                ]
+              },
+              {
+                "id": "reproducibility",
+                "en": "Reproducible Verification",
+                "zh": "可重现验证",
+                "children": [
+                  {
+                    "id": "verification_scripts",
+                    "en": "Verification Script Links",
+                    "zh": "验证脚本链接"
+                  },
+                  {
+                    "id": "independent_verification",
+                    "en": "Independent Verification Support",
+                    "zh": "独立验证支持"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "localization_support",
+        "en": "Localization Team Support",
+        "zh": "本地化团队支持",
+        "children": [
+          {
+            "id": "workflow_automation",
+            "en": "Workflow Automation",
+            "zh": "工作流自动化",
+            "children": [
+              {
+                "id": "manual_effort_reduction",
+                "en": "Manual Monitoring Effort Reduction",
+                "zh": "人工监控工作减少",
+                "children": [
+                  {
+                    "id": "automated_monitoring",
+                    "en": "Automated Content Monitoring",
+                    "zh": "自动化内容监控"
+                  },
+                  {
+                    "id": "automated_extraction",
+                    "en": "Automated Data Extraction",
+                    "zh": "自动化数据提取"
+                  }
+                ]
+              },
+              {
+                "id": "quality_improvement",
+                "en": "Translation Quality Improvement",
+                "zh": "翻译质量改进",
+                "children": [
+                  {
+                    "id": "error_detection",
+                    "en": "Translation Error Detection",
+                    "zh": "翻译错误检测"
+                  },
+                  {
+                    "id": "consistency_enforcement",
+                    "en": "Consistency Enforcement",
+                    "zh": "一致性强制执行"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "team_collaboration",
+            "en": "Team Collaboration Support",
+            "zh": "团队协作支持",
+            "children": [
+              {
+                "id": "shared_documentation",
+                "en": "Shared Documentation Generation",
+                "zh": "共享文档生成"
+              },
+              {
+                "id": "issue_tracking",
+                "en": "Translation Issue Tracking",
+                "zh": "翻译问题跟踪",
+                "children": [
+                  {
+                    "id": "issue_tracking_numeric_parameter_mistranslation",
+                    "en": "Numeric Parameter Mistranslation",
+                    "zh": "数值参数误译"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "community_support",
+            "en": "Community Volunteer Support",
+            "zh": "社区志愿者支持",
+            "children": [
+              {
+                "id": "wiki_maintenance",
+                "en": "Wiki Maintenance Assistance",
+                "zh": "维基维护协助"
+              },
+              {
+                "id": "accuracy_verification",
+                "en": "Community Content Accuracy Verification",
+                "zh": "社区内容准确性验证"
+              },
+              {
+                "id": "community_support_cross_language_update_synchronization_support",
+                "en": "Cross-language Update Synchronization Support",
+                "zh": "跨语言更新同步支持"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

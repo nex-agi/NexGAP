@@ -1,0 +1,1382 @@
+{
+  "framework": "medical_health_consultant",
+  "tree": {
+    "id": "root",
+    "en": "Medical and Health Consultation",
+    "zh": "医疗健康咨询",
+    "children": [
+      {
+        "id": "symptom_analysis",
+        "en": "Symptom Analysis and Assessment",
+        "zh": "症状分析评估",
+        "children": [
+          {
+            "id": "acute_symptoms",
+            "en": "Acute Symptoms",
+            "zh": "急性症状",
+            "children": [
+              {
+                "id": "emergency_symptoms",
+                "en": "Emergency Warning Signs",
+                "zh": "紧急警告征象"
+              },
+              {
+                "id": "fever_infection",
+                "en": "Fever and Infection Symptoms",
+                "zh": "发热和感染症状"
+              },
+              {
+                "id": "acute_pain",
+                "en": "Acute Pain Assessment",
+                "zh": "急性疼痛评估"
+              },
+              {
+                "id": "sudden_onset",
+                "en": "Sudden Onset Symptoms",
+                "zh": "突发症状"
+              },
+              {
+                "id": "acute_symptoms_acute_dizziness_and_vertigo_assessment",
+                "en": "Acute Dizziness and Vertigo Assessment",
+                "zh": "急性眩晕与头晕评估"
+              }
+            ]
+          },
+          {
+            "id": "chronic_symptoms",
+            "en": "Chronic Symptoms",
+            "zh": "慢性症状",
+            "children": [
+              {
+                "id": "chronic_pain",
+                "en": "Chronic Pain Management",
+                "zh": "慢性疼痛管理"
+              },
+              {
+                "id": "persistent_fatigue",
+                "en": "Persistent Fatigue",
+                "zh": "持续疲劳"
+              },
+              {
+                "id": "recurrent_symptoms",
+                "en": "Recurrent Symptoms",
+                "zh": "反复出现症状",
+                "children": [
+                  {
+                    "id": "recurrent_symptoms_recurrent_headaches",
+                    "en": "Recurrent Headaches",
+                    "zh": "反复性头痛"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "pain_assessment",
+            "en": "Pain Assessment",
+            "zh": "疼痛评估",
+            "children": [
+              {
+                "id": "pain_characterization",
+                "en": "Pain Characterization (OPQRST)",
+                "zh": "疼痛特征评估"
+              },
+              {
+                "id": "pain_scales",
+                "en": "Pain Scale Measurement",
+                "zh": "疼痛量表测量"
+              },
+              {
+                "id": "pain_pattern",
+                "en": "Pain Pattern Recognition",
+                "zh": "疼痛模式识别"
+              }
+            ]
+          },
+          {
+            "id": "respiratory_symptoms",
+            "en": "Respiratory Symptoms",
+            "zh": "呼吸系统症状",
+            "children": [
+              {
+                "id": "cough_analysis",
+                "en": "Cough Analysis",
+                "zh": "咳嗽分析",
+                "children": [
+                  {
+                    "id": "cough_analysis_chronic_cough_evaluation_ge_8_weeks",
+                    "en": "Chronic Cough Evaluation (≥8 Weeks)",
+                    "zh": "慢性咳嗽评估（≥8周）"
+                  }
+                ]
+              },
+              {
+                "id": "dyspnea",
+                "en": "Breathing Difficulty",
+                "zh": "呼吸困难"
+              },
+              {
+                "id": "chest_symptoms",
+                "en": "Chest Symptoms",
+                "zh": "胸部症状"
+              },
+              {
+                "id": "respiratory_symptoms_hemoptysis_assessment",
+                "en": "Hemoptysis Assessment",
+                "zh": "咯血评估"
+              },
+              {
+                "id": "respiratory_symptoms_wheezing_noisy_breathing_assessment",
+                "en": "Wheezing and Noisy Breathing Assessment",
+                "zh": "哮鸣音与呼吸异常声音评估"
+              }
+            ]
+          },
+          {
+            "id": "differential_diagnosis",
+            "en": "Differential Diagnosis Support",
+            "zh": "鉴别诊断支持",
+            "children": [
+              {
+                "id": "red_flag_identification",
+                "en": "Red Flag Identification",
+                "zh": "危险征象识别"
+              },
+              {
+                "id": "symptom_correlation",
+                "en": "Symptom-Disease Correlation",
+                "zh": "症状疾病关联"
+              }
+            ]
+          },
+          {
+            "id": "symptom_analysis_dermatologic_symptoms",
+            "en": "Dermatologic Symptoms",
+            "zh": "皮肤症状",
+            "children": [
+              {
+                "id": "symptom_analysis_dermatologic_symptoms_new_or_changing_pigmented_skin_lesion",
+                "en": "New or Changing Pigmented Skin Lesion (Mole)",
+                "zh": "新发或变化的皮肤色素性病变（痣）"
+              }
+            ]
+          },
+          {
+            "id": "symptom_analysis_ophthalmologic_symptoms",
+            "en": "Ophthalmologic Symptoms",
+            "zh": "眼科症状",
+            "children": [
+              {
+                "id": "symptom_analysis_ophthalmologic_symptoms_sudden_vision_loss",
+                "en": "Sudden Vision Loss",
+                "zh": "突发性视力下降/丧失"
+              }
+            ]
+          },
+          {
+            "id": "symptom_analysis_gastrointestinal_symptoms",
+            "en": "Gastrointestinal Symptoms",
+            "zh": "消化系统症状"
+          },
+          {
+            "id": "symptom_analysis_neurologic_symptoms",
+            "en": "Neurologic Symptoms",
+            "zh": "神经系统症状"
+          }
+        ]
+      },
+      {
+        "id": "medication_consultation",
+        "en": "Medication Consultation and Safety",
+        "zh": "药物咨询与安全",
+        "children": [
+          {
+            "id": "drug_interactions",
+            "en": "Drug Interactions",
+            "zh": "药物相互作用",
+            "children": [
+              {
+                "id": "drug_drug_interaction",
+                "en": "Drug-Drug Interactions",
+                "zh": "药物间相互作用"
+              },
+              {
+                "id": "drug_food_interaction",
+                "en": "Drug-Food Interactions",
+                "zh": "药物食物相互作用"
+              },
+              {
+                "id": "polypharmacy_management",
+                "en": "Polypharmacy Management",
+                "zh": "多药管理",
+                "children": [
+                  {
+                    "id": "polypharmacy_management_duplicate_therapy_identification_and_consolidation",
+                    "en": "Duplicate Therapy Identification and Consolidation",
+                    "zh": "重复用药识别与整合"
+                  }
+                ]
+              },
+              {
+                "id": "drug_interactions_drug_disease_interactions",
+                "en": "Drug-Disease Interactions",
+                "zh": "药物疾病相互作用"
+              },
+              {
+                "id": "drug_interactions_drug_laboratory_test_interactions",
+                "en": "Drug-Laboratory Test Interactions",
+                "zh": "药物-实验室检验相互作用"
+              }
+            ]
+          },
+          {
+            "id": "dosage_adjustment",
+            "en": "Dosage Calculation and Adjustment",
+            "zh": "剂量计算调整",
+            "children": [
+              {
+                "id": "weight_based_dosing",
+                "en": "Weight-Based Dosing",
+                "zh": "基于体重的剂量"
+              },
+              {
+                "id": "renal_adjustment",
+                "en": "Renal Function Adjustment",
+                "zh": "肾功能调整"
+              },
+              {
+                "id": "hepatic_adjustment",
+                "en": "Hepatic Function Adjustment",
+                "zh": "肝功能调整"
+              }
+            ]
+          },
+          {
+            "id": "adverse_reactions",
+            "en": "Adverse Drug Reactions",
+            "zh": "药物不良反应",
+            "children": [
+              {
+                "id": "side_effect_management",
+                "en": "Side Effect Management",
+                "zh": "副作用管理"
+              },
+              {
+                "id": "allergy_identification",
+                "en": "Drug Allergy Identification",
+                "zh": "药物过敏识别"
+              },
+              {
+                "id": "adr_reporting",
+                "en": "ADR Reporting and Assessment",
+                "zh": "不良反应报告评估"
+              }
+            ]
+          },
+          {
+            "id": "medication_adherence",
+            "en": "Medication Adherence",
+            "zh": "用药依从性",
+            "children": [
+              {
+                "id": "adherence_strategies",
+                "en": "Adherence Improvement Strategies",
+                "zh": "依从性改善策略",
+                "children": [
+                  {
+                    "id": "adherence_strategies_medication_regimen_simplification_and_synchronization",
+                    "en": "Medication Regimen Simplification and Dose-Time Synchronization",
+                    "zh": "用药方案简化与服药时间同步"
+                  }
+                ]
+              },
+              {
+                "id": "medication_reminders",
+                "en": "Medication Reminders",
+                "zh": "用药提醒"
+              },
+              {
+                "id": "barrier_identification",
+                "en": "Adherence Barrier Identification",
+                "zh": "依从性障碍识别",
+                "children": [
+                  {
+                    "id": "barrier_identification_side_effect_driven_medication_nonadherence_identification",
+                    "en": "Side-Effect-Driven Medication Nonadherence Identification",
+                    "zh": "药物副作用导致的用药依从性障碍识别"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "medication_reconciliation",
+            "en": "Medication Reconciliation",
+            "zh": "药物整合审查",
+            "children": [
+              {
+                "id": "medication_review",
+                "en": "Comprehensive Medication Review",
+                "zh": "全面用药审查"
+              },
+              {
+                "id": "medication_optimization",
+                "en": "Medication Optimization",
+                "zh": "用药优化"
+              }
+            ]
+          },
+          {
+            "id": "medication_consultation_contraindications_and_precautions_assessment",
+            "en": "Contraindications and Precautions Assessment",
+            "zh": "用药禁忌与慎用评估",
+            "children": [
+              {
+                "id": "medication_consultation_contraindications_and_precautions_assessment_pregnancy_lactation_contraindications_precautions_assessment",
+                "en": "Pregnancy and Lactation Medication Contraindications and Precautions Assessment",
+                "zh": "妊娠与哺乳期用药禁忌与慎用评估"
+              }
+            ]
+          },
+          {
+            "id": "medication_consultation_medication_monitoring_and_tdm",
+            "en": "Medication Monitoring and Therapeutic Drug Monitoring (TDM)",
+            "zh": "用药监测与治疗药物监测（TDM）指导",
+            "children": [
+              {
+                "id": "medication_consultation_medication_monitoring_and_tdm_tdm_sampling_time_optimization",
+                "en": "TDM Sampling Time Optimization (Peak/Trough Scheduling Guidance)",
+                "zh": "TDM采样时间优化与峰/谷值采血时机指导"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "chronic_disease_management",
+        "en": "Chronic Disease Management",
+        "zh": "慢性病管理",
+        "children": [
+          {
+            "id": "diabetes_management",
+            "en": "Diabetes Management",
+            "zh": "糖尿病管理",
+            "children": [
+              {
+                "id": "blood_sugar_control",
+                "en": "Blood Sugar Control",
+                "zh": "血糖控制",
+                "children": [
+                  {
+                    "id": "blood_sugar_control_insulin_dose_titration_adjustment",
+                    "en": "Insulin Dose Titration and Adjustment Guidance",
+                    "zh": "胰岛素剂量滴定与调整指导"
+                  }
+                ]
+              },
+              {
+                "id": "diabetes_complications",
+                "en": "Diabetes Complications Monitoring",
+                "zh": "糖尿病并发症监测"
+              },
+              {
+                "id": "insulin_management",
+                "en": "Insulin Management",
+                "zh": "胰岛素管理"
+              }
+            ]
+          },
+          {
+            "id": "hypertension_management",
+            "en": "Hypertension Management",
+            "zh": "高血压管理",
+            "children": [
+              {
+                "id": "blood_pressure_monitoring",
+                "en": "Blood Pressure Monitoring",
+                "zh": "血压监测"
+              },
+              {
+                "id": "lifestyle_modification",
+                "en": "Lifestyle Modification for BP",
+                "zh": "生活方式改善"
+              },
+              {
+                "id": "hypertension_management_hypertension_medication_management",
+                "en": "Hypertension Medication Management",
+                "zh": "高血压用药管理"
+              }
+            ]
+          },
+          {
+            "id": "cardiovascular_disease",
+            "en": "Cardiovascular Disease Management",
+            "zh": "心血管疾病管理",
+            "children": [
+              {
+                "id": "heart_failure_management",
+                "en": "Heart Failure Management",
+                "zh": "心力衰竭管理",
+                "children": [
+                  {
+                    "id": "heart_failure_management_heart_failure_medication_optimization_and_safety_review",
+                    "en": "Heart Failure Medication Optimization and Safety Review",
+                    "zh": "心力衰竭用药优化与安全评估"
+                  }
+                ]
+              },
+              {
+                "id": "coronary_artery_disease",
+                "en": "Coronary Artery Disease Management",
+                "zh": "冠状动脉疾病管理"
+              }
+            ]
+          },
+          {
+            "id": "respiratory_diseases",
+            "en": "Respiratory Disease Management",
+            "zh": "呼吸系统疾病管理",
+            "children": [
+              {
+                "id": "asthma_management",
+                "en": "Asthma Management",
+                "zh": "哮喘管理"
+              },
+              {
+                "id": "copd_management",
+                "en": "COPD Management",
+                "zh": "慢阻肺管理"
+              }
+            ]
+          },
+          {
+            "id": "autoimmune_diseases",
+            "en": "Autoimmune Disease Management",
+            "zh": "自身免疫疾病管理",
+            "children": [
+              {
+                "id": "rheumatoid_arthritis",
+                "en": "Rheumatoid Arthritis Management",
+                "zh": "类风湿关节炎管理"
+              },
+              {
+                "id": "lupus_management",
+                "en": "Lupus Management",
+                "zh": "红斑狼疮管理"
+              }
+            ]
+          },
+          {
+            "id": "chronic_disease_management_chronic_kidney_disease_management",
+            "en": "Chronic Kidney Disease Management",
+            "zh": "慢性肾脏病管理"
+          },
+          {
+            "id": "chronic_disease_management_chronic_pain_management",
+            "en": "Chronic Pain Management",
+            "zh": "慢性疼痛管理"
+          },
+          {
+            "id": "chronic_disease_management_osteoporosis_management",
+            "en": "Osteoporosis Management",
+            "zh": "骨质疏松管理"
+          }
+        ]
+      },
+      {
+        "id": "mental_health_support",
+        "en": "Mental Health Support",
+        "zh": "心理健康支持",
+        "children": [
+          {
+            "id": "anxiety_disorders",
+            "en": "Anxiety Disorders",
+            "zh": "焦虑障碍",
+            "children": [
+              {
+                "id": "generalized_anxiety",
+                "en": "Generalized Anxiety",
+                "zh": "广泛性焦虑"
+              },
+              {
+                "id": "panic_disorder",
+                "en": "Panic Disorder",
+                "zh": "恐慌障碍"
+              },
+              {
+                "id": "social_anxiety",
+                "en": "Social Anxiety",
+                "zh": "社交焦虑"
+              },
+              {
+                "id": "anxiety_disorders_substance_medication_induced_anxiety",
+                "en": "Substance/Medication-Induced Anxiety",
+                "zh": "物质/药物诱发的焦虑"
+              }
+            ]
+          },
+          {
+            "id": "depression",
+            "en": "Depression Support",
+            "zh": "抑郁症支持",
+            "children": [
+              {
+                "id": "major_depression",
+                "en": "Major Depression",
+                "zh": "重度抑郁",
+                "children": [
+                  {
+                    "id": "major_depression_antidepressant_side_effects_and_interactions_management",
+                    "en": "Antidepressant Side Effects and Interaction Management in Major Depression",
+                    "zh": "重度抑郁的抗抑郁药不良反应与相互作用管理"
+                  }
+                ]
+              },
+              {
+                "id": "persistent_depressive",
+                "en": "Persistent Depressive Disorder",
+                "zh": "持续性抑郁障碍",
+                "children": [
+                  {
+                    "id": "persistent_depressive_pdd_medication_side_effects_interaction_review",
+                    "en": "PDD Medication Side Effects and Interaction Review",
+                    "zh": "持续性抑郁障碍用药副作用与相互作用评估"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "crisis_intervention",
+            "en": "Crisis Intervention",
+            "zh": "危机干预",
+            "children": [
+              {
+                "id": "suicide_risk",
+                "en": "Suicide Risk Assessment",
+                "zh": "自杀风险评估"
+              },
+              {
+                "id": "self_harm",
+                "en": "Self-Harm Support",
+                "zh": "自残支持"
+              },
+              {
+                "id": "crisis_resources",
+                "en": "Crisis Resource Provision",
+                "zh": "危机资源提供"
+              },
+              {
+                "id": "crisis_intervention_panic_attack_deescalation",
+                "en": "Panic Attack De-escalation",
+                "zh": "惊恐发作急性干预",
+                "children": [
+                  {
+                    "id": "crisis_intervention_panic_attack_deescalation_panic_attack_real_time_breathing_grounding_coaching",
+                    "en": "Live Breathing and Grounding Guidance During Panic Attack",
+                    "zh": "惊恐发作期间的实时呼吸与锚定指导"
+                  }
+                ]
+              },
+              {
+                "id": "crisis_intervention_intimate_partner_violence_immediate_safety_planning",
+                "en": "Intimate Partner Violence Immediate Safety Planning",
+                "zh": "亲密伴侣暴力即时安全计划"
+              }
+            ]
+          },
+          {
+            "id": "coping_strategies",
+            "en": "Coping Strategies",
+            "zh": "应对策略",
+            "children": [
+              {
+                "id": "cbt_techniques",
+                "en": "CBT Techniques",
+                "zh": "认知行为疗法技术"
+              },
+              {
+                "id": "mindfulness",
+                "en": "Mindfulness Practices",
+                "zh": "正念练习"
+              },
+              {
+                "id": "stress_management",
+                "en": "Stress Management",
+                "zh": "压力管理",
+                "children": [
+                  {
+                    "id": "stress_management_workplace_burnout_assessment_and_coping_plan",
+                    "en": "Workplace Burnout Assessment and Coping Plan",
+                    "zh": "工作倦怠评估与应对方案"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "mental_health_screening",
+            "en": "Mental Health Screening",
+            "zh": "心理健康筛查",
+            "children": [
+              {
+                "id": "depression_screening",
+                "en": "Depression Screening (PHQ-9)",
+                "zh": "抑郁筛查"
+              },
+              {
+                "id": "anxiety_screening",
+                "en": "Anxiety Screening (GAD-7)",
+                "zh": "焦虑筛查",
+                "children": [
+                  {
+                    "id": "anxiety_screening_gad_7_administration_and_scoring",
+                    "en": "GAD-7 Administration and Scoring",
+                    "zh": "GAD-7量表施测与计分"
+                  }
+                ]
+              },
+              {
+                "id": "mental_health_screening_ptsd_screening_pc_ptsd_5",
+                "en": "PTSD Screening (PC-PTSD-5)",
+                "zh": "创伤后应激障碍筛查（PC-PTSD-5）"
+              },
+              {
+                "id": "mental_health_screening_bipolar_disorder_screening_mdq",
+                "en": "Bipolar Disorder Screening (MDQ)",
+                "zh": "双相情感障碍筛查（MDQ）"
+              }
+            ]
+          },
+          {
+            "id": "mental_health_support_substance_use_addiction_support",
+            "en": "Substance Use and Addiction Support",
+            "zh": "物质使用与成瘾支持",
+            "children": [
+              {
+                "id": "mental_health_support_substance_use_addiction_support_substance_use_risk_screening_and_brief_intervention_sbirt",
+                "en": "Substance Use Risk Screening and Brief Intervention (SBIRT)",
+                "zh": "物质使用风险筛查与简短干预（SBIRT）"
+              }
+            ]
+          },
+          {
+            "id": "mental_health_support_grief_and_bereavement_support",
+            "en": "Grief and Bereavement Support",
+            "zh": "哀伤与丧亲支持"
+          },
+          {
+            "id": "mental_health_support_eating_disorders_support",
+            "en": "Eating Disorders Support",
+            "zh": "进食障碍支持"
+          },
+          {
+            "id": "mental_health_support_trauma_ptsd_support",
+            "en": "Trauma and PTSD Support",
+            "zh": "创伤与创伤后应激障碍支持"
+          },
+          {
+            "id": "mental_health_support_perinatal_postpartum_mental_health_support",
+            "en": "Perinatal and Postpartum Mental Health Support",
+            "zh": "围产期与产后心理健康支持"
+          },
+          {
+            "id": "mental_health_support_bipolar_disorder_support",
+            "en": "Bipolar Disorder Support",
+            "zh": "双相情感障碍支持"
+          },
+          {
+            "id": "mental_health_support_schizophrenia_spectrum_psychotic_disorders_support",
+            "en": "Schizophrenia Spectrum and Other Psychotic Disorders Support",
+            "zh": "精神分裂症谱系及其他精神病性障碍支持"
+          },
+          {
+            "id": "mental_health_support_workplace_burnout_and_occupational_stress_support",
+            "en": "Workplace Burnout and Occupational Stress Support",
+            "zh": "职业倦怠与工作压力支持"
+          },
+          {
+            "id": "mental_health_support_adhd_support",
+            "en": "ADHD (Attention-Deficit/Hyperactivity Disorder) Support",
+            "zh": "注意缺陷多动障碍（ADHD）支持"
+          }
+        ]
+      },
+      {
+        "id": "preventive_health",
+        "en": "Preventive Health and Wellness",
+        "zh": "预防保健与健康",
+        "children": [
+          {
+            "id": "health_screening",
+            "en": "Health Screening",
+            "zh": "健康筛查",
+            "children": [
+              {
+                "id": "cancer_screening",
+                "en": "Cancer Screening",
+                "zh": "癌症筛查"
+              },
+              {
+                "id": "cardiovascular_screening",
+                "en": "Cardiovascular Screening",
+                "zh": "心血管筛查"
+              },
+              {
+                "id": "age_appropriate_screening",
+                "en": "Age-Appropriate Screening",
+                "zh": "年龄适宜筛查"
+              },
+              {
+                "id": "health_screening_mental_health_screening",
+                "en": "Mental Health Screening",
+                "zh": "心理健康筛查"
+              }
+            ]
+          },
+          {
+            "id": "lifestyle_optimization",
+            "en": "Lifestyle Optimization",
+            "zh": "生活方式优化",
+            "children": [
+              {
+                "id": "smoking_cessation",
+                "en": "Smoking Cessation",
+                "zh": "戒烟"
+              },
+              {
+                "id": "alcohol_reduction",
+                "en": "Alcohol Reduction",
+                "zh": "减少饮酒"
+              },
+              {
+                "id": "sleep_optimization",
+                "en": "Sleep Optimization",
+                "zh": "睡眠优化",
+                "children": [
+                  {
+                    "id": "sleep_optimization_medication_related_sleep_disturbance_assessment",
+                    "en": "Medication-Related Sleep Disturbance Assessment",
+                    "zh": "药物相关睡眠障碍评估"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "health_risk_assessment",
+            "en": "Health Risk Assessment",
+            "zh": "健康风险评估",
+            "children": [
+              {
+                "id": "family_history_assessment",
+                "en": "Family History Assessment",
+                "zh": "家族史评估"
+              },
+              {
+                "id": "risk_stratification",
+                "en": "Risk Stratification",
+                "zh": "风险分层"
+              },
+              {
+                "id": "health_risk_assessment_environmental_occupational_exposure_risk_assessment",
+                "en": "Environmental and Occupational Exposure Risk Assessment",
+                "zh": "环境与职业暴露风险评估"
+              }
+            ]
+          },
+          {
+            "id": "vaccination_guidance",
+            "en": "Vaccination Guidance",
+            "zh": "疫苗接种指导",
+            "children": [
+              {
+                "id": "adult_vaccination",
+                "en": "Adult Vaccination Schedule",
+                "zh": "成人疫苗接种计划"
+              },
+              {
+                "id": "travel_vaccination",
+                "en": "Travel Vaccination",
+                "zh": "旅行疫苗接种"
+              },
+              {
+                "id": "vaccination_guidance_catch_up_immunization_planning",
+                "en": "Catch-up Immunization Planning",
+                "zh": "疫苗补种与追赶接种规划"
+              },
+              {
+                "id": "vaccination_guidance_post_exposure_vaccination_and_immunoprophylaxis_guidance",
+                "en": "Post-exposure Vaccination and Immunoprophylaxis Guidance",
+                "zh": "暴露后疫苗接种与免疫预防指导"
+              }
+            ]
+          },
+          {
+            "id": "preventive_health_preventive_medication_guidance",
+            "en": "Preventive Medication Guidance",
+            "zh": "预防性用药指导"
+          },
+          {
+            "id": "preventive_health_fall_prevention_and_home_safety_planning",
+            "en": "Fall Prevention and Home Safety Planning",
+            "zh": "跌倒预防与居家安全规划"
+          }
+        ]
+      },
+      {
+        "id": "nutrition_fitness",
+        "en": "Nutrition and Fitness",
+        "zh": "营养与健身",
+        "children": [
+          {
+            "id": "nutrition_counseling",
+            "en": "Nutrition Counseling",
+            "zh": "营养咨询",
+            "children": [
+              {
+                "id": "dietary_planning",
+                "en": "Dietary Planning",
+                "zh": "膳食计划"
+              },
+              {
+                "id": "medical_nutrition_therapy",
+                "en": "Medical Nutrition Therapy",
+                "zh": "医学营养治疗"
+              },
+              {
+                "id": "nutrient_deficiency",
+                "en": "Nutrient Deficiency Assessment",
+                "zh": "营养缺乏评估"
+              },
+              {
+                "id": "special_diets",
+                "en": "Special Dietary Needs",
+                "zh": "特殊饮食需求"
+              }
+            ]
+          },
+          {
+            "id": "weight_management",
+            "en": "Weight Management",
+            "zh": "体重管理",
+            "children": [
+              {
+                "id": "weight_loss",
+                "en": "Weight Loss Strategies",
+                "zh": "减重策略"
+              },
+              {
+                "id": "weight_gain",
+                "en": "Healthy Weight Gain",
+                "zh": "健康增重"
+              },
+              {
+                "id": "weight_maintenance",
+                "en": "Weight Maintenance",
+                "zh": "体重维持"
+              },
+              {
+                "id": "weight_management_medication_related_weight_change_management",
+                "en": "Medication-Related Weight Change Management",
+                "zh": "药物相关体重变化管理"
+              }
+            ]
+          },
+          {
+            "id": "fitness_guidance",
+            "en": "Fitness Guidance",
+            "zh": "健身指导",
+            "children": [
+              {
+                "id": "exercise_prescription",
+                "en": "Exercise Prescription",
+                "zh": "运动处方"
+              },
+              {
+                "id": "strength_training",
+                "en": "Strength Training",
+                "zh": "力量训练"
+              },
+              {
+                "id": "cardiovascular_training",
+                "en": "Cardiovascular Training",
+                "zh": "心血管训练",
+                "children": [
+                  {
+                    "id": "cardiovascular_training_heart_rate_zone_prescription_and_progression_planning",
+                    "en": "Heart Rate Zone Prescription and Progression Planning",
+                    "zh": "心率分区训练处方与进阶规划"
+                  }
+                ]
+              },
+              {
+                "id": "flexibility_mobility",
+                "en": "Flexibility and Mobility",
+                "zh": "柔韧性与活动能力"
+              },
+              {
+                "id": "fitness_guidance_training_periodization_and_progression",
+                "en": "Training Periodization and Progression",
+                "zh": "训练周期化与渐进计划"
+              }
+            ]
+          },
+          {
+            "id": "sports_nutrition",
+            "en": "Sports Nutrition",
+            "zh": "运动营养",
+            "children": [
+              {
+                "id": "performance_nutrition",
+                "en": "Performance Nutrition",
+                "zh": "运动表现营养"
+              },
+              {
+                "id": "recovery_nutrition",
+                "en": "Recovery Nutrition",
+                "zh": "恢复期营养"
+              }
+            ]
+          },
+          {
+            "id": "nutrition_fitness_medical_nutrition_therapy",
+            "en": "Medical Nutrition Therapy",
+            "zh": "医学营养治疗",
+            "children": [
+              {
+                "id": "nutrition_fitness_medical_nutrition_therapy_ckd_stage_3_5_non_dialysis_nutrition_therapy",
+                "en": "Chronic Kidney Disease (Stages 3–5, Non-Dialysis) Nutrition Therapy",
+                "zh": "慢性肾脏病（3–5期，未透析）营养治疗"
+              }
+            ]
+          },
+          {
+            "id": "nutrition_fitness_dietary_supplement_safety_and_interaction_management",
+            "en": "Dietary Supplement Safety and Interaction Management",
+            "zh": "膳食补充剂安全与相互作用管理",
+            "children": [
+              {
+                "id": "nutrition_fitness_dietary_supplement_safety_and_interaction_management_supplement_lab_test_interference_assessment_management",
+                "en": "Dietary Supplement–Laboratory Test Interference Assessment and Management",
+                "zh": "膳食补充剂与实验室检验干扰评估与管理"
+              }
+            ]
+          },
+          {
+            "id": "nutrition_fitness_life_stage_nutrition_planning",
+            "en": "Life Stage Nutrition Planning",
+            "zh": "生命阶段营养规划"
+          },
+          {
+            "id": "nutrition_fitness_travel_shift_work_nutrition_fitness_planning",
+            "en": "Travel and Shift-Work Nutrition and Fitness Planning",
+            "zh": "旅行与轮班营养与健身规划"
+          },
+          {
+            "id": "nutrition_fitness_budget_conscious_healthy_eating_and_meal_planning",
+            "en": "Budget-Conscious Healthy Eating and Meal Planning",
+            "zh": "经济实惠型健康饮食与膳食规划"
+          }
+        ]
+      },
+      {
+        "id": "report_interpretation",
+        "en": "Medical Report Interpretation",
+        "zh": "医疗报告解读",
+        "children": [
+          {
+            "id": "laboratory_reports",
+            "en": "Laboratory Reports",
+            "zh": "实验室报告",
+            "children": [
+              {
+                "id": "blood_test_interpretation",
+                "en": "Blood Test Interpretation",
+                "zh": "血液检查解读"
+              },
+              {
+                "id": "urine_analysis",
+                "en": "Urine Analysis",
+                "zh": "尿液分析"
+              },
+              {
+                "id": "metabolic_panel",
+                "en": "Metabolic Panel",
+                "zh": "代谢组套",
+                "children": [
+                  {
+                    "id": "metabolic_panel_electrolyte_abnormality_interpretation",
+                    "en": "Electrolyte Abnormality Interpretation (Sodium/Potassium/Chloride/Bicarbonate)",
+                    "zh": "电解质异常解读（钠/钾/氯/碳酸氢盐）"
+                  }
+                ]
+              },
+              {
+                "id": "lipid_panel",
+                "en": "Lipid Panel",
+                "zh": "血脂组套"
+              },
+              {
+                "id": "laboratory_reports_thyroid_function_panel",
+                "en": "Thyroid Function Panel",
+                "zh": "甲状腺功能组套"
+              },
+              {
+                "id": "laboratory_reports_coagulation_profile_interpretation",
+                "en": "Coagulation Profile Interpretation",
+                "zh": "凝血功能检查解读",
+                "children": [
+                  {
+                    "id": "laboratory_reports_coagulation_profile_interpretation_anticoagulation_monitoring_inr_aptt_antixa",
+                    "en": "Anticoagulation Monitoring: INR/aPTT/Anti-Xa Interpretation",
+                    "zh": "抗凝监测：INR/aPTT/抗Xa解读"
+                  }
+                ]
+              },
+              {
+                "id": "laboratory_reports_arterial_blood_gas_interpretation",
+                "en": "Arterial Blood Gas Interpretation",
+                "zh": "动脉血气分析解读",
+                "children": [
+                  {
+                    "id": "laboratory_reports_arterial_blood_gas_interpretation_abg_acid_base_disorder_compensation_assessment",
+                    "en": "ABG-Based Acid-Base Disorder Identification and Compensation Assessment",
+                    "zh": "基于动脉血气的酸碱紊乱识别与代偿评估"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "imaging_reports",
+            "en": "Imaging Reports",
+            "zh": "影像报告",
+            "children": [
+              {
+                "id": "xray_interpretation",
+                "en": "X-ray Interpretation",
+                "zh": "X光解读",
+                "children": [
+                  {
+                    "id": "xray_interpretation_chest_xray_report_interpretation_and_next_step_guidance",
+                    "en": "Chest X-ray Report Interpretation and Next-Step Guidance",
+                    "zh": "胸部X光报告解读与下一步建议"
+                  }
+                ]
+              },
+              {
+                "id": "ct_scan_interpretation",
+                "en": "CT Scan Interpretation",
+                "zh": "CT扫描解读"
+              },
+              {
+                "id": "mri_interpretation",
+                "en": "MRI Interpretation",
+                "zh": "核磁共振解读"
+              }
+            ]
+          },
+          {
+            "id": "trend_analysis",
+            "en": "Trend Analysis",
+            "zh": "趋势分析",
+            "children": [
+              {
+                "id": "longitudinal_tracking",
+                "en": "Longitudinal Result Tracking",
+                "zh": "纵向结果追踪",
+                "children": [
+                  {
+                    "id": "longitudinal_tracking_lab_result_trend_interpretation",
+                    "en": "Laboratory Result Trend Interpretation",
+                    "zh": "实验室检查结果趋势解读"
+                  }
+                ]
+              },
+              {
+                "id": "progression_assessment",
+                "en": "Disease Progression Assessment",
+                "zh": "疾病进展评估"
+              },
+              {
+                "id": "trend_analysis_treatment_response_trend_evaluation",
+                "en": "Treatment Response Trend Evaluation",
+                "zh": "疗效趋势评估"
+              },
+              {
+                "id": "trend_analysis_vital_signs_trend_assessment",
+                "en": "Vital Signs Trend Assessment",
+                "zh": "生命体征趋势评估"
+              }
+            ]
+          },
+          {
+            "id": "reference_value_interpretation",
+            "en": "Reference Value Interpretation",
+            "zh": "参考值解读",
+            "children": [
+              {
+                "id": "abnormal_value_analysis",
+                "en": "Abnormal Value Analysis",
+                "zh": "异常值分析"
+              },
+              {
+                "id": "critical_value_identification",
+                "en": "Critical Value Identification",
+                "zh": "危急值识别"
+              }
+            ]
+          },
+          {
+            "id": "report_interpretation_physiological_monitoring_functional_test_interpretation",
+            "en": "Physiological Monitoring and Functional Test Interpretation",
+            "zh": "生理监测与功能性检查报告解读"
+          },
+          {
+            "id": "report_interpretation_pathology_biopsy_report_interpretation",
+            "en": "Pathology and Biopsy Report Interpretation",
+            "zh": "病理与活检报告解读",
+            "children": [
+              {
+                "id": "report_interpretation_pathology_biopsy_report_interpretation_immunohistochemistry_marker_interpretation",
+                "en": "Immunohistochemistry Marker Interpretation in Tumor Pathology Reports",
+                "zh": "肿瘤病理报告中的免疫组化标记物解读"
+              }
+            ]
+          },
+          {
+            "id": "report_interpretation_discharge_summary_report_interpretation",
+            "en": "Discharge Summary Report Interpretation",
+            "zh": "出院小结报告解读"
+          },
+          {
+            "id": "report_interpretation_operative_and_procedure_report_interpretation",
+            "en": "Operative and Procedure Report Interpretation",
+            "zh": "手术与操作报告解读"
+          },
+          {
+            "id": "report_interpretation_clinical_encounter_note_interpretation",
+            "en": "Clinical Encounter Note Interpretation (History & Physical, Progress, Consult)",
+            "zh": "临床就诊记录解读（入院评估、病程记录、会诊记录）"
+          },
+          {
+            "id": "report_interpretation_genetic_and_genomic_test_report_interpretation",
+            "en": "Genetic and Genomic Test Report Interpretation",
+            "zh": "遗传与基因组检测报告解读"
+          }
+        ]
+      },
+      {
+        "id": "emergency_triage",
+        "en": "Emergency Triage and Assessment",
+        "zh": "紧急分流评估",
+        "children": [
+          {
+            "id": "life_threatening_conditions",
+            "en": "Life-Threatening Conditions",
+            "zh": "威胁生命的状况",
+            "children": [
+              {
+                "id": "cardiac_emergencies",
+                "en": "Cardiac Emergencies",
+                "zh": "心脏急症"
+              },
+              {
+                "id": "stroke_symptoms",
+                "en": "Stroke Symptoms",
+                "zh": "中风症状"
+              },
+              {
+                "id": "respiratory_distress",
+                "en": "Severe Respiratory Distress",
+                "zh": "严重呼吸窘迫"
+              }
+            ]
+          },
+          {
+            "id": "urgent_care_needs",
+            "en": "Urgent Care Needs",
+            "zh": "紧急护理需求",
+            "children": [
+              {
+                "id": "moderate_pain",
+                "en": "Moderate Acute Pain",
+                "zh": "中度急性疼痛"
+              },
+              {
+                "id": "infection_symptoms",
+                "en": "Infection Symptoms",
+                "zh": "感染症状"
+              }
+            ]
+          },
+          {
+            "id": "triage_assessment",
+            "en": "Triage Level Assessment",
+            "zh": "分流等级评估",
+            "children": [
+              {
+                "id": "immediate_care",
+                "en": "Immediate Care Required",
+                "zh": "需要立即护理"
+              },
+              {
+                "id": "urgent_care",
+                "en": "Urgent Care Required",
+                "zh": "需要紧急护理"
+              },
+              {
+                "id": "standard_care",
+                "en": "Standard Care Appropriate",
+                "zh": "适合标准护理",
+                "children": [
+                  {
+                    "id": "standard_care_minor_ailment_self_care_otc_guidance",
+                    "en": "Minor Ailment Self-Care and OTC Medication Guidance",
+                    "zh": "轻症自我护理与非处方用药指导"
+                  }
+                ]
+              },
+              {
+                "id": "triage_assessment_self_care_with_monitoring",
+                "en": "Self-Care with Monitoring",
+                "zh": "适合自我护理与观察"
+              },
+              {
+                "id": "triage_assessment_telehealth_first_evaluation_recommended",
+                "en": "Telehealth-First Evaluation Recommended",
+                "zh": "建议优先进行远程医疗评估"
+              }
+            ]
+          },
+          {
+            "id": "emergency_triage_pre_arrival_first_aid_and_stabilization_guidance",
+            "en": "Pre-Arrival First Aid and Stabilization Guidance",
+            "zh": "院前急救与稳定指导"
+          },
+          {
+            "id": "emergency_triage_time_critical_intervention_window_assessment",
+            "en": "Time-Critical Intervention Window Assessment",
+            "zh": "关键治疗时窗评估"
+          },
+          {
+            "id": "emergency_triage_ems_activation_and_transport_decision_support",
+            "en": "EMS Activation and Transport Mode Decision Support",
+            "zh": "急救呼叫与转运方式决策支持"
+          },
+          {
+            "id": "emergency_triage_infectious_risk_isolation_pre_arrival_precautions",
+            "en": "Infectious Risk Isolation and Pre-Arrival Precautions",
+            "zh": "传染风险隔离与就诊前防护指导"
+          },
+          {
+            "id": "emergency_triage_poisoning_and_toxic_exposure_triage_guidance",
+            "en": "Poisoning and Toxic Exposure Triage Guidance",
+            "zh": "中毒与毒性暴露分流指导"
+          },
+          {
+            "id": "emergency_triage_postoperative_procedure_complication_triage",
+            "en": "Postoperative and Procedure-Related Complication Triage Assessment",
+            "zh": "术后及操作后并发症分流评估"
+          }
+        ]
+      },
+      {
+        "id": "special_populations",
+        "en": "Special Population Considerations",
+        "zh": "特殊人群考虑",
+        "children": [
+          {
+            "id": "pediatric_care",
+            "en": "Pediatric Care",
+            "zh": "儿科护理",
+            "children": [
+              {
+                "id": "child_development",
+                "en": "Child Development Assessment",
+                "zh": "儿童发育评估"
+              },
+              {
+                "id": "pediatric_medication",
+                "en": "Pediatric Medication Dosing",
+                "zh": "儿科用药剂量",
+                "children": [
+                  {
+                    "id": "pediatric_medication_weight_based_pediatric_antipyretic_dosing",
+                    "en": "Weight-Based Dosing for Pediatric Antipyretics (Acetaminophen/Ibuprofen)",
+                    "zh": "儿科退热药按体重给药剂量（对乙酰氨基酚/布洛芬）"
+                  }
+                ]
+              },
+              {
+                "id": "pediatric_care_pediatric_immunization_and_catch_up_scheduling",
+                "en": "Pediatric Immunization and Catch-up Scheduling",
+                "zh": "儿童疫苗接种与补种计划"
+              },
+              {
+                "id": "pediatric_care_pediatric_fever_assessment_and_red_flag_triage",
+                "en": "Pediatric Fever Assessment and Red-Flag Triage",
+                "zh": "儿科发热评估与危险信号分诊"
+              }
+            ]
+          },
+          {
+            "id": "geriatric_care",
+            "en": "Geriatric Care",
+            "zh": "老年护理",
+            "children": [
+              {
+                "id": "polypharmacy_elderly",
+                "en": "Elderly Polypharmacy Management",
+                "zh": "老年人多药管理"
+              },
+              {
+                "id": "fall_risk",
+                "en": "Fall Risk Assessment",
+                "zh": "跌倒风险评估"
+              },
+              {
+                "id": "cognitive_assessment",
+                "en": "Cognitive Assessment",
+                "zh": "认知评估"
+              }
+            ]
+          },
+          {
+            "id": "pregnancy_care",
+            "en": "Pregnancy and Maternal Care",
+            "zh": "妊娠与产妇护理",
+            "children": [
+              {
+                "id": "prenatal_guidance",
+                "en": "Prenatal Guidance",
+                "zh": "产前指导"
+              },
+              {
+                "id": "pregnancy_medication_safety",
+                "en": "Pregnancy Medication Safety",
+                "zh": "妊娠期用药安全"
+              },
+              {
+                "id": "postpartum_support",
+                "en": "Postpartum Support",
+                "zh": "产后支持"
+              },
+              {
+                "id": "pregnancy_care_prenatal_screening_and_test_interpretation",
+                "en": "Prenatal Screening and Test Interpretation",
+                "zh": "产前筛查与检查解读"
+              }
+            ]
+          },
+          {
+            "id": "special_populations_immunocompromised_patient_care",
+            "en": "Immunocompromised Patient Care",
+            "zh": "免疫功能低下患者护理"
+          }
+        ]
+      }
+    ]
+  }
+}

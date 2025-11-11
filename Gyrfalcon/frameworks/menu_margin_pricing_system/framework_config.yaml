@@ -1,0 +1,498 @@
+# Copyright (c) Nex-AGI. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# MenuMargin Pricing System Framework Configuration
+# Intelligent Pricing Planner for Pop-up Dining & Catering
+
+# === Framework Description ===
+framework:
+  name: MenuMargin Pricing System
+  description_en: "MenuMargin is a comprehensive multi-agent framework that transforms recipes into actionable pricing plans for independent pop-up dining and small food businesses, addressing the key challenges faced by culinary entrepreneurs who lack professional cost management tools and real-time market pricing intelligence. The framework resolves five core issues: location-based automatic retail price discovery through ethical web scraping of public store websites, eliminating the need for manual price checking across multiple stores; intelligent ingredient standardization that converts diverse recipe formats (cups, tablespoons, ounces) into standardized metric units (grams/milliliters) with smart synonym matching to store product categories; accurate cost computation that integrates USDA-based edible yield factors (accounting for the typical 12–18% waste from bones, stems, and peels) and performs Pareto analysis to identify the 20% of ingredients driving 80% of dish costs; strategic pricing recommendations that include multi-scenario sensitivity analysis modeling ±5%, ±10%, and ±15% price fluctuations, psychological pricing strategies (charm pricing, prestige positioning), and competitive profit margin targets (standard 25–35% food cost ratio); and continuous pre-launch price monitoring through periodic lightweight re-scraping, generating severity-weighted alerts when ingredient costs fluctuate beyond configurable thresholds (default >10% change), enabling proactive menu price adjustments before service begins. The system includes 27 custom tools across eight functional categories: data collection (web search optimization, URL validation, promotional page discovery); ingredient processing (normalization, synonym matching, unit standardization); price discovery (query construction, result ranking, ethical scraping, price parsing, unit conversion); cost analysis (yield factor retrieval, adjusted computation, recipe aggregation); pricing strategy (calculation, sensitivity analysis, strategic recommendation); nutrition (authoritative source search, data parsing, constraint validation); substitution (alternative search, culinary compatibility scoring, cost/nutrition impact analysis); and monitoring (lightweight re-scraping, change detection, threshold-based alerts). MenuMargin enables pop-up chefs to price seasonal menus based on current market conditions, allows catering businesses to generate accurate event quotations with cost-effective substitution options, and helps menu planners test recipe profitability before finalizing supplies. It reduces manual price research workload by 90% while maintaining complete data traceability and providing actionable intelligence for strategic pricing decisions in the competitive food service market."
+  description_zh: "MenuMargin是一个综合性多智能体框架，将食谱转化为独立快闪餐饮和小型餐饮企业的可操作定价计划，解决缺乏专业成本管理工具和实时市场定价情报的烹饪创业者面临的关键挑战。该框架解决五个核心问题：(1) 基于位置的自动零售价格发现，从公共商店网站使用符合伦理的网页抓取，消除跨多个商店的手动价格检查；(2) 智能成分标准化，将多样化的食谱格式（杯、汤匙、盎司）转换为标准化的公制单位（克/毫升），具有商店产品类别的智能同义词匹配；(3) 准确的成本计算，结合基于USDA的可食用产量因子（考虑到骨头、茎和皮产生的典型12-18%浪费），执行帕累托分析以识别驱动80%菜肴成本的20%成分；(4) 战略定价建议，具有多场景敏感性分析建模±5%、±10%和±15%价格波动，心理定价策略（魅力定价、声望定位）和竞争利润率目标（标准25-35%食品成本比率）；(5) 通过定期轻量级重新抓取进行持续的预发布价格监控，当成分成本波动超过可配置阈值（默认>10%变化）时生成严重性加权警报，使服务开始前的主动菜单定价调整成为可能。该系统包括跨8个功能类别的27个自定义工具：数据收集（网络搜索优化、URL验证、促销页面发现）、成分处理（规范化、同义词匹配、单位标准化）、价格发现（查询构建、结果排名、符合伦理的抓取、价格解析、单位转换）、成本分析（产量因子检索、调整计算、食谱聚合）、定价策略（计算、敏感性分析、策略建议）、营养（权威来源搜索、数据解析、约束验证）、替代（替代品搜索、烹饪兼容性评分、成本/营养影响分析）和监控（轻量级重新抓取、变化检测、基于阈值的警报）。MenuMargin使快闪厨师能够根据当前市场状况为季节性菜单定价，餐饮企业能够生成具有成本效益替代选项的准确活动报价，菜单规划者能够在最终确定供应之前测试食谱盈利能力，将手动价格研究工作减少90%，同时保持完整的数据可追溯性，并为竞争性食品服务市场中的战略定价决策提供可操作的情报。"
+
+# === Agent Definitions ===
+agents:
+  # Entry Point - Main Scheduler
+  - agent_name: MenuPricingOrchestrator
+    description_en: "Central coordination scheduler managing the complete pricing workflow with loops, conditions, and state management"
+    description_zh: "中央协调调度程序，管理具有循环、条件和状态管理的完整定价工作流程"
+    capabilities:
+      - "Six-phase workflow orchestration with conditional branching"
+      - "State management across multiple agent calls"
+      - "Retry logic for failed operations"
+      - "Monitoring loop coordination"
+      - "Final report synthesis"
+    sysprompt_path: not exists in original meta framework
+    llm_config: scheduler_llm
+    tools: []
+
+  # Framework-Level Worker Agents
+  - agent_name: LocationDataCollector
+    description_en: "Gathers store websites and promotional pages based on location"
+    description_zh: "根据位置收集商店网站和促销页面"
+    capabilities:
+      - "Location-based store discovery"
+      - "URL validation and accessibility checking"
+      - "Promotional page identification"
+      - "Weekly ad and price list detection"
+    sysprompt_path: LocationDataCollector.yaml
+    llm_config: default_llm
+    tools:
+      - web_search
+      - web_read
+      - web_search_tool
+      - store_url_validator_tool
+      - promotional_page_finder_tool
+
+  - agent_name: IngredientMapper
+    description_en: "Standardizes recipe ingredients to normalized formats with metric units"
+    description_zh: "将食谱成分标准化为具有公制单位的规范化格式"
+    capabilities:
+      - "Ingredient name normalization"
+      - "Store category mapping"
+      - "Synonym generation"
+      - "Unit conversion to metric"
+    sysprompt_path: IngredientMapper.yaml
+    llm_config: default_llm
+    tools:
+      - ingredient_normalizer_tool
+      - synonym_matcher_tool
+      - unit_standardization_tool
+
+  - agent_name: PriceHarvester
+    description_en: "Orchestrates search and scraping to collect retail ingredient prices"
+    description_zh: "编排搜索和抓取以收集零售成分价格"
+    capabilities:
+      - "Multi-source price discovery"
+      - "Search strategy optimization"
+      - "Scraping coordination"
+      - "Confidence scoring"
+    sysprompt_path: PriceHarvester.yaml
+    llm_config: default_llm
+    tools: []
+
+  - agent_name: CostCalculator
+    description_en: "Calculates dish costs with yield factor adjustments and Pareto analysis"
+    description_zh: "计算具有产量因子调整和帕累托分析的菜肴成本"
+    capabilities:
+      - "USDA yield factor integration"
+      - "Waste percentage calculation"
+      - "Per-serving cost breakdown"
+      - "80/20 Pareto analysis"
+    sysprompt_path: CostCalculator.yaml
+    llm_config: default_llm
+    tools:
+      - yield_factor_retriever_tool
+      - cost_computation_tool
+      - recipe_cost_aggregator_tool
+
+  - agent_name: PricingAdvisor
+    description_en: "Generates strategic menu pricing with sensitivity analysis and positioning strategies"
+    description_zh: "生成具有敏感性分析和定位策略的战略菜单定价"
+    capabilities:
+      - "Target margin calculation"
+      - "Multi-scenario sensitivity analysis"
+      - "Psychological pricing strategies"
+      - "Competitive positioning recommendations"
+    sysprompt_path: PricingAdvisor.yaml
+    llm_config: default_llm
+    tools:
+      - price_calculator_tool
+      - sensitivity_analyzer_tool
+      - pricing_strategy_recommender_tool
+
+  - agent_name: NutritionChecker
+    description_en: "Estimates nutrition and validates against user-defined dietary ranges"
+    description_zh: "估算营养并根据用户定义的膳食范围进行验证"
+    capabilities:
+      - "Per-100g nutrition retrieval"
+      - "Per-serving estimation"
+      - "Dietary constraint validation"
+      - "Health warning generation"
+    sysprompt_path: NutritionChecker.yaml
+    llm_config: default_llm
+    tools:
+      - nutrition_validator_tool
+
+  - agent_name: SubstituteRecommender
+    description_en: "Finds cost-effective ingredient alternatives maintaining quality"
+    description_zh: "寻找保持质量的成本效益成分替代品"
+    capabilities:
+      - "Alternative ingredient discovery"
+      - "Culinary compatibility scoring"
+      - "Cost savings calculation"
+      - "Nutrition impact comparison"
+    sysprompt_path: SubstituteRecommender.yaml
+    llm_config: default_llm
+    tools:
+      - substitute_search_tool
+      - similarity_scorer_tool
+      - cost_impact_calculator_tool
+      - nutrition_impact_tool
+
+  - agent_name: PriceMonitor
+    description_en: "Tracks ingredient price changes through periodic monitoring"
+    description_zh: "通过定期监控追踪成分价格变化"
+    capabilities:
+      - "Periodic price re-checking"
+      - "Change detection and trending"
+      - "Threshold-based alerting"
+      - "Monitoring schedule management"
+    sysprompt_path: PriceMonitor.yaml
+    llm_config: default_llm
+    tools:
+      - lightweight_scraper_tool
+      - price_change_detector_tool
+      - alert_threshold_checker_tool
+
+  # Sub-Agents (Layer 3)
+  - agent_name: PriceSearchAgent
+    description_en: "Searches for product pages containing pricing information"
+    description_zh: "搜索包含定价信息的产品页面"
+    capabilities:
+      - "Query optimization"
+      - "Result filtering"
+      - "Relevance ranking"
+    sysprompt_path: PriceSearchAgent.yaml
+    llm_config: default_llm
+    tools:
+      - web_search
+      - web_read
+      - search_query_builder_tool
+      - result_ranker_tool
+
+  - agent_name: PriceScraperAgent
+    description_en: "Scrapes and parses pricing from product pages"
+    description_zh: "从产品页面抓取和解析定价"
+    capabilities:
+      - "Ethical web scraping"
+      - "HTML price extraction"
+      - "Unit price conversion"
+    sysprompt_path: PriceScraperAgent.yaml
+    llm_config: default_llm
+    tools:
+      - web_scraper_tool
+      - price_parser_tool
+      - unit_price_converter_tool
+
+  - agent_name: NutritionDataScraperAgent
+    description_en: "Retrieves per-100g nutrition data from authoritative sources"
+    description_zh: "从权威来源检索每100克营养数据"
+    capabilities:
+      - "Nutrition database search"
+      - "Per-100g data parsing"
+      - "Source validation"
+    sysprompt_path: NutritionDataScraperAgent.yaml
+    llm_config: default_llm
+    tools:
+      - nutrition_search_tool
+      - nutrition_parser_tool
+
+# === LLM Configurations ===
+llm_configs:
+  - llm_name: default_llm
+    provider: openai
+    model: nex
+    api_key: ${LLM_API_KEY}
+    base_url: ${LLM_BASE_URL}
+    max_tokens: 64000
+    temperature: 0.6
+    timeout: 300
+
+  - llm_name: scheduler_llm
+    provider: openai
+    model: nex
+    api_key: ${LLM_API_KEY}
+    base_url: ${LLM_BASE_URL}
+    max_tokens: 16000
+    temperature: 0.7
+    timeout: 300
+
+# === Tool Configurations ===
+tools:
+  # Builtin tools (from nexau)
+  - tool_name: bash
+    description: Execute bash commands
+    config_path: null
+    binding: nexau.archs.tool.builtin.bash_tool:bash_tool
+
+  - tool_name: ls
+    description: List directory contents
+    config_path: null
+    binding: nexau.archs.tool.builtin.ls_tool:ls_tool
+
+  - tool_name: file_read
+    description: Read file contents
+    config_path: null
+    binding: nexau.archs.tool.builtin.file_tools.file_read_tool:file_read_tool
+
+  - tool_name: file_write
+    description: Write content to file
+    config_path: null
+    binding: nexau.archs.tool.builtin.file_tools.file_write_tool:file_write_tool
+
+  - tool_name: web_search
+    description: Search the web
+    config_path: null
+    binding: nexau.archs.tool.builtin.web_search_tool:web_search_tool
+
+  - tool_name: web_read
+    description: Read web page content
+    config_path: null
+    binding: nexau.archs.tool.builtin.web_read_tool:web_read_tool
+
+  # LocationDataCollector Tools
+  - tool_name: web_search_tool
+    description: Generate optimized search queries for finding store websites by location
+    config_path: tools/web_search_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.web_search_tool:web_search_tool
+
+  - tool_name: store_url_validator_tool
+    description: Validate URLs are accessible and relevant to target stores
+    config_path: tools/store_url_validator_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.store_url_validator_tool:store_url_validator_tool
+
+  - tool_name: promotional_page_finder_tool
+    description: Identify promotional and pricing pages within store websites
+    config_path: tools/promotional_page_finder_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.promotional_page_finder_tool:promotional_page_finder_tool
+
+  # IngredientMapper Tools
+  - tool_name: ingredient_normalizer_tool
+    description: Extract base ingredient names from descriptive recipe text
+    config_path: tools/ingredient_normalizer_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.ingredient_normalizer_tool:ingredient_normalizer_tool
+
+  - tool_name: synonym_matcher_tool
+    description: Map ingredients to store categories and synonyms
+    config_path: tools/synonym_matcher_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.synonym_matcher_tool:synonym_matcher_tool
+
+  - tool_name: unit_standardization_tool
+    description: Convert recipe units to standard metric (grams/mL)
+    config_path: tools/unit_standardization_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.unit_standardization_tool:unit_standardization_tool
+
+  # PriceSearchAgent Tools
+  - tool_name: search_query_builder_tool
+    description: Generate effective search queries for product pages
+    config_path: tools/search_query_builder_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.search_query_builder_tool:search_query_builder_tool
+
+  - tool_name: result_ranker_tool
+    description: Score and rank search results by relevance
+    config_path: tools/result_ranker_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.result_ranker_tool:result_ranker_tool
+
+  # PriceScraperAgent Tools
+  - tool_name: web_scraper_tool
+    description: Fetch web pages while respecting robots.txt and rate limits
+    config_path: tools/web_scraper_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.web_scraper_tool:web_scraper_tool
+
+  - tool_name: price_parser_tool
+    description: Extract structured product pricing from HTML
+    config_path: tools/price_parser_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.price_parser_tool:price_parser_tool
+
+  - tool_name: unit_price_converter_tool
+    description: Convert prices to standardized unit prices
+    config_path: tools/unit_price_converter_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.unit_price_converter_tool:unit_price_converter_tool
+
+  # CostCalculator Tools
+  - tool_name: yield_factor_retriever_tool
+    description: Retrieve edible yield percentages from USDA and professional sources
+    config_path: tools/yield_factor_retriever_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.yield_factor_retriever_tool:yield_factor_retriever_tool
+
+  - tool_name: cost_computation_tool
+    description: Calculate ingredient cost with yield factor adjustment
+    config_path: tools/cost_computation_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.cost_computation_tool:cost_computation_tool
+
+  - tool_name: recipe_cost_aggregator_tool
+    description: Aggregate ingredient costs with Pareto analysis
+    config_path: tools/recipe_cost_aggregator_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.recipe_cost_aggregator_tool:recipe_cost_aggregator_tool
+
+  # PricingAdvisor Tools
+  - tool_name: price_calculator_tool
+    description: Calculate suggested selling price from cost and target ratio
+    config_path: tools/price_calculator_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.price_calculator_tool:price_calculator_tool
+
+  - tool_name: sensitivity_analyzer_tool
+    description: Simulate price volatility scenarios and calculate adjustments
+    config_path: tools/sensitivity_analyzer_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.sensitivity_analyzer_tool:sensitivity_analyzer_tool
+
+  - tool_name: pricing_strategy_recommender_tool
+    description: Suggest optimal pricing strategies based on positioning
+    config_path: tools/pricing_strategy_recommender_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.pricing_strategy_recommender_tool:pricing_strategy_recommender_tool
+
+  # NutritionDataScraperAgent Tools
+  - tool_name: nutrition_search_tool
+    description: Search for authoritative nutrition data pages
+    config_path: tools/nutrition_search_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.nutrition_search_tool:nutrition_search_tool
+
+  - tool_name: nutrition_parser_tool
+    description: Extract per-100g nutritional values from database pages
+    config_path: tools/nutrition_parser_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.nutrition_parser_tool:nutrition_parser_tool
+
+  # NutritionChecker Tools
+  - tool_name: nutrition_validator_tool
+    description: Validate recipe nutrition against user-defined ranges
+    config_path: tools/nutrition_validator_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.nutrition_validator_tool:nutrition_validator_tool
+
+  # SubstituteRecommender Tools
+  - tool_name: substitute_search_tool
+    description: Find alternative ingredients from pricing data
+    config_path: tools/substitute_search_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.substitute_search_tool:substitute_search_tool
+
+  - tool_name: similarity_scorer_tool
+    description: Rate culinary compatibility between original and substitute
+    config_path: tools/similarity_scorer_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.similarity_scorer_tool:similarity_scorer_tool
+
+  - tool_name: cost_impact_calculator_tool
+    description: Calculate cost savings from ingredient substitution
+    config_path: tools/cost_impact_calculator_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.cost_impact_calculator_tool:cost_impact_calculator_tool
+
+  - tool_name: nutrition_impact_tool
+    description: Compare nutritional changes from substitution
+    config_path: tools/nutrition_impact_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.nutrition_impact_tool:nutrition_impact_tool
+
+  # PriceMonitor Tools
+  - tool_name: lightweight_scraper_tool
+    description: Quick re-scrape of product pages for price updates
+    config_path: tools/lightweight_scraper_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.lightweight_scraper_tool:lightweight_scraper_tool
+
+  - tool_name: price_change_detector_tool
+    description: Compare current vs baseline prices to detect changes
+    config_path: tools/price_change_detector_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.price_change_detector_tool:price_change_detector_tool
+
+  - tool_name: alert_threshold_checker_tool
+    description: Identify significant price changes requiring alerts
+    config_path: tools/alert_threshold_checker_tool.py
+    binding: src.created_frameworks.menu_margin_pricing_system.tools.alert_threshold_checker_tool:alert_threshold_checker_tool
+
+# === Workflow Configuration ===
+workflow:
+  name: menu_margin_pricing_workflow
+  description: |
+    Complete multi-agent workflow for transforming recipes into actionable pricing plans.
+    Coordinates location data collection, ingredient standardization, price harvesting,
+    cost calculation, pricing strategy, nutrition validation, substitution recommendations,
+    and ongoing price monitoring.
+
+  nodes:
+    # Entry Point Scheduler
+    - id: MenuPricingOrchestrator
+      type: agent
+
+    # Framework-Level Workers
+    - id: LocationDataCollector
+      type: agent
+
+    - id: IngredientMapper
+      type: agent
+
+    - id: PriceHarvester
+      type: agent
+
+    - id: CostCalculator
+      type: agent
+
+    - id: PricingAdvisor
+      type: agent
+
+    - id: NutritionChecker
+      type: agent
+
+    - id: SubstituteRecommender
+      type: agent
+
+    - id: PriceMonitor
+      type: agent
+
+    # Sub-Agents
+    - id: PriceSearchAgent
+      type: agent
+
+    - id: PriceScraperAgent
+      type: agent
+
+    - id: NutritionDataScraperAgent
+      type: agent
+
+  edges:
+    # MenuPricingOrchestrator manages all framework-level workers
+    - from: MenuPricingOrchestrator
+      to: LocationDataCollector
+      condition: Phase 1 - Initial data collection
+
+    - from: MenuPricingOrchestrator
+      to: IngredientMapper
+      condition: Phase 1 - Ingredient standardization
+
+    - from: MenuPricingOrchestrator
+      to: PriceHarvester
+      condition: Phase 2 - Price discovery with retry logic
+
+    - from: MenuPricingOrchestrator
+      to: CostCalculator
+      condition: Phase 3 - Cost calculation
+
+    - from: MenuPricingOrchestrator
+      to: PricingAdvisor
+      condition: Phase 3 - Pricing recommendations (parallel with NutritionChecker)
+
+    - from: MenuPricingOrchestrator
+      to: NutritionChecker
+      condition: Phase 3 - Nutrition validation (parallel with PricingAdvisor)
+
+    - from: MenuPricingOrchestrator
+      to: SubstituteRecommender
+      condition: Phase 4 - Optimization (conditional on high-cost items)
+
+    - from: MenuPricingOrchestrator
+      to: PriceMonitor
+      condition: Phase 5 - Pre-launch monitoring loop
+
+    # PriceHarvester coordinates search and scraping sub-agents
+    - from: PriceHarvester
+      to: PriceSearchAgent
+      condition: Search for product pages
+
+    - from: PriceHarvester
+      to: PriceScraperAgent
+      condition: Scrape pricing from found pages
+
+    # NutritionChecker calls nutrition data scraper
+    - from: NutritionChecker
+      to: NutritionDataScraperAgent
+      condition: Retrieve nutrition data from authoritative sources
+
+framework_name: menu_margin_pricing_system
+framework_entrance_agent: MenuPricingOrchestrator

@@ -1,0 +1,520 @@
+{
+  "description": "ConSignal CN is a comprehensive constitutional intelligence monitoring framework designed for cross-border tech platforms operating in China. It orchestrates the collection, processing, and analysis of constitutional and rights-related signals from Chinese public sources, transforming dispersed legal information into actionable, bilingual intelligence handbooks. The framework employs a three-layer architecture with main orchestrator, sub-orchestrators, and specialized engines for source discovery, content acquisition, signal processing, intelligence generation, and feedback integration.",
+  "subagents": [
+    {
+      "name": "consignal_cn",
+      "description": "Main orchestrator coordinating the entire constitutional intelligence monitoring framework",
+      "role": "orchestrator",
+      "capabilities": [
+        "strategic_coordination",
+        "multi_orchestrator_management",
+        "workflow_optimization",
+        "user_interaction",
+        "transparency_reporting"
+      ],
+      "tools": []
+    },
+    {
+      "name": "data_pipeline_orchestrator",
+      "description": "Complete data acquisition pipeline orchestrator managing source discovery, content acquisition, and signal processing",
+      "role": "orchestrator",
+      "capabilities": [
+        "pipeline_coordination",
+        "source_monitoring",
+        "content_acquisition_management",
+        "signal_processing_orchestration",
+        "mode_management"
+      ],
+      "tools": []
+    },
+    {
+      "name": "intelligence_production_orchestrator",
+      "description": "Intelligence generation and continuous improvement orchestrator managing relevance scoring, report generation, visualization, and feedback integration",
+      "role": "orchestrator",
+      "capabilities": [
+        "intelligence_synthesis",
+        "report_generation_management",
+        "trend_analysis_coordination",
+        "feedback_loop_management",
+        "quality_improvement"
+      ],
+      "tools": []
+    },
+    {
+      "name": "source_discovery_engine",
+      "description": "Discovers and monitors constitutional information sources from Chinese public entities",
+      "role": "researcher",
+      "capabilities": [
+        "source_identification",
+        "search_query_construction",
+        "search_result_scraping",
+        "source_evaluation",
+        "monitoring_setup"
+      ],
+      "tools": [
+        "keyword_expander",
+        "query_template_builder",
+        "temporal_query_constructor",
+        "source_specific_optimizer"
+      ]
+    },
+    {
+      "name": "content_acquisition_engine",
+      "description": "Orchestrates web content acquisition and parsing with ethical compliance",
+      "role": "researcher",
+      "capabilities": [
+        "content_fetching",
+        "web_scraping",
+        "page_template_analysis",
+        "ethical_compliance",
+        "custom_tool_generation"
+      ],
+      "tools": []
+    },
+    {
+      "name": "signal_processing_engine",
+      "description": "Processes raw content into structured constitutional signals",
+      "role": "content_creator",
+      "capabilities": [
+        "signal_extraction",
+        "metadata_normalization",
+        "bilingual_processing",
+        "content_structuring",
+        "data_output"
+      ],
+      "tools": [
+        "bash",
+        "ls",
+        "file_read",
+        "file_write"
+      ]
+    },
+    {
+      "name": "intelligence_generation_engine",
+      "description": "Generates intelligence reports, scores, and visualizations",
+      "role": "content_creator",
+      "capabilities": [
+        "relevance_scoring",
+        "report_generation",
+        "trend_visualization",
+        "insight_extraction",
+        "priority_flagging"
+      ],
+      "tools": []
+    },
+    {
+      "name": "feedback_loop_manager",
+      "description": "Manages continuous improvement through feedback integration",
+      "role": "coordinator",
+      "capabilities": [
+        "feedback_collection",
+        "feedback_processing",
+        "parameter_adjustment",
+        "quality_tracking",
+        "iteration_management"
+      ],
+      "tools": []
+    },
+    {
+      "name": "constitutional_signal_extractor",
+      "description": "Extracts constitutional and rights-related signals from legal documents",
+      "role": "technical_specialist",
+      "capabilities": [
+        "legal_term_matching",
+        "citation_pattern_detection",
+        "rights_classification",
+        "balancing_analysis_detection",
+        "guiding_case_extraction"
+      ],
+      "tools": [
+        "legal_term_matcher",
+        "citation_pattern_detector",
+        "rights_category_classifier",
+        "balancing_analysis_detector",
+        "guiding_case_extractor"
+      ]
+    },
+    {
+      "name": "metadata_normalizer",
+      "description": "Normalizes and standardizes metadata from diverse sources",
+      "role": "technical_specialist",
+      "capabilities": [
+        "date_parsing",
+        "jurisdiction_classification",
+        "document_type_detection",
+        "law_citation_parsing",
+        "case_id_extraction"
+      ],
+      "tools": [
+        "date_parser",
+        "jurisdiction_classifier",
+        "document_type_detector",
+        "law_citation_parser",
+        "case_id_extractor"
+      ]
+    },
+    {
+      "name": "bilingual_content_processor",
+      "description": "Specialized legal content processing agent for bilingual text segmentation and translation",
+      "role": "content_creator",
+      "capabilities": [
+        "text_segmentation",
+        "rule_based_translation",
+        "summary_generation",
+        "terminology_preservation",
+        "parallel_formatting"
+      ],
+      "tools": [
+        "text_segmenter",
+        "rule_based_translator",
+        "summary_generator",
+        "terminology_preserver",
+        "parallel_formatter"
+      ]
+    },
+    {
+      "name": "relevance_scorer",
+      "description": "Scores constitutional signals by relevance and business impact",
+      "role": "technical_specialist",
+      "capabilities": [
+        "feature_extraction",
+        "authority_level_scoring",
+        "citation_impact_calculation",
+        "timeliness_scoring",
+        "enforcement_signal_detection",
+        "composite_score_calculation"
+      ],
+      "tools": [
+        "feature_extractor",
+        "authority_level_scorer",
+        "citation_impact_calculator",
+        "timeliness_scorer",
+        "enforcement_signal_detector",
+        "composite_score_calculator"
+      ]
+    },
+    {
+      "name": "intelligence_report_generator",
+      "description": "Generates comprehensive bilingual intelligence summaries for constitutional signals",
+      "role": "content_creator",
+      "capabilities": [
+        "template_rendering",
+        "markdown_formatting",
+        "impact_analysis",
+        "executive_summary_generation",
+        "source_attribution_formatting"
+      ],
+      "tools": [
+        "template_renderer",
+        "markdown_formatter",
+        "impact_analyzer",
+        "executive_summary_generator",
+        "source_attribution_formatter"
+      ]
+    },
+    {
+      "name": "trend_visualizer",
+      "description": "Generates visualizations and trend analysis for intelligence reports",
+      "role": "content_creator",
+      "capabilities": [
+        "data_aggregation",
+        "chart_generation",
+        "statistical_analysis",
+        "heatmap_generation",
+        "insight_extraction"
+      ],
+      "tools": [
+        "data_aggregator",
+        "chart_generator",
+        "statistical_analyzer",
+        "heatmap_generator",
+        "insight_extractor"
+      ]
+    },
+    {
+      "name": "search_query_constructor",
+      "description": "Constructs optimized bilingual search queries for source discovery",
+      "role": "technical_specialist",
+      "capabilities": [
+        "keyword_expansion",
+        "query_template_building",
+        "temporal_query_construction",
+        "source_specific_optimization"
+      ],
+      "tools": [
+        "keyword_expander",
+        "query_template_builder",
+        "temporal_query_constructor",
+        "source_specific_optimizer"
+      ]
+    },
+    {
+      "name": "search_result_scraper",
+      "description": "Extracts URLs from search engine result pages",
+      "role": "technical_specialist",
+      "capabilities": [
+        "http_fetching",
+        "html_parsing",
+        "url_extraction",
+        "robots_txt_checking",
+        "result_deduplication"
+      ],
+      "tools": [
+        "http_fetcher",
+        "html_parser",
+        "url_extractor",
+        "robots_txt_checker",
+        "result_deduplicator"
+      ]
+    },
+    {
+      "name": "web_content_scraper",
+      "description": "Fetches and extracts web content with ethical compliance",
+      "role": "technical_specialist",
+      "capabilities": [
+        "http_fetching",
+        "robots_txt_compliance",
+        "rate_limiting",
+        "content_hashing",
+        "pdf_link_detection"
+      ],
+      "tools": [
+        "http_fetcher",
+        "robots_txt_checker",
+        "rate_limiter",
+        "content_hasher",
+        "pdf_link_detector"
+      ]
+    },
+    {
+      "name": "page_template_analyzer",
+      "description": "Analyzes web page structure to generate custom extraction rules",
+      "role": "technical_specialist",
+      "capabilities": [
+        "html_structure_analysis",
+        "dom_pattern_detection",
+        "xpath_generation",
+        "css_selector_generation",
+        "extraction_rule_serialization"
+      ],
+      "tools": [
+        "html_structure_analyzer",
+        "dom_pattern_detector",
+        "xpath_generator",
+        "css_selector_generator",
+        "extraction_rule_serializer"
+      ]
+    },
+    {
+      "name": "python_tool_generator",
+      "description": "Generates custom Python scraping and parsing tools on demand",
+      "role": "technical_specialist",
+      "capabilities": [
+        "code_template_library",
+        "syntax_validation",
+        "dependency_resolution",
+        "tool_packaging",
+        "test_generation"
+      ],
+      "tools": [
+        "code_template_library",
+        "syntax_validator",
+        "dependency_resolver",
+        "tool_packager",
+        "test_generator"
+      ]
+    },
+    {
+      "name": "feedback_integrator",
+      "description": "Integrates human feedback to adjust scoring parameters and keywords",
+      "role": "coordinator",
+      "capabilities": [
+        "feedback_parsing",
+        "weight_adjustment",
+        "changelog_generation",
+        "parameter_validation",
+        "keyword_list_updating"
+      ],
+      "tools": [
+        "feedback_parser",
+        "weight_adjuster",
+        "changelog_generator",
+        "parameter_validator",
+        "keyword_list_updater"
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "legal_term_matcher",
+      "description": "Matches legal terminology patterns in Chinese legal documents",
+      "capabilities": [
+        "term_pattern_matching",
+        "constitutional_keyword_detection",
+        "legal_phrase_recognition"
+      ]
+    },
+    {
+      "name": "citation_pattern_detector",
+      "description": "Detects citation patterns in legal texts",
+      "capabilities": [
+        "law_citation_detection",
+        "case_reference_extraction",
+        "regulation_cross_referencing"
+      ]
+    },
+    {
+      "name": "rights_category_classifier",
+      "description": "Classifies constitutional rights categories",
+      "capabilities": [
+        "rights_type_classification",
+        "constitutional_domain_categorization",
+        "rights_hierarchy_mapping"
+      ]
+    },
+    {
+      "name": "web_search",
+      "description": "Real-time web search for constitutional information gathering",
+      "capabilities": [
+        "real_time_search",
+        "legal_source_discovery",
+        "news_monitoring"
+      ]
+    },
+    {
+      "name": "http_fetcher",
+      "description": "HTTP content fetching with rate limiting and ethical compliance",
+      "capabilities": [
+        "http_request_management",
+        "content_retrieval",
+        "timeout_handling"
+      ]
+    },
+    {
+      "name": "robots_txt_checker",
+      "description": "Checks robots.txt compliance before scraping",
+      "capabilities": [
+        "robots_txt_parsing",
+        "scraping_permission_validation",
+        "ethical_compliance_verification"
+      ]
+    },
+    {
+      "name": "rate_limiter",
+      "description": "Enforces rate limiting for web requests",
+      "capabilities": [
+        "request_throttling",
+        "rate_limit_enforcement",
+        "respectful_scraping"
+      ]
+    },
+    {
+      "name": "keyword_expander",
+      "description": "Expands keywords for comprehensive search queries",
+      "capabilities": [
+        "synonym_expansion",
+        "related_term_generation",
+        "bilingual_keyword_mapping"
+      ]
+    },
+    {
+      "name": "template_renderer",
+      "description": "Renders intelligence report templates",
+      "capabilities": [
+        "template_processing",
+        "variable_substitution",
+        "format_rendering"
+      ]
+    },
+    {
+      "name": "markdown_formatter",
+      "description": "Formats intelligence reports in markdown",
+      "capabilities": [
+        "markdown_conversion",
+        "structure_formatting",
+        "bilingual_layout"
+      ]
+    },
+    {
+      "name": "chart_generator",
+      "description": "Generates charts and visualizations for trend analysis",
+      "capabilities": [
+        "chart_creation",
+        "data_visualization",
+        "trend_plotting"
+      ]
+    },
+    {
+      "name": "file_read",
+      "description": "Reads file contents for signal processing",
+      "capabilities": [
+        "file_input",
+        "content_loading",
+        "data_reading"
+      ]
+    },
+    {
+      "name": "file_write",
+      "description": "Writes processed signals to files",
+      "capabilities": [
+        "file_output",
+        "data_persistence",
+        "result_storage"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "author": "ConSignal CN Development Team",
+    "created_date": "2024-10-22",
+    "framework_type": "constitutional_intelligence_monitoring",
+    "base_architecture": "Three-layer hierarchical agent system",
+    "primary_llm": "Nex",
+    "use_cases": [
+      "constitutional_compliance_monitoring",
+      "rights_related_signal_extraction",
+      "bilingual_intelligence_reporting",
+      "legal_source_discovery",
+      "court_case_analysis",
+      "regulatory_development_tracking",
+      "npc_legislation_monitoring",
+      "cyberspace_regulation_analysis",
+      "data_protection_intelligence",
+      "privacy_rights_tracking",
+      "freedom_of_expression_monitoring",
+      "tech_platform_compliance_guidance",
+      "constitutional_trend_analysis",
+      "legal_risk_assessment",
+      "cross_border_platform_intelligence"
+    ],
+    "strengths": [
+      "hierarchical_three_layer_architecture",
+      "bilingual_chinese_english_support",
+      "ethical_web_scraping_compliance",
+      "comprehensive_source_coverage",
+      "automated_relevance_scoring",
+      "continuous_feedback_integration",
+      "specialized_constitutional_focus",
+      "multi_format_intelligence_output",
+      "real_time_monitoring_capabilities",
+      "custom_tool_generation_on_demand"
+    ],
+    "limitations": [
+      "china_specific_focus",
+      "requires_chinese_language_processing",
+      "dependent_on_public_source_availability",
+      "coordination_complexity_in_three_layers",
+      "specialized_legal_domain_knowledge_required"
+    ],
+    "optimal_scenarios": [
+      "cross_border_tech_platform_compliance",
+      "constitutional_law_firm_intelligence",
+      "multinational_legal_department_monitoring",
+      "regulatory_affairs_team_support",
+      "academic_constitutional_research",
+      "policy_analysis_and_forecasting",
+      "rights_advocacy_organization_intelligence",
+      "business_legal_risk_assessment"
+    ]
+  }
+}

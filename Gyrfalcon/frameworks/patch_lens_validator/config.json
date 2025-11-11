@@ -1,0 +1,881 @@
+{
+  "description": "PatchLens is a comprehensive framework designed for multi-language game mechanics validation and documentation maintenance. It addresses the critical challenge faced by small localization teams and community volunteers who are overwhelmed by rapidly changing multi-language game patches with inconsistent mechanics documentation across languages and sources. The framework solves key problems: (1) Automated continuous monitoring of public web sources including official patch notes, developer blogs, community wikis, and forums to extract quantifiable mechanics data such as damage values, cooldown durations, trigger conditions, ability effects, and item interactions; (2) Cross-source validation with confidence scoring to ensure accuracy by aggregating data from multiple sources, weighting by authority level, and detecting conflicts between official sources, community wikis, and forum discussions; (3) Multi-language consistency checking across English, Chinese, Japanese, Korean, and other languages to detect translation lags where one language version falls behind others by days or weeks, identify mistranslations where terminology or numeric values are incorrectly translated, and flag terminology inconsistencies where the same concept is expressed differently across sources; (4) Version change tracking and diff reporting between game patches to identify mechanics modifications including buffs, nerfs, and balance changes, new mechanics additions, and removed mechanics, with side-by-side comparison and impact scoring for competitive balance assessment; (5) Automated generation of reproducible Python validation scripts containing executable assertions that can independently verify extracted mechanics data, enabling community verification and quality assurance; (6) Comprehensive traceability linking every extracted mechanic to source URLs with timestamps, allowing independent verification and audit trails. The framework enables localization teams to reduce manual monitoring effort by 80% through automated content discovery and extraction, helps community translators maintain accurate fan-made wikis with cross-validated data, supports game data miners in tracking mechanics evolution across patches, assists quality assurance engineers in identifying translation errors before release, and empowers esports analysts to quickly understand meta-shifting balance changes. Typical use cases include validating Hero_Aria's passive ability trigger condition changed from 4 to 5 basic attacks in Patch 3.2.1 across all language versions, detecting that Japanese patch notes are 3 days behind English with 12 untranslated mechanics changes, generating weekly digests highlighting top 5 high-impact balance changes for competitive players, maintaining community wiki accuracy through multi-source cross-validation, and producing executable test scripts that verify item stacking rules match official documentation.",
+  "subagents": [
+    {
+      "name": "PatchLensScheduler",
+      "description": "Master orchestrator coordinating 12-step iterative workflow for game mechanics validation across multiple languages",
+      "role": "orchestrator",
+      "capabilities": [
+        "workflow_orchestration",
+        "state_management",
+        "error_handling_and_retry",
+        "iterative_execution",
+        "cross_agent_coordination"
+      ],
+      "tools": []
+    },
+    {
+      "name": "TaskConfigurationManager",
+      "description": "Configuration parsing, validation, and storage for validation tasks",
+      "role": "coordinator",
+      "capabilities": [
+        "config_parsing",
+        "schema_validation",
+        "configuration_storage",
+        "yaml_json_processing",
+        "requirement_validation"
+      ],
+      "tools": [
+        "config_parser_tool",
+        "config_validator_tool",
+        "config_storage_tool"
+      ]
+    },
+    {
+      "name": "WebContentAcquisitor",
+      "description": "Web search, URL filtering, and content acquisition with robots.txt compliance",
+      "role": "researcher",
+      "capabilities": [
+        "web_search",
+        "url_filtering",
+        "html_storage",
+        "ethical_crawling",
+        "multi_source_discovery"
+      ],
+      "tools": [
+        "web_search_tool",
+        "url_filter_tool",
+        "html_storage_tool"
+      ]
+    },
+    {
+      "name": "ContentProcessor",
+      "description": "HTML parsing, noise removal, and content deduplication",
+      "role": "content_creator",
+      "capabilities": [
+        "html_parsing",
+        "noise_removal",
+        "text_normalization",
+        "content_cleaning",
+        "boilerplate_detection"
+      ],
+      "tools": [
+        "html_parser_tool",
+        "content_filter_tool",
+        "text_normalizer_tool"
+      ]
+    },
+    {
+      "name": "MechanicsExtractor",
+      "description": "Structured mechanics data extraction with pattern matching and terminology normalization",
+      "role": "technical_specialist",
+      "capabilities": [
+        "pattern_matching",
+        "value_extraction",
+        "terminology_normalization",
+        "structured_data_generation",
+        "regex_based_extraction"
+      ],
+      "tools": [
+        "pattern_library_loader_tool",
+        "terminology_loader_tool",
+        "value_extractor_tool",
+        "structured_data_generator_tool"
+      ]
+    },
+    {
+      "name": "CrossSourceValidator",
+      "description": "Multi-source validation with confidence scoring and conflict detection",
+      "role": "technical_specialist",
+      "capabilities": [
+        "multi_source_validation",
+        "confidence_scoring",
+        "conflict_detection",
+        "source_weighting",
+        "voting_aggregation"
+      ],
+      "tools": [
+        "voting_aggregator_tool",
+        "source_weighting_tool",
+        "conflict_detector_tool"
+      ]
+    },
+    {
+      "name": "VersionTracker",
+      "description": "Change detection and version history tracking for game mechanics updates",
+      "role": "technical_specialist",
+      "capabilities": [
+        "version_comparison",
+        "change_detection",
+        "snapshot_management",
+        "diff_calculation",
+        "lag_detection"
+      ],
+      "tools": [
+        "change_detector_tool",
+        "snapshot_loader_tool",
+        "diff_calculator_tool"
+      ]
+    },
+    {
+      "name": "LocalizationAdvisor",
+      "description": "Cross-language consistency checking and mistranslation detection",
+      "role": "content_creator",
+      "capabilities": [
+        "cross_language_consistency",
+        "mistranslation_detection",
+        "terminology_reference",
+        "localization_recommendations",
+        "multi_language_analysis"
+      ],
+      "tools": [
+        "terminology_reference_tool",
+        "suggestion_formatter_tool"
+      ]
+    },
+    {
+      "name": "PythonScriptGenerator",
+      "description": "Python script generation for validation and transformation tasks",
+      "role": "technical_specialist",
+      "capabilities": [
+        "script_generation",
+        "template_rendering",
+        "python_execution",
+        "validation_script_creation",
+        "reproducible_automation"
+      ],
+      "tools": [
+        "script_writer_tool",
+        "template_loader_tool",
+        "python_runner_tool"
+      ]
+    },
+    {
+      "name": "ReportAssembler",
+      "description": "Final report generation in JSON and Markdown formats with executive summaries",
+      "role": "content_creator",
+      "capabilities": [
+        "json_report_generation",
+        "markdown_formatting",
+        "digest_creation",
+        "multi_format_output",
+        "impact_scoring"
+      ],
+      "tools": [
+        "json_writer_tool",
+        "markdown_formatter_tool",
+        "digest_template_tool"
+      ]
+    },
+    {
+      "name": "RobotsTxtChecker",
+      "description": "Robots.txt compliance verification for ethical web scraping",
+      "role": "technical_specialist",
+      "capabilities": [
+        "robots_txt_parsing",
+        "compliance_verification",
+        "crawl_permission_checking",
+        "rate_limiting",
+        "ethical_scraping"
+      ],
+      "tools": [
+        "robots_checker_tool",
+        "rate_limiter_tool"
+      ]
+    },
+    {
+      "name": "ContentCrawler",
+      "description": "HTTP content fetching with rate limiting and caching",
+      "role": "researcher",
+      "capabilities": [
+        "http_fetching",
+        "rate_limiting",
+        "content_caching",
+        "error_handling",
+        "retry_logic"
+      ],
+      "tools": [
+        "http_fetcher_tool",
+        "html_storage_tool"
+      ]
+    },
+    {
+      "name": "NoiseRemover",
+      "description": "HTML noise detection and removal including ads, navigation, and boilerplate",
+      "role": "content_creator",
+      "capabilities": [
+        "noise_detection",
+        "boilerplate_removal",
+        "content_filtering",
+        "ad_removal",
+        "navigation_stripping"
+      ],
+      "tools": [
+        "noise_detection_tool",
+        "content_filter_tool"
+      ]
+    },
+    {
+      "name": "DeduplicatorAgent",
+      "description": "Content deduplication and similarity detection across sources",
+      "role": "technical_specialist",
+      "capabilities": [
+        "similarity_calculation",
+        "duplicate_detection",
+        "content_deduplication",
+        "cross_source_comparison",
+        "fuzzy_matching"
+      ],
+      "tools": [
+        "similarity_calculator_tool",
+        "content_filter_tool"
+      ]
+    },
+    {
+      "name": "RegexPatternMatcher",
+      "description": "Regex-based pattern matching for mechanics value extraction",
+      "role": "technical_specialist",
+      "capabilities": [
+        "regex_matching",
+        "pattern_application",
+        "value_extraction",
+        "multi_pattern_processing",
+        "result_aggregation"
+      ],
+      "tools": [
+        "pattern_matching_tool",
+        "pattern_applier_tool"
+      ]
+    },
+    {
+      "name": "TerminologyNormalizer",
+      "description": "Game terminology normalization across languages and sources",
+      "role": "content_creator",
+      "capabilities": [
+        "term_mapping",
+        "terminology_normalization",
+        "cross_language_mapping",
+        "synonym_resolution",
+        "standard_term_generation"
+      ],
+      "tools": [
+        "term_mapper_tool",
+        "terminology_loader_tool"
+      ]
+    },
+    {
+      "name": "ConfidenceCalculator",
+      "description": "Confidence score calculation based on source agreement and authority",
+      "role": "technical_specialist",
+      "capabilities": [
+        "confidence_scoring",
+        "formula_application",
+        "voting_aggregation",
+        "source_authority_weighting",
+        "risk_assessment"
+      ],
+      "tools": [
+        "confidence_formula_tool",
+        "voting_aggregator_tool"
+      ]
+    },
+    {
+      "name": "MistranslationDetector",
+      "description": "Cross-language mistranslation and inconsistency detection",
+      "role": "content_creator",
+      "capabilities": [
+        "mistranslation_detection",
+        "cross_language_comparison",
+        "inconsistency_identification",
+        "terminology_validation",
+        "translation_quality_assessment"
+      ],
+      "tools": [
+        "multi_language_snippet_tool",
+        "terminology_reference_tool"
+      ]
+    },
+    {
+      "name": "ScriptTemplateBuilder",
+      "description": "Python script template generation for validation rules",
+      "role": "technical_specialist",
+      "capabilities": [
+        "template_generation",
+        "template_rendering",
+        "script_structure_creation",
+        "assertion_encoding",
+        "validation_framework_setup"
+      ],
+      "tools": [
+        "template_engine_tool",
+        "script_writer_tool"
+      ]
+    },
+    {
+      "name": "ScriptExecutor",
+      "description": "Safe execution of generated Python validation scripts",
+      "role": "technical_specialist",
+      "capabilities": [
+        "safe_execution",
+        "sandbox_environment",
+        "script_validation",
+        "output_capture",
+        "error_handling"
+      ],
+      "tools": [
+        "python_runner_tool"
+      ]
+    },
+    {
+      "name": "JSONPackager",
+      "description": "Structured JSON report packaging with validation results",
+      "role": "content_creator",
+      "capabilities": [
+        "json_serialization",
+        "structured_packaging",
+        "schema_validation",
+        "data_formatting",
+        "comprehensive_reporting"
+      ],
+      "tools": [
+        "json_writer_tool",
+        "json_serializer_tool"
+      ]
+    },
+    {
+      "name": "MarkdownGenerator",
+      "description": "Human-readable Markdown report generation with diff visualization",
+      "role": "content_creator",
+      "capabilities": [
+        "markdown_formatting",
+        "template_rendering",
+        "readable_report_generation",
+        "diff_visualization",
+        "citation_formatting"
+      ],
+      "tools": [
+        "markdown_formatter_tool",
+        "markdown_template_tool"
+      ]
+    },
+    {
+      "name": "DigestGenerator",
+      "description": "Executive summary and digest generation for validation reports",
+      "role": "content_creator",
+      "capabilities": [
+        "summary_generation",
+        "impact_scoring",
+        "digest_creation",
+        "high_impact_identification",
+        "executive_reporting"
+      ],
+      "tools": [
+        "digest_template_tool",
+        "impact_scorer_tool"
+      ]
+    },
+    {
+      "name": "AssertionGenerator",
+      "description": "Validation assertion generation for game mechanics rules",
+      "role": "technical_specialist",
+      "capabilities": [
+        "assertion_building",
+        "assertion_encoding",
+        "testable_claim_generation",
+        "rule_formalization",
+        "validation_criteria_creation"
+      ],
+      "tools": [
+        "assertion_builder_tool",
+        "assertion_encoder_tool"
+      ]
+    },
+    {
+      "name": "StandardExpressionGenerator",
+      "description": "Standard expression generation for mechanics formulas and rules",
+      "role": "technical_specialist",
+      "capabilities": [
+        "expression_generation",
+        "formula_standardization",
+        "canonical_form_creation",
+        "pattern_library_usage",
+        "rule_expression_formatting"
+      ],
+      "tools": [
+        "expression_template_tool",
+        "pattern_library_loader_tool"
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "config_parser_tool",
+      "description": "Parse and structure validation task configuration from YAML or JSON",
+      "capabilities": [
+        "yaml_parsing",
+        "json_parsing",
+        "configuration_structuring"
+      ]
+    },
+    {
+      "name": "config_validator_tool",
+      "description": "Validate configuration schema and required fields",
+      "capabilities": [
+        "schema_validation",
+        "field_verification",
+        "constraint_checking"
+      ]
+    },
+    {
+      "name": "config_storage_tool",
+      "description": "Store and retrieve configuration data with backup",
+      "capabilities": [
+        "configuration_persistence",
+        "data_retrieval",
+        "backup_management"
+      ]
+    },
+    {
+      "name": "web_search_tool",
+      "description": "Multi-language web search for game mechanics sources",
+      "capabilities": [
+        "multi_language_search",
+        "search_query_construction",
+        "result_filtering"
+      ]
+    },
+    {
+      "name": "url_filter_tool",
+      "description": "Filter and rank URLs by relevance and authority",
+      "capabilities": [
+        "url_ranking",
+        "relevance_scoring",
+        "domain_filtering"
+      ]
+    },
+    {
+      "name": "html_storage_tool",
+      "description": "Store and retrieve HTML content with metadata and timestamps",
+      "capabilities": [
+        "html_persistence",
+        "metadata_storage",
+        "timestamp_tracking"
+      ]
+    },
+    {
+      "name": "robots_checker_tool",
+      "description": "Check robots.txt compliance before crawling",
+      "capabilities": [
+        "robots_txt_parsing",
+        "compliance_checking",
+        "permission_verification"
+      ]
+    },
+    {
+      "name": "rate_limiter_tool",
+      "description": "Enforce rate limiting for ethical web scraping",
+      "capabilities": [
+        "request_throttling",
+        "delay_management",
+        "ethical_scraping"
+      ]
+    },
+    {
+      "name": "http_fetcher_tool",
+      "description": "HTTP content fetching with headers and error handling",
+      "capabilities": [
+        "http_request",
+        "header_management",
+        "error_handling"
+      ]
+    },
+    {
+      "name": "html_parser_tool",
+      "description": "Parse HTML and extract structured content",
+      "capabilities": [
+        "html_parsing",
+        "dom_traversal",
+        "content_extraction"
+      ]
+    },
+    {
+      "name": "content_filter_tool",
+      "description": "Filter and clean content based on rules",
+      "capabilities": [
+        "rule_based_filtering",
+        "content_cleaning",
+        "pattern_matching"
+      ]
+    },
+    {
+      "name": "text_normalizer_tool",
+      "description": "Normalize text formatting and whitespace",
+      "capabilities": [
+        "whitespace_normalization",
+        "unicode_handling",
+        "text_standardization"
+      ]
+    },
+    {
+      "name": "noise_detection_tool",
+      "description": "Detect and flag noisy content including ads and navigation",
+      "capabilities": [
+        "noise_classification",
+        "boilerplate_detection",
+        "content_quality_assessment"
+      ]
+    },
+    {
+      "name": "similarity_calculator_tool",
+      "description": "Calculate content similarity for deduplication",
+      "capabilities": [
+        "similarity_scoring",
+        "fuzzy_matching",
+        "duplicate_identification"
+      ]
+    },
+    {
+      "name": "pattern_library_loader_tool",
+      "description": "Load predefined patterns for mechanics extraction",
+      "capabilities": [
+        "pattern_loading",
+        "library_management",
+        "regex_compilation"
+      ]
+    },
+    {
+      "name": "terminology_loader_tool",
+      "description": "Load game-specific terminology dictionaries",
+      "capabilities": [
+        "dictionary_loading",
+        "terminology_management",
+        "multi_language_support"
+      ]
+    },
+    {
+      "name": "value_extractor_tool",
+      "description": "Extract numeric values and mechanics parameters",
+      "capabilities": [
+        "numeric_extraction",
+        "unit_parsing",
+        "parameter_identification"
+      ]
+    },
+    {
+      "name": "structured_data_generator_tool",
+      "description": "Generate structured mechanics data from raw content",
+      "capabilities": [
+        "data_structuring",
+        "field_mapping",
+        "schema_conformance"
+      ]
+    },
+    {
+      "name": "pattern_matching_tool",
+      "description": "Apply regex patterns for value extraction",
+      "capabilities": [
+        "regex_application",
+        "pattern_matching",
+        "capture_group_extraction"
+      ]
+    },
+    {
+      "name": "pattern_applier_tool",
+      "description": "Apply multiple patterns and aggregate results",
+      "capabilities": [
+        "multi_pattern_application",
+        "result_aggregation",
+        "priority_handling"
+      ]
+    },
+    {
+      "name": "term_mapper_tool",
+      "description": "Map terms across languages and sources",
+      "capabilities": [
+        "cross_language_mapping",
+        "terminology_translation",
+        "synonym_resolution"
+      ]
+    },
+    {
+      "name": "voting_aggregator_tool",
+      "description": "Aggregate values using voting mechanisms",
+      "capabilities": [
+        "voting_algorithm",
+        "consensus_building",
+        "multi_source_aggregation"
+      ]
+    },
+    {
+      "name": "source_weighting_tool",
+      "description": "Weight sources by authority and reliability",
+      "capabilities": [
+        "authority_scoring",
+        "source_ranking",
+        "weighted_averaging"
+      ]
+    },
+    {
+      "name": "conflict_detector_tool",
+      "description": "Detect conflicts between different sources",
+      "capabilities": [
+        "conflict_identification",
+        "discrepancy_detection",
+        "inconsistency_reporting"
+      ]
+    },
+    {
+      "name": "confidence_formula_tool",
+      "description": "Calculate confidence scores using predefined formulas",
+      "capabilities": [
+        "formula_application",
+        "score_calculation",
+        "confidence_assessment"
+      ]
+    },
+    {
+      "name": "change_detector_tool",
+      "description": "Detect changes between versions",
+      "capabilities": [
+        "version_comparison",
+        "change_identification",
+        "modification_tracking"
+      ]
+    },
+    {
+      "name": "snapshot_loader_tool",
+      "description": "Load historical snapshots for comparison",
+      "capabilities": [
+        "snapshot_retrieval",
+        "version_loading",
+        "historical_data_access"
+      ]
+    },
+    {
+      "name": "diff_calculator_tool",
+      "description": "Calculate detailed diffs between versions",
+      "capabilities": [
+        "diff_computation",
+        "change_visualization",
+        "delta_calculation"
+      ]
+    },
+    {
+      "name": "lag_detector_tool",
+      "description": "Detect update lag between different language versions",
+      "capabilities": [
+        "lag_calculation",
+        "synchronization_checking",
+        "delay_measurement"
+      ]
+    },
+    {
+      "name": "terminology_reference_tool",
+      "description": "Reference terminology databases for consistency",
+      "capabilities": [
+        "database_lookup",
+        "consistency_checking",
+        "standard_term_reference"
+      ]
+    },
+    {
+      "name": "suggestion_formatter_tool",
+      "description": "Format localization suggestions and corrections",
+      "capabilities": [
+        "suggestion_formatting",
+        "correction_presentation",
+        "recommendation_structuring"
+      ]
+    },
+    {
+      "name": "multi_language_snippet_tool",
+      "description": "Generate multi-language code snippets for comparison",
+      "capabilities": [
+        "snippet_generation",
+        "cross_language_formatting",
+        "comparison_preparation"
+      ]
+    },
+    {
+      "name": "script_writer_tool",
+      "description": "Generate Python validation scripts",
+      "capabilities": [
+        "python_code_generation",
+        "script_formatting",
+        "file_writing"
+      ]
+    },
+    {
+      "name": "template_loader_tool",
+      "description": "Load script templates from library",
+      "capabilities": [
+        "template_retrieval",
+        "library_management",
+        "template_caching"
+      ]
+    },
+    {
+      "name": "template_engine_tool",
+      "description": "Render templates with dynamic data",
+      "capabilities": [
+        "template_rendering",
+        "variable_substitution",
+        "dynamic_content_generation"
+      ]
+    },
+    {
+      "name": "python_runner_tool",
+      "description": "Execute Python scripts in safe sandbox",
+      "capabilities": [
+        "safe_execution",
+        "sandbox_isolation",
+        "output_capture"
+      ]
+    },
+    {
+      "name": "json_writer_tool",
+      "description": "Write structured JSON reports",
+      "capabilities": [
+        "json_serialization",
+        "file_writing",
+        "pretty_printing"
+      ]
+    },
+    {
+      "name": "json_serializer_tool",
+      "description": "Serialize complex objects to JSON",
+      "capabilities": [
+        "object_serialization",
+        "type_handling",
+        "encoding_management"
+      ]
+    },
+    {
+      "name": "markdown_formatter_tool",
+      "description": "Format content as Markdown",
+      "capabilities": [
+        "markdown_conversion",
+        "formatting_application",
+        "structure_preservation"
+      ]
+    },
+    {
+      "name": "markdown_template_tool",
+      "description": "Use Markdown templates for consistent formatting",
+      "capabilities": [
+        "template_application",
+        "consistent_formatting",
+        "section_generation"
+      ]
+    },
+    {
+      "name": "digest_template_tool",
+      "description": "Generate executive summaries using templates",
+      "capabilities": [
+        "summary_generation",
+        "template_rendering",
+        "key_point_extraction"
+      ]
+    },
+    {
+      "name": "impact_scorer_tool",
+      "description": "Score impact of validation findings",
+      "capabilities": [
+        "impact_calculation",
+        "priority_scoring",
+        "severity_assessment"
+      ]
+    },
+    {
+      "name": "assertion_builder_tool",
+      "description": "Build validation assertions from mechanics data",
+      "capabilities": [
+        "assertion_construction",
+        "rule_formalization",
+        "testable_claim_creation"
+      ]
+    },
+    {
+      "name": "assertion_encoder_tool",
+      "description": "Encode assertions in standard format",
+      "capabilities": [
+        "assertion_encoding",
+        "format_standardization",
+        "python_syntax_generation"
+      ]
+    },
+    {
+      "name": "expression_template_tool",
+      "description": "Generate standard expressions for mechanics formulas",
+      "capabilities": [
+        "expression_generation",
+        "formula_formatting",
+        "canonical_form_creation"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "author": "PatchLens Development Team",
+    "created_date": "2024-10-24",
+    "framework_type": "multi_language_game_mechanics_validation",
+    "base_architecture": "Hierarchical three-layer multi-agent system with 25 specialized agents",
+    "primary_llm": "Nex",
+    "use_cases": [
+      "game_mechanics_validation_across_languages",
+      "patch_notes_monitoring_and_extraction",
+      "cross_language_consistency_checking",
+      "mistranslation_detection",
+      "version_change_tracking",
+      "mechanics_diff_reporting",
+      "community_wiki_validation",
+      "official_source_verification",
+      "automated_validation_script_generation",
+      "localization_quality_assurance",
+      "game_data_mining",
+      "terminology_normalization",
+      "multi_source_cross_validation",
+      "confidence_scored_mechanics_documentation",
+      "reproducible_mechanics_verification"
+    ],
+    "strengths": [
+      "hierarchical_25_agent_architecture",
+      "comprehensive_46_custom_tools",
+      "multi_language_support_en_zh_ja_ko",
+      "ethical_web_scraping_with_robots_txt",
+      "cross_source_validation_with_confidence_scoring",
+      "automated_mistranslation_detection",
+      "version_change_tracking_and_diffing",
+      "reproducible_python_script_generation",
+      "traceability_with_source_url_citations",
+      "12_step_iterative_validation_pipeline",
+      "intelligent_noise_removal_and_deduplication",
+      "terminology_normalization_across_languages",
+      "multi_format_output_json_markdown_python",
+      "executive_digest_generation",
+      "80_percent_manual_effort_reduction"
+    ],
+    "limitations": [
+      "requires_public_web_sources_only",
+      "no_game_client_access_or_telemetry",
+      "limited_to_text_based_mechanics_extraction",
+      "pattern_library_requires_game_specific_tuning",
+      "llm_dependent_for_complex_reasoning",
+      "rate_limiting_may_slow_large_crawls"
+    ],
+    "optimal_scenarios": [
+      "small_localization_team_support",
+      "community_volunteer_translator_assistance",
+      "multi_language_patch_note_validation",
+      "game_wiki_accuracy_verification",
+      "version_update_impact_analysis",
+      "cross_language_synchronization_monitoring",
+      "automated_qa_for_game_documentation",
+      "mechanics_data_mining_for_analysis",
+      "competitive_game_mechanics_tracking",
+      "esports_data_validation",
+      "game_balance_patch_monitoring",
+      "community_content_creator_support"
+    ]
+  }
+}

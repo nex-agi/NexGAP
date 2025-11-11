@@ -1,0 +1,638 @@
+# Copyright (c) Nex-AGI. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Framework Configuration for consignal_cn
+# Constitutional intelligence monitoring framework with data pipeline and intelligence production
+
+# === Framework Description ===
+framework:
+  name: ConSignal CN
+  description_en: "ConSignal CN is a comprehensive constitutional intelligence monitoring framework that addresses the critical challenge of tracking rapidly evolving legal and regulatory developments in China's constitutional rights landscape. The framework solves key problems for cross-border tech platforms: (1) Automated discovery and monitoring of constitutional signals from Supreme People's Court cases, NPC legislation, CAC/MIIT regulations, and guiding cases; (2) Real-time compliance risk assessment for privacy rights (PIPL), data protection, cross-border data transfer, freedom of expression, algorithmic regulation, and platform economy governance; (3) Bilingual legal content processing with terminology preservation and parallel translation; (4) Intelligent relevance scoring based on authority level, business impact, timeliness, and enforcement signals; (5) Multi-format intelligence production including daily briefs, weekly handbooks, deep-dive analysis, and trend visualizations. The framework employs a three-layer hierarchical architecture (Main Orchestrator → Data Pipeline & Intelligence Production Orchestrators → Source Discovery, Content Acquisition, Signal Processing, Intelligence Generation, and Feedback Loop Engines) with 62 specialized tools for web scraping compliance, metadata normalization, citation analysis, and custom Python tool generation. It enables legal teams, compliance officers, and regulatory affairs managers to proactively identify constitutional risks, monitor enforcement patterns, and implement data-driven compliance strategies, reducing manual monitoring effort by 80% while improving signal detection accuracy and coverage across 10+ key rights domains."
+  description_zh: "ConSignal CN是一个综合性宪法情报监控框架，解决了跟踪中国宪法权利领域快速演变的法律法规发展这一关键挑战。该框架为跨境科技平台解决以下核心问题：(1) 从最高人民法院案例、全国人大立法、网信办/工信部法规和指导性案例中自动发现和监控宪法信号；(2) 针对隐私权（个人信息保护法）、数据保护、跨境数据传输、表达自由、算法监管和平台经济治理的实时合规风险评估；(3) 具有术语保留和平行翻译功能的双语法律内容处理；(4) 基于权威级别、商业影响、时效性和执法信号的智能相关性评分；(5) 多格式情报生成，包括每日简报、每周手册、深度分析和趋势可视化。该框架采用三层分层架构（主编排器→数据管道与情报生成编排器→来源发现、内容获取、信号处理、情报生成和反馈循环引擎），配备62个专用工具，用于网页抓取合规、元数据规范化、引用分析和自定义Python工具生成。它使法律团队、合规官和监管事务经理能够主动识别宪法风险、监控执法模式并实施数据驱动的合规策略，将人工监控工作减少80%，同时提高10多个关键权利领域的信号检测准确性和覆盖率。"
+
+# === Agent Definitions ===
+agents:
+- agent_name: consignal_cn
+  description: ConSignal CN Orchestrator - Strategic coordinator for constitutional intelligence monitoring
+  sysprompt_path: consignal_cn.yaml
+  llm_config: default_llm
+  tools: []
+
+- agent_name: bilingual_content_processor
+  description: Specialized legal content processing agent for bilingual text segmentation and translation
+  sysprompt_path: bilingual_content_processor.yaml
+  llm_config: default_llm
+  tools:
+  - text_segmenter
+  - rule_based_translator
+  - summary_generator
+  - terminology_preserver
+  - parallel_formatter
+
+- agent_name: constitutional_signal_extractor
+  description: Extract constitutional and rights-related signals from legal documents
+  sysprompt_path: constitutional_signal_extractor.yaml
+  llm_config: default_llm
+  tools:
+  - legal_term_matcher
+  - citation_pattern_detector
+  - rights_category_classifier
+  - balancing_analysis_detector
+  - guiding_case_extractor
+
+- agent_name: content_acquisition_engine
+  description: Orchestrate web content acquisition and parsing
+  sysprompt_path: content_acquisition_engine.yaml
+  llm_config: default_llm
+  tools: []
+
+- agent_name: data_pipeline_orchestrator
+  description: Orchestrate data pipeline from source discovery to signal processing
+  sysprompt_path: data_pipeline_orchestrator.yaml
+  llm_config: default_llm
+  tools: []
+
+- agent_name: feedback_integrator
+  description: Integrate human feedback to adjust scoring parameters and keywords
+  sysprompt_path: feedback_integrator.yaml
+  llm_config: default_llm
+  tools:
+  - feedback_parser
+  - weight_adjuster
+  - changelog_generator
+  - parameter_validator
+  - keyword_list_updater
+
+- agent_name: feedback_loop_manager
+  description: Manage continuous improvement through feedback integration
+  sysprompt_path: feedback_loop_manager.yaml
+  llm_config: default_llm
+  tools: []
+
+- agent_name: intelligence_generation_engine
+  description: Generate intelligence reports, scores, and visualizations
+  sysprompt_path: intelligence_generation_engine.yaml
+  llm_config: default_llm
+  tools: []
+
+- agent_name: intelligence_production_orchestrator
+  description: Orchestrate intelligence production and quality improvement
+  sysprompt_path: intelligence_production_orchestrator.yaml
+  llm_config: default_llm
+  tools: []
+
+- agent_name: intelligence_report_generator
+  description: Generate comprehensive bilingual intelligence summaries for constitutional signals
+  sysprompt_path: intelligence_report_generator.yaml
+  llm_config: default_llm
+  tools:
+  - template_renderer
+  - markdown_formatter
+  - impact_analyzer
+  - executive_summary_generator
+  - source_attribution_formatter
+
+- agent_name: metadata_normalizer
+  description: Normalize and standardize metadata from diverse sources
+  sysprompt_path: metadata_normalizer.yaml
+  llm_config: default_llm
+  tools:
+  - date_parser
+  - jurisdiction_classifier
+  - document_type_detector
+  - law_citation_parser
+  - case_id_extractor
+
+- agent_name: page_template_analyzer
+  description: Analyze web page structure to generate custom extraction rules
+  sysprompt_path: page_template_analyzer.yaml
+  llm_config: default_llm
+  tools:
+  - html_structure_analyzer
+  - dom_pattern_detector
+  - xpath_generator
+  - css_selector_generator
+  - extraction_rule_serializer
+
+- agent_name: python_tool_generator
+  description: Generate custom Python scraping and parsing tools on demand
+  sysprompt_path: python_tool_generator.yaml
+  llm_config: default_llm
+  tools:
+  - code_template_library
+  - syntax_validator
+  - dependency_resolver
+  - tool_packager
+  - test_generator
+
+- agent_name: relevance_scorer
+  description: Score constitutional signals by relevance and business impact
+  sysprompt_path: relevance_scorer.yaml
+  llm_config: default_llm
+  tools:
+  - feature_extractor
+  - authority_level_scorer
+  - citation_impact_calculator
+  - timeliness_scorer
+  - enforcement_signal_detector
+  - composite_score_calculator
+
+- agent_name: search_query_constructor
+  description: Construct optimized bilingual search queries for source discovery
+  sysprompt_path: search_query_constructor.yaml
+  llm_config: default_llm
+  tools:
+  - keyword_expander
+  - query_template_builder
+  - temporal_query_constructor
+  - source_specific_optimizer
+
+- agent_name: search_result_scraper
+  description: Extract URLs from search engine result pages
+  sysprompt_path: search_result_scraper.yaml
+  llm_config: default_llm
+  tools:
+  - http_fetcher
+  - html_parser
+  - url_extractor
+  - robots_txt_checker
+  - result_deduplicator
+
+- agent_name: signal_processing_engine
+  description: Process raw content into structured constitutional signals
+  sysprompt_path: signal_processing_engine.yaml
+  llm_config: default_llm
+  tools:
+  - bash
+  - ls
+  - file_read
+  - file_write
+
+- agent_name: source_discovery_engine
+  description: Discover and monitor constitutional information sources
+  sysprompt_path: source_discovery_engine.yaml
+  llm_config: default_llm
+  tools: []
+
+- agent_name: trend_visualizer
+  description: Generate visualizations and trend analysis for intelligence reports
+  sysprompt_path: trend_visualizer.yaml
+  llm_config: default_llm
+  tools:
+  - data_aggregator
+  - chart_generator
+  - statistical_analyzer
+  - heatmap_generator
+  - insight_extractor
+
+- agent_name: web_content_scraper
+  description: Fetch and extract web content with ethical compliance
+  sysprompt_path: web_content_scraper.yaml
+  llm_config: default_llm
+  tools:
+  - http_fetcher
+  - robots_txt_checker
+  - rate_limiter
+  - content_hasher
+  - pdf_link_detector
+
+# === LLM Configurations ===
+llm_configs:
+- llm_name: default_llm
+  provider: openai
+  model: nex
+  api_key: ${LLM_API_KEY}
+  base_url: ${LLM_BASE_URL}
+  max_tokens: 8000
+  temperature: 0.7
+  timeout: 300
+
+# === Tool Configurations ===
+tools:
+# Builtin tools (from nexau)
+- tool_name: bash
+  description: Execute bash commands
+  config_path: null
+  binding: nexau.archs.tool.builtin.bash_tool:bash_tool
+
+- tool_name: ls
+  description: List directory contents
+  config_path: null
+  binding: nexau.archs.tool.builtin.ls_tool:ls_tool
+
+- tool_name: file_read
+  description: Read file contents
+  config_path: null
+  binding: nexau.archs.tool.builtin.file_tools.file_read_tool:file_read_tool
+
+- tool_name: file_write
+  description: Write content to file
+  config_path: null
+  binding: nexau.archs.tool.builtin.file_tools.file_write_tool:file_write_tool
+
+# Custom framework tools
+- tool_name: authority_level_scorer
+  description: Score authority level of sources
+  config_path: tools/authority_level_scorer.py
+  binding: src.created_frameworks.consignal_cn.tools.authority_level_scorer:authority_level_scorer
+
+- tool_name: balancing_analysis_detector
+  description: Detect constitutional balancing analysis patterns
+  config_path: tools/balancing_analysis_detector.py
+  binding: src.created_frameworks.consignal_cn.tools.balancing_analysis_detector:balancing_analysis_detector
+
+- tool_name: case_id_extractor
+  description: Extract case identifiers from legal documents
+  config_path: tools/case_id_extractor.py
+  binding: src.created_frameworks.consignal_cn.tools.case_id_extractor:case_id_extractor
+
+- tool_name: changelog_generator
+  description: Generate changelog for parameter updates
+  config_path: tools/changelog_generator.py
+  binding: src.created_frameworks.consignal_cn.tools.changelog_generator:changelog_generator
+
+- tool_name: chart_generator
+  description: Generate charts and visualizations
+  config_path: tools/chart_generator.py
+  binding: src.created_frameworks.consignal_cn.tools.chart_generator:chart_generator
+
+- tool_name: citation_impact_calculator
+  description: Calculate citation impact scores
+  config_path: tools/citation_impact_calculator.py
+  binding: src.created_frameworks.consignal_cn.tools.citation_impact_calculator:citation_impact_calculator
+
+- tool_name: citation_pattern_detector
+  description: Detect citation patterns in legal text
+  config_path: tools/citation_pattern_detector.py
+  binding: src.created_frameworks.consignal_cn.tools.citation_pattern_detector:citation_pattern_detector
+
+- tool_name: code_template_library
+  description: Library of code templates for tool generation
+  config_path: tools/code_template_library.py
+  binding: src.created_frameworks.consignal_cn.tools.code_template_library:code_template_library
+
+- tool_name: composite_score_calculator
+  description: Calculate composite relevance scores
+  config_path: tools/composite_score_calculator.py
+  binding: src.created_frameworks.consignal_cn.tools.composite_score_calculator:composite_score_calculator
+
+- tool_name: content_hasher
+  description: Generate content hashes for deduplication
+  config_path: tools/content_hasher.py
+  binding: src.created_frameworks.consignal_cn.tools.content_hasher:content_hasher
+
+- tool_name: css_selector_generator
+  description: Generate CSS selectors for content extraction
+  config_path: tools/css_selector_generator.py
+  binding: src.created_frameworks.consignal_cn.tools.css_selector_generator:css_selector_generator
+
+- tool_name: data_aggregator
+  description: Aggregate data for trend analysis
+  config_path: tools/data_aggregator.py
+  binding: src.created_frameworks.consignal_cn.tools.data_aggregator:data_aggregator
+
+- tool_name: date_parser
+  description: Parse and normalize date formats
+  config_path: tools/date_parser.py
+  binding: src.created_frameworks.consignal_cn.tools.date_parser:date_parser
+
+- tool_name: dependency_resolver
+  description: Resolve dependencies for generated tools
+  config_path: tools/dependency_resolver.py
+  binding: src.created_frameworks.consignal_cn.tools.dependency_resolver:dependency_resolver
+
+- tool_name: document_type_detector
+  description: Detect document types (judgment, regulation, etc.)
+  config_path: tools/document_type_detector.py
+  binding: src.created_frameworks.consignal_cn.tools.document_type_detector:document_type_detector
+
+- tool_name: dom_pattern_detector
+  description: Detect DOM patterns for extraction
+  config_path: tools/dom_pattern_detector.py
+  binding: src.created_frameworks.consignal_cn.tools.dom_pattern_detector:dom_pattern_detector
+
+- tool_name: enforcement_signal_detector
+  description: Detect enforcement signals in documents
+  config_path: tools/enforcement_signal_detector.py
+  binding: src.created_frameworks.consignal_cn.tools.enforcement_signal_detector:enforcement_signal_detector
+
+- tool_name: executive_summary_generator
+  description: Generate executive summaries
+  config_path: tools/executive_summary_generator.py
+  binding: src.created_frameworks.consignal_cn.tools.executive_summary_generator:executive_summary_generator
+
+- tool_name: extraction_rule_serializer
+  description: Serialize extraction rules to JSON/YAML
+  config_path: tools/extraction_rule_serializer.py
+  binding: src.created_frameworks.consignal_cn.tools.extraction_rule_serializer:extraction_rule_serializer
+
+- tool_name: feature_extractor
+  description: Extract features for relevance scoring
+  config_path: tools/feature_extractor.py
+  binding: src.created_frameworks.consignal_cn.tools.feature_extractor:feature_extractor
+
+- tool_name: feedback_parser
+  description: Parse human feedback from legal teams
+  config_path: tools/feedback_parser.py
+  binding: src.created_frameworks.consignal_cn.tools.feedback_parser:feedback_parser
+
+- tool_name: guiding_case_extractor
+  description: Extract guiding case references
+  config_path: tools/guiding_case_extractor.py
+  binding: src.created_frameworks.consignal_cn.tools.guiding_case_extractor:guiding_case_extractor
+
+- tool_name: heatmap_generator
+  description: Generate heatmaps for trend visualization
+  config_path: tools/heatmap_generator.py
+  binding: src.created_frameworks.consignal_cn.tools.heatmap_generator:heatmap_generator
+
+- tool_name: html_parser
+  description: Parse HTML content
+  config_path: tools/html_parser.py
+  binding: src.created_frameworks.consignal_cn.tools.html_parser:html_parser
+
+- tool_name: html_structure_analyzer
+  description: Analyze HTML structure for extraction patterns
+  config_path: tools/html_structure_analyzer.py
+  binding: src.created_frameworks.consignal_cn.tools.html_structure_analyzer:html_structure_analyzer
+
+- tool_name: http_fetcher
+  description: Fetch HTTP content with rate limiting
+  config_path: tools/http_fetcher.py
+  binding: src.created_frameworks.consignal_cn.tools.http_fetcher:http_fetcher
+
+- tool_name: impact_analyzer
+  description: Analyze business impact of constitutional signals
+  config_path: tools/impact_analyzer.py
+  binding: src.created_frameworks.consignal_cn.tools.impact_analyzer:impact_analyzer
+
+- tool_name: insight_extractor
+  description: Extract insights from trend data
+  config_path: tools/insight_extractor.py
+  binding: src.created_frameworks.consignal_cn.tools.insight_extractor:insight_extractor
+
+- tool_name: jurisdiction_classifier
+  description: Classify legal jurisdiction
+  config_path: tools/jurisdiction_classifier.py
+  binding: src.created_frameworks.consignal_cn.tools.jurisdiction_classifier:jurisdiction_classifier
+
+- tool_name: keyword_expander
+  description: Expand keywords for search queries
+  config_path: tools/keyword_expander.py
+  binding: src.created_frameworks.consignal_cn.tools.keyword_expander:keyword_expander
+
+- tool_name: keyword_list_updater
+  description: Update keyword lists based on feedback
+  config_path: tools/keyword_list_updater.py
+  binding: src.created_frameworks.consignal_cn.tools.keyword_list_updater:keyword_list_updater
+
+- tool_name: law_citation_parser
+  description: Parse law citations
+  config_path: tools/law_citation_parser.py
+  binding: src.created_frameworks.consignal_cn.tools.law_citation_parser:law_citation_parser
+
+- tool_name: legal_term_matcher
+  description: Match legal terminology patterns
+  config_path: tools/legal_term_matcher.py
+  binding: src.created_frameworks.consignal_cn.tools.legal_term_matcher:legal_term_matcher
+
+- tool_name: markdown_formatter
+  description: Format intelligence reports in markdown
+  config_path: tools/markdown_formatter.py
+  binding: src.created_frameworks.consignal_cn.tools.markdown_formatter:markdown_formatter
+
+- tool_name: parallel_formatter
+  description: Format bilingual content in parallel columns
+  config_path: tools/parallel_formatter.py
+  binding: src.created_frameworks.consignal_cn.tools.parallel_formatter:parallel_formatter
+
+- tool_name: parameter_validator
+  description: Validate scoring parameters
+  config_path: tools/parameter_validator.py
+  binding: src.created_frameworks.consignal_cn.tools.parameter_validator:parameter_validator
+
+- tool_name: pdf_link_detector
+  description: Detect PDF links in web pages
+  config_path: tools/pdf_link_detector.py
+  binding: src.created_frameworks.consignal_cn.tools.pdf_link_detector:pdf_link_detector
+
+- tool_name: query_template_builder
+  description: Build search query templates
+  config_path: tools/query_template_builder.py
+  binding: src.created_frameworks.consignal_cn.tools.query_template_builder:query_template_builder
+
+- tool_name: rate_limiter
+  description: Enforce rate limiting for web requests
+  config_path: tools/rate_limiter.py
+  binding: src.created_frameworks.consignal_cn.tools.rate_limiter:rate_limiter
+
+- tool_name: result_deduplicator
+  description: Deduplicate search results
+  config_path: tools/result_deduplicator.py
+  binding: src.created_frameworks.consignal_cn.tools.result_deduplicator:result_deduplicator
+
+- tool_name: rights_category_classifier
+  description: Classify constitutional rights categories
+  config_path: tools/rights_category_classifier.py
+  binding: src.created_frameworks.consignal_cn.tools.rights_category_classifier:rights_category_classifier
+
+- tool_name: robots_txt_checker
+  description: Check robots.txt compliance
+  config_path: tools/robots_txt_checker.py
+  binding: src.created_frameworks.consignal_cn.tools.robots_txt_checker:robots_txt_checker
+
+- tool_name: rule_based_translator
+  description: Rule-based translation for legal terminology
+  config_path: tools/rule_based_translator.py
+  binding: src.created_frameworks.consignal_cn.tools.rule_based_translator:rule_based_translator
+
+- tool_name: source_attribution_formatter
+  description: Format source attributions and citations
+  config_path: tools/source_attribution_formatter.py
+  binding: src.created_frameworks.consignal_cn.tools.source_attribution_formatter:source_attribution_formatter
+
+- tool_name: source_specific_optimizer
+  description: Optimize queries for specific sources
+  config_path: tools/source_specific_optimizer.py
+  binding: src.created_frameworks.consignal_cn.tools.source_specific_optimizer:source_specific_optimizer
+
+- tool_name: statistical_analyzer
+  description: Perform statistical analysis on trend data
+  config_path: tools/statistical_analyzer.py
+  binding: src.created_frameworks.consignal_cn.tools.statistical_analyzer:statistical_analyzer
+
+- tool_name: summary_generator
+  description: Generate text summaries
+  config_path: tools/summary_generator.py
+  binding: src.created_frameworks.consignal_cn.tools.summary_generator:summary_generator
+
+- tool_name: syntax_validator
+  description: Validate Python syntax for generated tools
+  config_path: tools/syntax_validator.py
+  binding: src.created_frameworks.consignal_cn.tools.syntax_validator:syntax_validator
+
+- tool_name: template_renderer
+  description: Render report templates
+  config_path: tools/template_renderer.py
+  binding: src.created_frameworks.consignal_cn.tools.template_renderer:template_renderer
+
+- tool_name: temporal_query_constructor
+  description: Construct time-based search queries
+  config_path: tools/temporal_query_constructor.py
+  binding: src.created_frameworks.consignal_cn.tools.temporal_query_constructor:temporal_query_constructor
+
+- tool_name: terminology_preserver
+  description: Preserve legal terminology during translation
+  config_path: tools/terminology_preserver.py
+  binding: src.created_frameworks.consignal_cn.tools.terminology_preserver:terminology_preserver
+
+- tool_name: test_generator
+  description: Generate tests for custom tools
+  config_path: tools/test_generator.py
+  binding: src.created_frameworks.consignal_cn.tools.test_generator:test_generator
+
+- tool_name: text_segmenter
+  description: Segment text for bilingual processing
+  config_path: tools/text_segmenter.py
+  binding: src.created_frameworks.consignal_cn.tools.text_segmenter:text_segmenter
+
+- tool_name: timeliness_scorer
+  description: Score timeliness of constitutional signals
+  config_path: tools/timeliness_scorer.py
+  binding: src.created_frameworks.consignal_cn.tools.timeliness_scorer:timeliness_scorer
+
+- tool_name: tool_packager
+  description: Package generated tools for deployment
+  config_path: tools/tool_packager.py
+  binding: src.created_frameworks.consignal_cn.tools.tool_packager:tool_packager
+
+- tool_name: url_extractor
+  description: Extract URLs from HTML content
+  config_path: tools/url_extractor.py
+  binding: src.created_frameworks.consignal_cn.tools.url_extractor:url_extractor
+
+- tool_name: weight_adjuster
+  description: Adjust scoring weights based on feedback
+  config_path: tools/weight_adjuster.py
+  binding: src.created_frameworks.consignal_cn.tools.weight_adjuster:weight_adjuster
+
+- tool_name: xpath_generator
+  description: Generate XPath selectors for content extraction
+  config_path: tools/xpath_generator.py
+  binding: src.created_frameworks.consignal_cn.tools.xpath_generator:xpath_generator
+
+# === Workflow Configuration ===
+workflow:
+  name: consignal_cn_workflow
+  description: Constitutional intelligence monitoring framework with data pipeline and intelligence production
+
+  nodes:
+  - id: consignal_cn
+    type: agent
+  - id: bilingual_content_processor
+    type: agent
+  - id: constitutional_signal_extractor
+    type: agent
+  - id: content_acquisition_engine
+    type: agent
+  - id: data_pipeline_orchestrator
+    type: agent
+  - id: feedback_integrator
+    type: agent
+  - id: feedback_loop_manager
+    type: agent
+  - id: intelligence_generation_engine
+    type: agent
+  - id: intelligence_production_orchestrator
+    type: agent
+  - id: intelligence_report_generator
+    type: agent
+  - id: metadata_normalizer
+    type: agent
+  - id: page_template_analyzer
+    type: agent
+  - id: python_tool_generator
+    type: agent
+  - id: relevance_scorer
+    type: agent
+  - id: search_query_constructor
+    type: agent
+  - id: search_result_scraper
+    type: agent
+  - id: signal_processing_engine
+    type: agent
+  - id: source_discovery_engine
+    type: agent
+  - id: trend_visualizer
+    type: agent
+  - id: web_content_scraper
+    type: agent
+
+  edges:
+  # Entry point connections
+  - from: consignal_cn
+    to: data_pipeline_orchestrator
+  - from: consignal_cn
+    to: intelligence_production_orchestrator
+
+  # Data pipeline flow
+  - from: data_pipeline_orchestrator
+    to: source_discovery_engine
+  - from: data_pipeline_orchestrator
+    to: content_acquisition_engine
+  - from: data_pipeline_orchestrator
+    to: signal_processing_engine
+
+  # Source discovery flow
+  - from: source_discovery_engine
+    to: search_query_constructor
+  - from: source_discovery_engine
+    to: search_result_scraper
+
+  # Content acquisition flow
+  - from: content_acquisition_engine
+    to: web_content_scraper
+  - from: content_acquisition_engine
+    to: page_template_analyzer
+  - from: content_acquisition_engine
+    to: python_tool_generator
+
+  # Signal processing flow
+  - from: signal_processing_engine
+    to: constitutional_signal_extractor
+  - from: signal_processing_engine
+    to: metadata_normalizer
+  - from: signal_processing_engine
+    to: bilingual_content_processor
+
+  # Intelligence production flow
+  - from: intelligence_production_orchestrator
+    to: intelligence_generation_engine
+  - from: intelligence_production_orchestrator
+    to: feedback_loop_manager
+
+  # Intelligence generation flow
+  - from: intelligence_generation_engine
+    to: relevance_scorer
+  - from: intelligence_generation_engine
+    to: intelligence_report_generator
+  - from: intelligence_generation_engine
+    to: trend_visualizer
+
+  # Feedback flow
+  - from: feedback_loop_manager
+    to: feedback_integrator
+
+framework_name: consignal_cn
+framework_entrance_agent: consignal_cn

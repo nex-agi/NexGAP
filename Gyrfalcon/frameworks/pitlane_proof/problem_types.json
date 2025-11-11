@@ -1,0 +1,848 @@
+{
+  "framework": "pitlane_proof",
+  "tree": {
+    "id": "root",
+    "en": "pitlane_proof",
+    "zh": "pitlane_proof",
+    "children": [
+      {
+        "id": "executive_verification",
+        "en": "Executive Information Verification",
+        "zh": "高管信息验证",
+        "children": [
+          {
+            "id": "title_verification",
+            "en": "Corporate Title Verification",
+            "zh": "企业职位验证",
+            "children": [
+              {
+                "id": "ceo_verification",
+                "en": "CEO Position Verification",
+                "zh": "CEO职位验证"
+              },
+              {
+                "id": "cfo_verification",
+                "en": "CFO Position Verification",
+                "zh": "CFO职位验证"
+              },
+              {
+                "id": "executive_team_verification",
+                "en": "Executive Team Member Verification",
+                "zh": "高管团队成员验证"
+              },
+              {
+                "id": "board_member_verification",
+                "en": "Board of Directors Verification",
+                "zh": "董事会成员验证"
+              }
+            ]
+          },
+          {
+            "id": "credential_verification",
+            "en": "Professional Credential Verification",
+            "zh": "专业资格验证",
+            "children": [
+              {
+                "id": "education_verification",
+                "en": "Educational Background Verification",
+                "zh": "教育背景验证"
+              },
+              {
+                "id": "professional_certification",
+                "en": "Professional Certification Validation",
+                "zh": "专业认证验证"
+              },
+              {
+                "id": "industry_experience",
+                "en": "Industry Experience Verification",
+                "zh": "行业经验验证"
+              }
+            ]
+          },
+          {
+            "id": "career_history",
+            "en": "Career History Verification",
+            "zh": "职业历史验证",
+            "children": [
+              {
+                "id": "previous_positions",
+                "en": "Previous Position Verification",
+                "zh": "以往职位验证"
+              },
+              {
+                "id": "tenure_duration",
+                "en": "Tenure Duration Verification",
+                "zh": "任期时长验证"
+              },
+              {
+                "id": "appointment_dates",
+                "en": "Appointment Date Verification",
+                "zh": "任命日期验证"
+              }
+            ]
+          },
+          {
+            "id": "executive_verification_executive_compensation_disclosure_verification",
+            "en": "Executive Compensation Disclosure Verification",
+            "zh": "高管薪酬披露验证"
+          }
+        ]
+      },
+      {
+        "id": "product_superlatives",
+        "en": "Product Superlative Validation",
+        "zh": "产品最高级声明验证",
+        "children": [
+          {
+            "id": "sales_rankings",
+            "en": "Sales Ranking Validation",
+            "zh": "销售排名验证",
+            "children": [
+              {
+                "id": "best_selling_claims",
+                "en": "Best-Selling Vehicle Claims",
+                "zh": "最畅销车辆声明"
+              },
+              {
+                "id": "market_leader_claims",
+                "en": "Market Leader Position Claims",
+                "zh": "市场领先地位声明"
+              },
+              {
+                "id": "sales_volume_verification",
+                "en": "Sales Volume Number Verification",
+                "zh": "销售量数字验证"
+              },
+              {
+                "id": "market_share_claims",
+                "en": "Market Share Claims Validation",
+                "zh": "市场份额声明验证"
+              }
+            ]
+          },
+          {
+            "id": "performance_claims",
+            "en": "Performance Claims Validation",
+            "zh": "性能声明验证",
+            "children": [
+              {
+                "id": "speed_records",
+                "en": "Fastest/Speed Record Claims",
+                "zh": "最快/速度记录声明"
+              },
+              {
+                "id": "range_claims",
+                "en": "Longest Range Claims",
+                "zh": "最长续航里程声明"
+              },
+              {
+                "id": "efficiency_claims",
+                "en": "Most Efficient Claims",
+                "zh": "最高效率声明"
+              },
+              {
+                "id": "charging_speed_claims",
+                "en": "Fastest Charging Claims",
+                "zh": "最快充电声明"
+              }
+            ]
+          },
+          {
+            "id": "technology_firsts",
+            "en": "Technology First Claims",
+            "zh": "技术领先声明",
+            "children": [
+              {
+                "id": "first_to_market",
+                "en": "First-to-Market Claims",
+                "zh": "率先上市声明"
+              },
+              {
+                "id": "innovation_firsts",
+                "en": "Innovation First Claims",
+                "zh": "创新领先声明"
+              },
+              {
+                "id": "feature_firsts",
+                "en": "Feature First Claims",
+                "zh": "功能领先声明"
+              }
+            ]
+          },
+          {
+            "id": "quality_superiority",
+            "en": "Quality Superiority Claims",
+            "zh": "质量优越性声明",
+            "children": [
+              {
+                "id": "highest_rated",
+                "en": "Highest Rated Claims",
+                "zh": "最高评级声明"
+              },
+              {
+                "id": "award_winning",
+                "en": "Award-Winning Claims",
+                "zh": "获奖声明"
+              },
+              {
+                "id": "safety_ratings",
+                "en": "Safety Rating Claims",
+                "zh": "安全评级声明"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "event_schedules",
+        "en": "Event Schedule Confirmation",
+        "zh": "活动时间表确认",
+        "children": [
+          {
+            "id": "conference_events",
+            "en": "Industry Conference Events",
+            "zh": "行业会议活动",
+            "children": [
+              {
+                "id": "conference_dates",
+                "en": "Conference Date Verification",
+                "zh": "会议日期验证"
+              },
+              {
+                "id": "venue_confirmation",
+                "en": "Venue Location Confirmation",
+                "zh": "场地位置确认"
+              },
+              {
+                "id": "speaker_lineup",
+                "en": "Speaker Lineup Verification",
+                "zh": "演讲嘉宾阵容验证"
+              },
+              {
+                "id": "registration_details",
+                "en": "Registration Information Verification",
+                "zh": "注册信息验证"
+              }
+            ]
+          },
+          {
+            "id": "racing_events",
+            "en": "Racing Event Schedules",
+            "zh": "赛车活动时间表",
+            "children": [
+              {
+                "id": "race_calendar",
+                "en": "Race Calendar Verification",
+                "zh": "比赛日程验证"
+              },
+              {
+                "id": "track_locations",
+                "en": "Track Location Confirmation",
+                "zh": "赛道位置确认",
+                "children": [
+                  {
+                    "id": "track_locations_official_track_address_verification",
+                    "en": "Official Track Address Verification",
+                    "zh": "赛道官方地址核验"
+                  }
+                ]
+              },
+              {
+                "id": "race_times",
+                "en": "Race Time Verification",
+                "zh": "比赛时间验证"
+              },
+              {
+                "id": "participant_confirmation",
+                "en": "Participant Team Confirmation",
+                "zh": "参赛车队确认"
+              }
+            ]
+          },
+          {
+            "id": "product_launches",
+            "en": "Product Launch Events",
+            "zh": "产品发布活动",
+            "children": [
+              {
+                "id": "launch_dates",
+                "en": "Launch Date Verification",
+                "zh": "发布日期验证"
+              },
+              {
+                "id": "launch_venues",
+                "en": "Launch Venue Confirmation",
+                "zh": "发布地点确认"
+              },
+              {
+                "id": "availability_dates",
+                "en": "Availability Date Verification",
+                "zh": "上市日期验证"
+              },
+              {
+                "id": "pre_order_dates",
+                "en": "Pre-order Date Verification",
+                "zh": "预订日期验证"
+              }
+            ]
+          },
+          {
+            "id": "earnings_calls",
+            "en": "Earnings Call Schedules",
+            "zh": "财报电话会议时间表",
+            "children": [
+              {
+                "id": "earnings_dates",
+                "en": "Earnings Call Date Verification",
+                "zh": "财报电话会议日期验证"
+              },
+              {
+                "id": "filing_deadlines",
+                "en": "Filing Deadline Verification",
+                "zh": "申报截止日期验证"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "claim_analysis",
+        "en": "Claim Analysis and Parsing",
+        "zh": "声明分析和解析",
+        "children": [
+          {
+            "id": "entity_extraction",
+            "en": "Entity Extraction",
+            "zh": "实体提取",
+            "children": [
+              {
+                "id": "person_extraction",
+                "en": "Person Name Extraction",
+                "zh": "人名提取"
+              },
+              {
+                "id": "company_extraction",
+                "en": "Company Name Extraction",
+                "zh": "公司名称提取"
+              },
+              {
+                "id": "product_extraction",
+                "en": "Product Name Extraction",
+                "zh": "产品名称提取"
+              },
+              {
+                "id": "event_extraction",
+                "en": "Event Name Extraction",
+                "zh": "事件名称提取",
+                "children": [
+                  {
+                    "id": "event_extraction_official_product_launch_event_title_extraction",
+                    "en": "Official Product Launch Event Title Extraction",
+                    "zh": "官方产品发布会名称提取"
+                  }
+                ]
+              },
+              {
+                "id": "entity_extraction_venue_name_extraction",
+                "en": "Venue Name Extraction",
+                "zh": "场馆名称提取"
+              }
+            ]
+          },
+          {
+            "id": "entity_disambiguation",
+            "en": "Entity Disambiguation",
+            "zh": "实体消歧",
+            "children": [
+              {
+                "id": "executive_disambiguation",
+                "en": "Executive Name Disambiguation",
+                "zh": "高管姓名消歧"
+              },
+              {
+                "id": "company_disambiguation",
+                "en": "Company Name Disambiguation",
+                "zh": "公司名称消歧"
+              },
+              {
+                "id": "product_disambiguation",
+                "en": "Product Model Disambiguation",
+                "zh": "产品型号消歧"
+              }
+            ]
+          },
+          {
+            "id": "claim_classification",
+            "en": "Claim Type Classification",
+            "zh": "声明类型分类",
+            "children": [
+              {
+                "id": "executive_claim_detection",
+                "en": "Executive Claim Detection",
+                "zh": "高管声明检测"
+              },
+              {
+                "id": "superlative_claim_detection",
+                "en": "Superlative Claim Detection",
+                "zh": "最高级声明检测"
+              },
+              {
+                "id": "schedule_claim_detection",
+                "en": "Schedule Claim Detection",
+                "zh": "时间表声明检测"
+              }
+            ]
+          },
+          {
+            "id": "temporal_parsing",
+            "en": "Temporal Context Parsing",
+            "zh": "时间上下文解析",
+            "children": [
+              {
+                "id": "date_extraction",
+                "en": "Date Expression Extraction",
+                "zh": "日期表达提取"
+              },
+              {
+                "id": "date_normalization",
+                "en": "Date Format Normalization",
+                "zh": "日期格式规范化"
+              },
+              {
+                "id": "time_period_parsing",
+                "en": "Time Period Parsing",
+                "zh": "时间段解析",
+                "children": [
+                  {
+                    "id": "time_period_parsing_relative_time_window_normalization",
+                    "en": "Relative Time Window Normalization",
+                    "zh": "相对时间窗口标准化"
+                  }
+                ]
+              },
+              {
+                "id": "temporal_parsing_relative_temporal_reference_resolution",
+                "en": "Relative Temporal Reference Resolution",
+                "zh": "相对时间参照解析"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "evidence_collection",
+        "en": "Web Evidence Collection",
+        "zh": "网络证据收集",
+        "children": [
+          {
+            "id": "source_discovery",
+            "en": "Authoritative Source Discovery",
+            "zh": "权威来源发现",
+            "children": [
+              {
+                "id": "corporate_sources",
+                "en": "Official Corporate Sources",
+                "zh": "官方企业来源",
+                "children": [
+                  {
+                    "id": "leadership_pages",
+                    "en": "Leadership Page Discovery",
+                    "zh": "领导层页面发现"
+                  },
+                  {
+                    "id": "investor_relations",
+                    "en": "Investor Relations Content",
+                    "zh": "投资者关系内容"
+                  },
+                  {
+                    "id": "press_releases",
+                    "en": "Official Press Releases",
+                    "zh": "官方新闻稿"
+                  }
+                ]
+              },
+              {
+                "id": "industry_sources",
+                "en": "Industry Publication Sources",
+                "zh": "行业出版物来源",
+                "children": [
+                  {
+                    "id": "automotive_publications",
+                    "en": "Automotive Industry Publications",
+                    "zh": "汽车行业出版物"
+                  },
+                  {
+                    "id": "business_news",
+                    "en": "Business News Outlets",
+                    "zh": "商业新闻媒体"
+                  },
+                  {
+                    "id": "trade_journals",
+                    "en": "Trade Journal Articles",
+                    "zh": "行业期刊文章"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ethical_scraping",
+            "en": "Ethical Web Scraping",
+            "zh": "道德网页抓取",
+            "children": [
+              {
+                "id": "robots_compliance",
+                "en": "Robots.txt Compliance Checking",
+                "zh": "Robots.txt合规检查"
+              },
+              {
+                "id": "rate_limiting",
+                "en": "Request Rate Limiting",
+                "zh": "请求速率限制"
+              },
+              {
+                "id": "caching_strategy",
+                "en": "Intelligent Content Caching",
+                "zh": "智能内容缓存"
+              },
+              {
+                "id": "user_agent_transparency",
+                "en": "Transparent User Agent Identification",
+                "zh": "透明用户代理识别"
+              }
+            ]
+          },
+          {
+            "id": "content_extraction",
+            "en": "Content Extraction",
+            "zh": "内容提取",
+            "children": [
+              {
+                "id": "html_parsing",
+                "en": "HTML Structure Parsing",
+                "zh": "HTML结构解析"
+              },
+              {
+                "id": "parser_generation",
+                "en": "Custom Parser Generation",
+                "zh": "自定义解析器生成"
+              },
+              {
+                "id": "data_normalization",
+                "en": "Extracted Data Normalization",
+                "zh": "提取数据规范化"
+              },
+              {
+                "id": "field_standardization",
+                "en": "Field Value Standardization",
+                "zh": "字段值标准化"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "multi_source_validation",
+        "en": "Multi-Source Validation",
+        "zh": "多源验证",
+        "children": [
+          {
+            "id": "cross_validation",
+            "en": "Cross-Source Validation",
+            "zh": "跨源验证",
+            "children": [
+              {
+                "id": "field_comparison",
+                "en": "Field-by-Field Comparison",
+                "zh": "逐字段比较"
+              },
+              {
+                "id": "source_agreement",
+                "en": "Source Agreement Analysis",
+                "zh": "来源一致性分析"
+              },
+              {
+                "id": "confidence_scoring",
+                "en": "Confidence Score Calculation",
+                "zh": "置信度评分计算"
+              }
+            ]
+          },
+          {
+            "id": "conflict_detection",
+            "en": "Conflict Detection",
+            "zh": "冲突检测",
+            "children": [
+              {
+                "id": "discrepancy_identification",
+                "en": "Meaningful Discrepancy Identification",
+                "zh": "有意义差异识别"
+              },
+              {
+                "id": "formatting_vs_content",
+                "en": "Formatting vs Content Conflicts",
+                "zh": "格式与内容冲突区分"
+              },
+              {
+                "id": "conflict_severity",
+                "en": "Conflict Severity Assessment",
+                "zh": "冲突严重性评估"
+              }
+            ]
+          },
+          {
+            "id": "conflict_resolution",
+            "en": "Intelligent Conflict Resolution",
+            "zh": "智能冲突解决",
+            "children": [
+              {
+                "id": "authority_strategy",
+                "en": "Authority-Based Resolution",
+                "zh": "基于权威性的解决"
+              },
+              {
+                "id": "recency_strategy",
+                "en": "Recency-Based Resolution",
+                "zh": "基于时效性的解决"
+              },
+              {
+                "id": "resolution_explanation",
+                "en": "Resolution Decision Explanation",
+                "zh": "解决决策解释"
+              }
+            ]
+          },
+          {
+            "id": "source_authority",
+            "en": "Source Authority Assessment",
+            "zh": "来源权威性评估",
+            "children": [
+              {
+                "id": "domain_authority",
+                "en": "Domain Authority Ranking",
+                "zh": "域权威性排名"
+              },
+              {
+                "id": "official_vs_secondary",
+                "en": "Official vs Secondary Source Classification",
+                "zh": "官方与二级来源分类"
+              },
+              {
+                "id": "source_reliability",
+                "en": "Source Reliability Scoring",
+                "zh": "来源可靠性评分"
+              }
+            ]
+          },
+          {
+            "id": "multi_source_validation_temporal_consistency_verification",
+            "en": "Temporal Consistency Verification",
+            "zh": "时间一致性验证"
+          }
+        ]
+      },
+      {
+        "id": "publication_preparation",
+        "en": "Publication Preparation",
+        "zh": "出版准备",
+        "children": [
+          {
+            "id": "fact_card_generation",
+            "en": "Fact Card Generation",
+            "zh": "事实卡生成",
+            "children": [
+              {
+                "id": "claim_summary",
+                "en": "Claim Summary Formatting",
+                "zh": "声明摘要格式化",
+                "children": [
+                  {
+                    "id": "claim_summary_time_qualified_one_sentence_claim_summary",
+                    "en": "Time-Qualified One-Sentence Claim Summary Formatting",
+                    "zh": "含时间限定的单句声明摘要格式化"
+                  }
+                ]
+              },
+              {
+                "id": "evidence_presentation",
+                "en": "Evidence Presentation",
+                "zh": "证据呈现"
+              },
+              {
+                "id": "citation_formatting",
+                "en": "Citation Formatting",
+                "zh": "引用格式化",
+                "children": [
+                  {
+                    "id": "citation_formatting_canonical_url_normalization_in_citations",
+                    "en": "Canonical URL Normalization for Citations",
+                    "zh": "引用中的规范URL标准化"
+                  }
+                ]
+              },
+              {
+                "id": "confidence_display",
+                "en": "Confidence Level Display",
+                "zh": "置信度展示"
+              }
+            ]
+          },
+          {
+            "id": "multi_format_export",
+            "en": "Multi-Format Export",
+            "zh": "多格式导出",
+            "children": [
+              {
+                "id": "json_export",
+                "en": "JSON Export for CMS",
+                "zh": "CMS用JSON导出"
+              },
+              {
+                "id": "csv_export",
+                "en": "CSV Export for Analysis",
+                "zh": "分析用CSV导出"
+              },
+              {
+                "id": "schema_validation",
+                "en": "Export Schema Validation",
+                "zh": "导出架构验证"
+              }
+            ]
+          },
+          {
+            "id": "pre_publication_check",
+            "en": "Pre-Publication Verification",
+            "zh": "发布前验证",
+            "children": [
+              {
+                "id": "source_re_verification",
+                "en": "Source Re-verification",
+                "zh": "来源重新验证"
+              },
+              {
+                "id": "change_detection",
+                "en": "Source Change Detection",
+                "zh": "来源变更检测"
+              },
+              {
+                "id": "last_minute_updates",
+                "en": "Last-Minute Update Detection",
+                "zh": "最后更新检测"
+              },
+              {
+                "id": "integrity_alerts",
+                "en": "Source Integrity Alerts",
+                "zh": "来源完整性警报"
+              }
+            ]
+          },
+          {
+            "id": "audit_trail",
+            "en": "Audit Trail Documentation",
+            "zh": "审计追踪文档",
+            "children": [
+              {
+                "id": "source_tracking",
+                "en": "Complete Source Tracking",
+                "zh": "完整来源追踪"
+              },
+              {
+                "id": "timestamp_recording",
+                "en": "Access Timestamp Recording",
+                "zh": "访问时间戳记录"
+              },
+              {
+                "id": "evidence_packaging",
+                "en": "Evidence Package Creation",
+                "zh": "证据包创建"
+              },
+              {
+                "id": "verification_documentation",
+                "en": "Verification Process Documentation",
+                "zh": "验证过程文档"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "risk_mitigation",
+        "en": "Risk Mitigation and Compliance",
+        "zh": "风险缓解和合规",
+        "children": [
+          {
+            "id": "defamation_risk",
+            "en": "Defamation Risk Mitigation",
+            "zh": "诽谤风险缓解",
+            "children": [
+              {
+                "id": "executive_title_accuracy",
+                "en": "Executive Title Accuracy Verification",
+                "zh": "高管职位准确性验证"
+              },
+              {
+                "id": "multi_source_backing",
+                "en": "Multi-Source Backing Requirement",
+                "zh": "多源支持要求"
+              },
+              {
+                "id": "citation_completeness",
+                "en": "Complete Citation Chain",
+                "zh": "完整引用链"
+              }
+            ]
+          },
+          {
+            "id": "regulatory_compliance",
+            "en": "Regulatory Compliance",
+            "zh": "监管合规",
+            "children": [
+              {
+                "id": "advertising_claims",
+                "en": "Advertising Claim Validation",
+                "zh": "广告声明验证"
+              },
+              {
+                "id": "marketing_compliance",
+                "en": "Marketing Compliance Checking",
+                "zh": "营销合规检查"
+              },
+              {
+                "id": "evidence_traceability",
+                "en": "Evidence Traceability for Review",
+                "zh": "审查用证据可追溯性"
+              },
+              {
+                "id": "regulatory_compliance_regulatory_filing_and_certification_verification",
+                "en": "Regulatory Filing and Certification Verification",
+                "zh": "监管备案与认证核验"
+              }
+            ]
+          },
+          {
+            "id": "editorial_quality",
+            "en": "Editorial Quality Assurance",
+            "zh": "编辑质量保证",
+            "children": [
+              {
+                "id": "fact_accuracy",
+                "en": "Fact Accuracy Verification",
+                "zh": "事实准确性验证"
+              },
+              {
+                "id": "source_credibility",
+                "en": "Source Credibility Assessment",
+                "zh": "来源可信度评估"
+              },
+              {
+                "id": "reader_trust",
+                "en": "Reader Trust Maintenance",
+                "zh": "读者信任维护"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

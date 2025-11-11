@@ -1,0 +1,565 @@
+{
+  "description": "Comprehensive medical and health consultation framework providing full-spectrum healthcare services from emergency triage to specialized health management, including symptom analysis, medication advice, health management, report interpretation, and mental health support. Features 10 specialized agents coordinated through a 3-tier hub-and-spoke architecture.",
+  "subagents": [
+    {
+      "name": "medical_and_health_consultant",
+      "description": "Main medical coordinator responsible for medical consultation triage, emergency assessment, sub-agent coordination, health guidance synthesis, and medical safety oversight",
+      "role": "orchestrator",
+      "capabilities": [
+        "emergency_recognition",
+        "multi_system_health_analysis",
+        "patient_communication",
+        "evidence_based_health_guidance",
+        "medical_navigation_and_appointment_coordination"
+      ],
+      "tools": [
+        "bash",
+        "ls",
+        "file_read",
+        "file_write",
+        "web_search",
+        "web_read",
+        "todo_write",
+        "emergency_triage",
+        "knowledge_base_search",
+        "user_history",
+        "appointment_recommender"
+      ]
+    },
+    {
+      "name": "SymptomAnalyzer",
+      "description": "Specialized symptom analysis expert using standardized medical frameworks (OPQRST, SOCRATES, HPI) for systematic symptom assessment",
+      "role": "technical_specialist",
+      "capabilities": [
+        "differential_diagnosis_support",
+        "red_flag_identification",
+        "evidence_based_symptom_disease_correlation",
+        "special_population_considerations",
+        "pain_assessment_scale_classification"
+      ],
+      "tools": [
+        "bash",
+        "ls",
+        "file_read",
+        "file_write",
+        "web_search",
+        "web_read",
+        "todo_write",
+        "symptom_database",
+        "red_flag_checker",
+        "differential_assistant"
+      ]
+    },
+    {
+      "name": "medicationadvisor",
+      "description": "Specialized medication consultation expert focused on drug safety assessment and evidence-based medication guidance",
+      "role": "technical_specialist",
+      "capabilities": [
+        "drug_interaction_analysis",
+        "dosage_calculation_adjustment",
+        "adverse_drug_reaction_identification",
+        "medication_adherence_optimization",
+        "evidence_based_pharmacology",
+        "clinical_pharmacology_monitoring",
+        "medication_reconciliation"
+      ],
+      "tools": [
+        "bash",
+        "ls",
+        "file_read",
+        "file_write",
+        "web_search",
+        "web_read",
+        "grep",
+        "drug_interaction_analyzer",
+        "dosage_calculator",
+        "safety_assessor",
+        "adr_analyzer"
+      ]
+    },
+    {
+      "name": "HealthManager",
+      "description": "Specialized health management expert providing chronic disease management, lifestyle optimization, and preventive care coordination",
+      "role": "technical_specialist",
+      "capabilities": [
+        "chronic_disease_daily_management",
+        "evidence_based_lifestyle_medicine",
+        "preventive_care_scheduling",
+        "health_risk_assessment",
+        "health_plan_design",
+        "behavior_change_support"
+      ],
+      "tools": [
+        "bash",
+        "ls",
+        "file_read",
+        "file_write",
+        "web_search",
+        "web_read",
+        "todo_write",
+        "lifestyle_assessor",
+        "goal_tracker",
+        "screening_scheduler"
+      ]
+    },
+    {
+      "name": "ReportInterpreter",
+      "description": "Specialized medical report interpretation expert providing accurate and comprehensive medical report explanations",
+      "role": "technical_specialist",
+      "capabilities": [
+        "laboratory_report_parsing",
+        "medical_imaging_interpretation",
+        "test_result_trend_analysis",
+        "reference_value_comparison",
+        "critical_value_identification",
+        "comprehensive_report_synthesis"
+      ],
+      "tools": [
+        "file_read",
+        "file_write",
+        "web_search",
+        "web_read",
+        "grep",
+        "bash",
+        "ls",
+        "medical_report_parser",
+        "lab_reference",
+        "trend_analyzer"
+      ]
+    },
+    {
+      "name": "MentalHealthSupporter",
+      "description": "Specialized mental health support expert providing compassionate evidence-based psychological support and crisis intervention",
+      "role": "technical_specialist",
+      "capabilities": [
+        "crisis_identification",
+        "suicide_self_harm_risk_assessment",
+        "evidence_based_therapy_methods",
+        "mental_health_screening",
+        "anxiety_depression_support",
+        "substance_use_awareness"
+      ],
+      "tools": [
+        "bash",
+        "ls",
+        "file_read",
+        "file_write",
+        "web_search",
+        "web_read",
+        "grep",
+        "mental_screening",
+        "crisis_hotline",
+        "coping_library"
+      ]
+    },
+    {
+      "name": "PainAnalyzer",
+      "description": "Specialized pain assessment expert using evidence-based clinical frameworks for comprehensive pain evaluation",
+      "role": "technical_specialist",
+      "capabilities": [
+        "OPQRST_pain_assessment",
+        "pain_scale_management",
+        "pain_pattern_recognition",
+        "emergency_pain_condition_identification",
+        "clinical_pain_documentation",
+        "pediatric_geriatric_pain_assessment"
+      ],
+      "tools": [
+        "bash",
+        "ls",
+        "file_read",
+        "file_write",
+        "web_search",
+        "web_read",
+        "pain_scale"
+      ]
+    },
+    {
+      "name": "RespiratoryAnalyzer",
+      "description": "Specialized respiratory symptom analysis expert providing systematic respiratory assessment with emergency recognition",
+      "role": "technical_specialist",
+      "capabilities": [
+        "cough_characteristic_analysis",
+        "dyspnea_assessment",
+        "chest_pain_evaluation",
+        "upper_lower_respiratory_differentiation",
+        "emergency_respiratory_condition_recognition",
+        "age_specific_respiratory_assessment"
+      ],
+      "tools": [
+        "bash",
+        "ls",
+        "file_read",
+        "file_write",
+        "web_search",
+        "web_read",
+        "respiratory_assessor"
+      ]
+    },
+    {
+      "name": "NutritionAdvisor",
+      "description": "Specialized nutrition consultation expert providing comprehensive dietary guidance and personalized nutrition solutions",
+      "role": "technical_specialist",
+      "capabilities": [
+        "advanced_nutrition_science",
+        "medical_nutrition_therapy",
+        "macronutrient_micronutrient_metabolism",
+        "food_composition_analysis",
+        "cultural_religious_dietary_adaptation",
+        "sports_nutrition",
+        "weight_management_strategies"
+      ],
+      "tools": [
+        "bash",
+        "ls",
+        "file_read",
+        "file_write",
+        "file_edit",
+        "web_search",
+        "web_read",
+        "todo_write",
+        "nutrition_calculator",
+        "food_database",
+        "meal_planner"
+      ]
+    },
+    {
+      "name": "FitnessCoach",
+      "description": "Specialized fitness and exercise expert providing comprehensive fitness guidance, personalized workout plans, and evidence-based exercise prescription",
+      "role": "technical_specialist",
+      "capabilities": [
+        "exercise_physiology_biomechanics",
+        "strength_training_programming",
+        "cardiovascular_endurance_development",
+        "functional_movement_assessment",
+        "chronic_disease_exercise_modification",
+        "exercise_behavior_change_psychology"
+      ],
+      "tools": [
+        "bash",
+        "ls",
+        "file_read",
+        "file_write",
+        "web_search",
+        "web_read",
+        "todo_write",
+        "fitness_assessor",
+        "workout_library",
+        "progress_tracker"
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "name": "emergency_triage",
+      "description": "Emergency triage tool for rapid health symptom assessment to determine need for urgent medical attention",
+      "binding": "src.created_subagents.medical_and_health_consultant.tools.emergency_triage:emergency_triage",
+      "capabilities": [
+        "emergency_recognition",
+        "triage_assessment",
+        "urgency_level_determination"
+      ]
+    },
+    {
+      "name": "knowledge_base_search",
+      "description": "Advanced medical knowledge base search tool querying multiple authoritative medical databases",
+      "binding": "src.created_subagents.medical_and_health_consultant.tools.knowledge_base_search:knowledge_base_search",
+      "capabilities": [
+        "medical_database_query",
+        "evidence_based_research",
+        "clinical_guideline_access"
+      ]
+    },
+    {
+      "name": "user_history",
+      "description": "Comprehensive user medical history management tool for secure storage and retrieval of historical medical records",
+      "binding": "src.created_subagents.medical_and_health_consultant.tools.user_history:user_history",
+      "capabilities": [
+        "medical_history_storage",
+        "patient_data_retrieval",
+        "longitudinal_health_tracking"
+      ]
+    },
+    {
+      "name": "appointment_recommender",
+      "description": "Intelligent medical appointment recommendation tool analyzing health concerns and providing comprehensive guidance",
+      "binding": "src.created_subagents.medical_and_health_consultant.tools.appointment_recommender:appointment_recommender",
+      "capabilities": [
+        "specialist_recommendation",
+        "appointment_scheduling_guidance",
+        "care_pathway_optimization"
+      ]
+    },
+    {
+      "name": "symptom_database",
+      "description": "Symptom database querying comprehensive symptom-disease associations and clinical correlations",
+      "binding": "src.created_subagents.SymptomAnalyzer.tools.symptom_database:symptom_database",
+      "capabilities": [
+        "symptom_disease_correlation",
+        "differential_diagnosis_support",
+        "clinical_pattern_recognition"
+      ]
+    },
+    {
+      "name": "red_flag_checker",
+      "description": "Red flag detection for identifying dangerous warning signs requiring immediate emergency care",
+      "binding": "src.created_subagents.SymptomAnalyzer.tools.red_flag_checker:red_flag_checker",
+      "capabilities": [
+        "emergency_sign_detection",
+        "critical_symptom_identification",
+        "immediate_care_triage"
+      ]
+    },
+    {
+      "name": "differential_assistant",
+      "description": "Differential diagnosis assistant supporting clinical decision-making",
+      "binding": "src.created_subagents.SymptomAnalyzer.tools.differential_assistant:differential_assistant",
+      "capabilities": [
+        "differential_diagnosis_analysis",
+        "clinical_reasoning_support",
+        "diagnostic_probability_assessment"
+      ]
+    },
+    {
+      "name": "drug_interaction_analyzer",
+      "description": "Drug interaction analyzer detecting potential interactions between medications",
+      "binding": "src.created_subagents.medicationadvisor.tools.drug_interaction_analyzer:drug_interaction_analyzer",
+      "capabilities": [
+        "drug_interaction_detection",
+        "pharmacokinetic_analysis",
+        "safety_alert_generation"
+      ]
+    },
+    {
+      "name": "dosage_calculator",
+      "description": "Dosage calculator computing appropriate medication doses based on patient parameters",
+      "binding": "src.created_subagents.medicationadvisor.tools.dosage_calculator:dosage_calculator",
+      "capabilities": [
+        "dose_calculation",
+        "weight_based_dosing",
+        "renal_hepatic_adjustment"
+      ]
+    },
+    {
+      "name": "safety_assessor",
+      "description": "Medication safety assessor evaluating safety of medication use",
+      "binding": "src.created_subagents.medicationadvisor.tools.safety_assessor:safety_assessor",
+      "capabilities": [
+        "medication_safety_evaluation",
+        "contraindication_checking",
+        "risk_benefit_analysis"
+      ]
+    },
+    {
+      "name": "adr_analyzer",
+      "description": "Adverse drug reaction analyzer identifying and analyzing medication adverse reactions",
+      "binding": "src.created_subagents.medicationadvisor.tools.adr_analyzer:adr_analyzer",
+      "capabilities": [
+        "adverse_reaction_identification",
+        "causality_assessment",
+        "severity_classification"
+      ]
+    },
+    {
+      "name": "lifestyle_assessor",
+      "description": "Lifestyle assessor evaluating lifestyle impact on health",
+      "binding": "src.created_subagents.HealthManager.tools.lifestyle_assessor:lifestyle_assessor",
+      "capabilities": [
+        "lifestyle_evaluation",
+        "health_behavior_assessment",
+        "risk_factor_identification"
+      ]
+    },
+    {
+      "name": "goal_tracker",
+      "description": "Goal tracker monitoring and tracking health goal progress",
+      "binding": "src.created_subagents.HealthManager.tools.goal_tracker:goal_tracker",
+      "capabilities": [
+        "goal_progress_monitoring",
+        "milestone_tracking",
+        "achievement_analysis"
+      ]
+    },
+    {
+      "name": "screening_scheduler",
+      "description": "Screening scheduler arranging preventive health screenings",
+      "binding": "src.created_subagents.HealthManager.tools.screening_scheduler:screening_scheduler",
+      "capabilities": [
+        "preventive_screening_scheduling",
+        "age_appropriate_recommendations",
+        "guideline_based_planning"
+      ]
+    },
+    {
+      "name": "medical_report_parser",
+      "description": "Medical report parser interpreting various medical report formats",
+      "binding": "src.created_subagents.ReportInterpreter.tools.medical_report_parser:medical_report_parser",
+      "capabilities": [
+        "report_format_parsing",
+        "structured_data_extraction",
+        "multi_format_support"
+      ]
+    },
+    {
+      "name": "lab_reference",
+      "description": "Laboratory reference value query providing test result reference ranges",
+      "binding": "src.created_subagents.ReportInterpreter.tools.lab_reference:lab_reference",
+      "capabilities": [
+        "reference_range_lookup",
+        "abnormal_value_identification",
+        "age_gender_specific_ranges"
+      ]
+    },
+    {
+      "name": "trend_analyzer",
+      "description": "Trend analyzer analyzing medical data change trends",
+      "binding": "src.created_subagents.ReportInterpreter.tools.trend_analyzer:trend_analyzer",
+      "capabilities": [
+        "temporal_trend_analysis",
+        "longitudinal_data_visualization",
+        "progression_assessment"
+      ]
+    },
+    {
+      "name": "mental_screening",
+      "description": "Mental health screening tool using validated screening instruments for mental health assessment",
+      "binding": "src.created_subagents.MentalHealthSupporter.tools.mental_screening:mental_screening",
+      "capabilities": [
+        "validated_screening_administration",
+        "mental_health_assessment",
+        "risk_level_determination"
+      ]
+    },
+    {
+      "name": "crisis_hotline",
+      "description": "Crisis hotline tool providing emergency resources and support for crisis situations",
+      "binding": "src.created_subagents.MentalHealthSupporter.tools.crisis_hotline:crisis_hotline",
+      "capabilities": [
+        "crisis_resource_provision",
+        "emergency_contact_information",
+        "immediate_support_guidance"
+      ]
+    },
+    {
+      "name": "coping_library",
+      "description": "Coping strategy library providing evidence-based coping techniques and strategies",
+      "binding": "src.created_subagents.MentalHealthSupporter.tools.coping_library:coping_library",
+      "capabilities": [
+        "coping_strategy_recommendation",
+        "evidence_based_techniques",
+        "skill_building_resources"
+      ]
+    },
+    {
+      "name": "pain_scale",
+      "description": "Pain scale assessment tool for comprehensive pain severity evaluation using validated measurement tools",
+      "binding": "src.created_subagents.painanalyzer.tools.pain_scale:pain_scale",
+      "capabilities": [
+        "pain_severity_measurement",
+        "validated_scale_administration",
+        "multi_dimensional_pain_assessment"
+      ]
+    },
+    {
+      "name": "respiratory_assessor",
+      "description": "Respiratory assessor conducting comprehensive respiratory function evaluation",
+      "binding": "src.created_subagents.RespiratoryAnalyzer.tools.respiratory_assessor:respiratory_assessor",
+      "capabilities": [
+        "respiratory_function_assessment",
+        "breathing_pattern_analysis",
+        "oxygen_saturation_interpretation"
+      ]
+    },
+    {
+      "name": "nutrition_calculator",
+      "description": "Nutrition calculator computing precise nutritional needs based on individual parameters",
+      "binding": "src.created_subagents.NutritionAdvisor.tools.nutrition_calculator:nutrition_calculator",
+      "capabilities": [
+        "caloric_requirement_calculation",
+        "macronutrient_distribution",
+        "micronutrient_needs_assessment"
+      ]
+    },
+    {
+      "name": "food_database",
+      "description": "Food database querying accurate nutrition content and food composition data",
+      "binding": "src.created_subagents.NutritionAdvisor.tools.food_database:food_database",
+      "capabilities": [
+        "nutrition_data_lookup",
+        "food_composition_analysis",
+        "dietary_planning_support"
+      ]
+    },
+    {
+      "name": "meal_planner",
+      "description": "Meal planner creating structured meal plans with automatic nutrition balancing",
+      "binding": "src.created_subagents.NutritionAdvisor.tools.meal_planner:meal_planner",
+      "capabilities": [
+        "meal_plan_generation",
+        "nutrition_balance_optimization",
+        "dietary_preference_accommodation"
+      ]
+    },
+    {
+      "name": "fitness_assessor",
+      "description": "Fitness assessor evaluating current fitness level and exercise quality",
+      "binding": "src.created_subagents.FitnessCoach.tools.fitness_assessor:fitness_assessor",
+      "capabilities": [
+        "fitness_level_evaluation",
+        "movement_quality_assessment",
+        "baseline_measurement_establishment"
+      ]
+    },
+    {
+      "name": "workout_library",
+      "description": "Workout library accessing exercise database with guidance and safety instructions",
+      "binding": "src.created_subagents.FitnessCoach.tools.workout_library:workout_library",
+      "capabilities": [
+        "exercise_database_access",
+        "technique_instruction_provision",
+        "safety_guideline_delivery"
+      ]
+    },
+    {
+      "name": "progress_tracker",
+      "description": "Progress tracker monitoring key performance indicators and goal achievement metrics",
+      "binding": "src.created_subagents.FitnessCoach.tools.progress_tracker:progress_tracker",
+      "capabilities": [
+        "performance_metric_tracking",
+        "goal_achievement_monitoring",
+        "progress_visualization"
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "framework_type": "multi_agent_medical_consultation",
+    "architecture": "3_tier_hub_and_spoke",
+    "use_cases": [
+      "comprehensive_medical_consultation",
+      "symptom_analysis_and_triage",
+      "medication_safety_review",
+      "chronic_disease_management",
+      "mental_health_support",
+      "preventive_health_guidance",
+      "medical_report_interpretation",
+      "nutrition_and_fitness_counseling"
+    ],
+    "strengths": [
+      "comprehensive_medical_coverage",
+      "evidence_based_clinical_frameworks",
+      "specialized_sub_agent_expertise",
+      "emergency_recognition_capability",
+      "patient_safety_focused",
+      "holistic_health_approach",
+      "professional_medical_tool_integration"
+    ],
+    "limitations": [
+      "not_a_replacement_for_professional_medical_care",
+      "requires_medical_knowledge_base_access",
+      "custom_tools_need_implementation",
+      "regulatory_compliance_considerations",
+      "liability_and_medical_disclaimer_required"
+    ]
+  }
+}

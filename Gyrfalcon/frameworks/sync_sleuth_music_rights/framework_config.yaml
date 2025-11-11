@@ -1,0 +1,510 @@
+# Copyright (c) Nex-AGI. All rights reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Framework Configuration for sync_sleuth_music_rights
+# SyncSleuth - Music Rights Clearance Intelligence System
+
+framework_name: sync_sleuth_music_rights
+framework_entrance_agent: SyncSleuthOrchestrator
+version: "1.0.0"
+
+description: "SyncSleuth is a comprehensive music rights clearance intelligence system designed for independent production teams, small advertising agencies, and sync licensing professionals. The framework researches music rights ownership using publicly available sources to deliver actionable licensing guidance for sync licensing, television advertising, film productions, YouTube content monetization, and TikTok commercial usage. It provides complete rights attribution covering master recording rights and composition publishing rights, confidence-scored findings based on source authority and consistency, contact information for labels and publishers with inquiry email templates, claim verification for fast-changing industry events, multi-format output in JSON and human-readable formats, and full transparency with every claim linked to source URLs and content excerpts."
+
+description_chinese: "SyncSleuth是一个综合性音乐版权清查情报系统,专为独立制作团队、小型广告代理商和同步授权专业人员设计。该框架使用公开可用的来源研究音乐版权所有权,为同步授权、电视广告、电影制作、YouTube内容变现和TikTok商业使用提供可操作的授权指导。它提供完整的版权归属,涵盖母带录音版权和作曲出版版权,基于来源权威性和一致性的置信度评分结果,标签和出版商的联系信息以及咨询邮件模板,快速变化的行业事件的声明验证,JSON和人类可读格式的多格式输出,以及每个声明都链接到来源URL和内容摘录的完全透明性。"
+
+metadata:
+  domain: "Music Rights & Licensing"
+  approach: "Multi-layer hierarchical workflow with 16 specialized agents"
+  total_agents: 16
+  total_tools: 40
+  primary_use_cases:
+    - "Independent film and television licensing"
+    - "Advertising sync rights research"
+    - "YouTube content monetization planning"
+    - "TikTok commercial usage clearance"
+    - "Label change verification"
+    - "Rights due diligence and budget planning"
+  key_capabilities:
+    - "Complete rights attribution (master + composition)"
+    - "Multi-language web search orchestration"
+    - "Ethical web scraping with compliance"
+    - "Fuzzy entity matching and normalization"
+    - "Confidence-scored findings"
+    - "Contact extraction with email templates"
+    - "Claim verification with timestamped evidence"
+    - "Multi-format output (JSON + text)"
+
+# === Agent Definitions ===
+agents:
+  - agent_name: SyncSleuthOrchestrator
+    description: "Main coordinator managing complete music rights clearance workflow from user input to final report delivery"
+    description_chinese: "主协调器,管理从用户输入到最终报告交付的完整音乐版权清查工作流程"
+    role: orchestrator
+    layer: 0
+    capabilities:
+      - workflow_coordination
+      - stage_progression
+      - result_aggregation
+      - error_handling
+      - report_delivery
+
+  - agent_name: InputValidator
+    description: "Validates and normalizes user input for track and artist metadata with schema validation and field normalization"
+    description_chinese: "验证和规范化用户输入的曲目和艺术家元数据,包括模式验证和字段规范化"
+    role: content_creator
+    layer: 1
+    capabilities:
+      - schema_validation
+      - field_normalization
+      - input_sanitization
+      - metadata_enrichment
+
+  - agent_name: PublicSourceDiscoverer
+    description: "Multi-language web search orchestrator for discovering authoritative public sources including PRO databases, label websites, and verified music databases"
+    description_chinese: "多语言网络搜索协调器,用于发现权威公共来源,包括PRO数据库、标签网站和经过验证的音乐数据库"
+    role: researcher
+    layer: 2
+    capabilities:
+      - search_orchestration
+      - multi_language_support
+      - source_prioritization
+      - authority_assessment
+
+  - agent_name: QueryGenerator
+    description: "Generates multi-language search queries with artist and track aliases including romanization and transliteration support"
+    description_chinese: "生成多语言搜索查询,包含艺术家和曲目别名,支持罗马化和音译"
+    role: researcher
+    layer: 2
+    capabilities:
+      - alias_expansion
+      - query_template_building
+      - multi_language_queries
+      - romanization_support
+
+  - agent_name: SourceRanker
+    description: "Ranks search results by domain authority and relevance using tier-based classification"
+    description_chinese: "使用基于层级的分类,按域权威性和相关性对搜索结果进行排名"
+    role: researcher
+    layer: 2
+    capabilities:
+      - domain_authority_scoring
+      - relevance_calculation
+      - source_tier_classification
+      - quality_filtering
+
+  - agent_name: ContentHarvester
+    description: "Ethical web scraping agent with strict robots.txt compliance and configurable rate limiting"
+    description_chinese: "符合伦理的网页抓取代理,严格遵守robots.txt并具有可配置的速率限制"
+    role: researcher
+    layer: 3
+    capabilities:
+      - robots_txt_compliance
+      - rate_limiting
+      - html_extraction
+      - ethical_scraping
+
+  - agent_name: DataNormalizer
+    description: "Python-based entity normalization orchestrator coordinating fuzzy matching, conflict detection, and data standardization"
+    description_chinese: "基于Python的实体规范化协调器,协调模糊匹配、冲突检测和数据标准化"
+    role: technical_specialist
+    layer: 4
+    capabilities:
+      - entity_normalization
+      - conflict_detection
+      - data_standardization
+      - quality_assurance
+
+  - agent_name: PythonToolGenerator
+    description: "Generates custom Python normalization scripts using standard library for fuzzy matching and entity extraction"
+    description_chinese: "使用标准库生成自定义Python规范化脚本,用于模糊匹配和实体提取"
+    role: technical_specialist
+    layer: 4
+    capabilities:
+      - script_generation
+      - fuzzy_matching_logic
+      - entity_extraction_code
+      - conflict_detection_algorithms
+
+  - agent_name: PythonToolExecutor
+    description: "Executes Python scripts safely in sandboxed environments with security enforcement and result validation"
+    description_chinese: "在沙盒环境中安全执行Python脚本,具有安全强制执行和结果验证"
+    role: technical_specialist
+    layer: 4
+    capabilities:
+      - sandboxed_execution
+      - result_validation
+      - error_handling
+      - security_enforcement
+
+  - agent_name: RightsChainBuilder
+    description: "Constructs structured rights attribution chain with confidence levels coordinating master and composition analysis"
+    description_chinese: "构建具有置信度级别的结构化版权归属链,协调母带和作曲分析"
+    role: content_creator
+    layer: 5
+    capabilities:
+      - rights_chain_construction
+      - attribution_structuring
+      - confidence_coordination
+      - chain_validation
+
+  - agent_name: MasterRightsAnalyzer
+    description: "Analyzes master recording rights, label ownership, and regional variance detection"
+    description_chinese: "分析母带录音版权、标签所有权和区域差异检测"
+    role: technical_specialist
+    layer: 5
+    capabilities:
+      - label_identification
+      - ownership_tracking
+      - regional_variance_detection
+      - master_rights_attribution
+
+  - agent_name: CompositionRightsAnalyzer
+    description: "Analyzes composition and publishing rights with songwriter attribution, publisher mapping, and work code extraction"
+    description_chinese: "分析作曲和出版版权,包括词曲作者归属、出版商映射和作品代码提取"
+    role: technical_specialist
+    layer: 5
+    capabilities:
+      - songwriter_extraction
+      - publisher_mapping
+      - work_code_extraction
+      - split_calculation
+
+  - agent_name: ConfidenceScorer
+    description: "Assigns confidence levels based on source authority ranking, cross-source validation, and recency scoring"
+    description_chinese: "基于来源权威排名、跨来源验证和时效性评分分配置信度级别"
+    role: technical_specialist
+    layer: 5
+    capabilities:
+      - authority_ranking
+      - cross_source_validation
+      - recency_scoring
+      - confidence_calculation
+
+  - agent_name: ClaimVerifier
+    description: "Verifies fast-changing claims with timestamped evidence including label switches and catalog acquisitions"
+    description_chinese: "使用带时间戳的证据验证快速变化的声明,包括标签转换和目录收购"
+    role: researcher
+    layer: 6
+    capabilities:
+      - claim_classification
+      - official_source_search
+      - media_corroboration
+      - evidence_timestamping
+
+  - agent_name: ContactExtractor
+    description: "Extracts contact information and generates inquiry email templates for labels, publishers, and PROs"
+    description_chinese: "提取联系信息并为标签、出版商和PRO生成咨询邮件模板"
+    role: content_creator
+    layer: 7
+    capabilities:
+      - contact_extraction
+      - entity_contact_mapping
+      - template_generation
+      - next_step_suggestion
+
+  - agent_name: ReportGenerator
+    description: "Generates final clearance brief in JSON and human-readable formats with evidence linking and uncertainty highlighting"
+    description_chinese: "以JSON和人类可读格式生成最终清查简报,包含证据链接和不确定性突出显示"
+    role: content_creator
+    layer: 8
+    capabilities:
+      - json_formatting
+      - human_readable_formatting
+      - evidence_linking
+      - uncertainty_highlighting
+
+# === Tool Definitions ===
+tools:
+  # Input Processing Tools
+  - tool_name: input_schema_validator
+    description: "Validate input schema for track and artist metadata"
+    description_chinese: "验证曲目和艺术家元数据的输入模式"
+    category: input_processing
+
+  - tool_name: field_normalizer
+    description: "Normalize text fields to standard format"
+    description_chinese: "将文本字段规范化为标准格式"
+    category: input_processing
+
+  # Search & Discovery Tools
+  - tool_name: alias_expander
+    description: "Generate name aliases including romanization and transliteration"
+    description_chinese: "生成名称别名,包括罗马化和音译"
+    category: search_discovery
+
+  - tool_name: query_template_builder
+    description: "Build search query templates for rights research"
+    description_chinese: "为版权研究构建搜索查询模板"
+    category: search_discovery
+
+  - tool_name: domain_authority_scorer
+    description: "Score domain authority for source reliability assessment"
+    description_chinese: "为来源可靠性评估评分域权威性"
+    category: search_discovery
+
+  - tool_name: relevance_calculator
+    description: "Calculate search result relevance to query"
+    description_chinese: "计算搜索结果与查询的相关性"
+    category: search_discovery
+
+  # Web Scraping Tools
+  - tool_name: robots_txt_checker
+    description: "Validate robots.txt compliance before crawling"
+    description_chinese: "在爬取前验证robots.txt合规性"
+    category: web_scraping
+
+  - tool_name: rate_limiter
+    description: "Enforce rate limiting for ethical web requests"
+    description_chinese: "强制执行速率限制以进行符合伦理的网络请求"
+    category: web_scraping
+
+  - tool_name: html_extractor
+    description: "Extract clean text from HTML content"
+    description_chinese: "从HTML内容中提取干净的文本"
+    category: web_scraping
+
+  # Data Normalization Tools
+  - tool_name: difflib_matcher_generator
+    description: "Generate fuzzy matching scripts using Python difflib"
+    description_chinese: "使用Python difflib生成模糊匹配脚本"
+    category: data_normalization
+
+  - tool_name: entity_extractor_generator
+    description: "Generate entity extraction scripts"
+    description_chinese: "生成实体提取脚本"
+    category: data_normalization
+
+  - tool_name: conflict_detector_generator
+    description: "Generate conflict detection scripts"
+    description_chinese: "生成冲突检测脚本"
+    category: data_normalization
+
+  - tool_name: sandbox_executor
+    description: "Execute Python scripts safely in sandboxed environment"
+    description_chinese: "在沙盒环境中安全执行Python脚本"
+    category: data_normalization
+
+  - tool_name: result_validator
+    description: "Validate script execution results"
+    description_chinese: "验证脚本执行结果"
+    category: data_normalization
+
+  # Rights Analysis Tools
+  - tool_name: label_identifier
+    description: "Identify record labels and master rights holders"
+    description_chinese: "识别唱片公司和母带版权持有者"
+    category: rights_analysis
+
+  - tool_name: regional_variance_detector
+    description: "Detect regional rights differences across territories"
+    description_chinese: "检测跨地区的区域版权差异"
+    category: rights_analysis
+
+  - tool_name: composer_extractor
+    description: "Extract songwriters and composers from content"
+    description_chinese: "从内容中提取词曲作者和作曲家"
+    category: rights_analysis
+
+  - tool_name: publisher_mapper
+    description: "Map publishers to writers and compositions"
+    description_chinese: "将出版商映射到作者和作品"
+    category: rights_analysis
+
+  - tool_name: work_code_extractor
+    description: "Extract work registration codes like ISWC and PRO IDs"
+    description_chinese: "提取作品注册代码,如ISWC和PRO ID"
+    category: rights_analysis
+
+  - tool_name: source_authority_ranker
+    description: "Rank source authority for confidence scoring"
+    description_chinese: "为置信度评分排名来源权威性"
+    category: rights_analysis
+
+  - tool_name: cross_source_validator
+    description: "Validate consistency across multiple sources"
+    description_chinese: "验证多个来源之间的一致性"
+    category: rights_analysis
+
+  - tool_name: recency_scorer
+    description: "Score information freshness and recency"
+    description_chinese: "评分信息的新鲜度和时效性"
+    category: rights_analysis
+
+  # Claim Verification Tools
+  - tool_name: claim_type_classifier
+    description: "Classify claim types for targeted verification"
+    description_chinese: "对声明类型进行分类以进行针对性验证"
+    category: claim_verification
+
+  - tool_name: official_source_searcher
+    description: "Search for official announcements and press releases"
+    description_chinese: "搜索官方公告和新闻稿"
+    category: claim_verification
+
+  - tool_name: media_corroboration_finder
+    description: "Find corroborating media reports for claims"
+    description_chinese: "为声明寻找佐证的媒体报道"
+    category: claim_verification
+
+  - tool_name: evidence_timestamper
+    description: "Extract timestamps from evidence sources"
+    description_chinese: "从证据来源中提取时间戳"
+    category: claim_verification
+
+  # Contact & Reporting Tools
+  - tool_name: contact_info_extractor
+    description: "Extract contact information from web content"
+    description_chinese: "从网页内容中提取联系信息"
+    category: contact_reporting
+
+  - tool_name: entity_contact_mapper
+    description: "Map contacts to entities with role specification"
+    description_chinese: "将联系人映射到实体并指定角色"
+    category: contact_reporting
+
+  - tool_name: template_generator
+    description: "Generate email inquiry templates for stakeholders"
+    description_chinese: "为利益相关者生成电子邮件咨询模板"
+    category: contact_reporting
+
+  - tool_name: next_step_suggester
+    description: "Suggest next steps when contact unavailable"
+    description_chinese: "在无法联系时建议下一步行动"
+    category: contact_reporting
+
+  - tool_name: json_formatter
+    description: "Format data as structured JSON for machine consumption"
+    description_chinese: "将数据格式化为结构化JSON以供机器使用"
+    category: contact_reporting
+
+  - tool_name: human_readable_formatter
+    description: "Format clearance brief as readable text"
+    description_chinese: "将清查简报格式化为可读文本"
+    category: contact_reporting
+
+  - tool_name: evidence_linker
+    description: "Link claims to evidence sources with excerpts"
+    description_chinese: "将声明链接到证据来源并附上摘录"
+    category: contact_reporting
+
+  - tool_name: uncertainty_highlighter
+    description: "Highlight uncertainties and information gaps"
+    description_chinese: "突出显示不确定性和信息缺口"
+    category: contact_reporting
+
+  # Built-in Tools
+  - tool_name: bash
+    description: "Execute bash commands for file operations"
+    description_chinese: "执行bash命令进行文件操作"
+    category: builtin
+
+  - tool_name: ls
+    description: "List directory contents"
+    description_chinese: "列出目录内容"
+    category: builtin
+
+  - tool_name: file_read
+    description: "Read file contents"
+    description_chinese: "读取文件内容"
+    category: builtin
+
+  - tool_name: file_write
+    description: "Write file contents"
+    description_chinese: "写入文件内容"
+    category: builtin
+
+  - tool_name: file_edit
+    description: "Edit file contents"
+    description_chinese: "编辑文件内容"
+    category: builtin
+
+  - tool_name: web_search
+    description: "Search the web for music rights information"
+    description_chinese: "在网络上搜索音乐版权信息"
+    category: builtin
+
+  - tool_name: web_read
+    description: "Read web page content for rights research"
+    description_chinese: "读取网页内容进行版权研究"
+    category: builtin
+
+# === Workflow Configuration ===
+workflow:
+  name: sync_sleuth_music_rights_workflow
+  description: "Complete music rights clearance workflow from input validation through report generation"
+  description_chinese: "从输入验证到报告生成的完整音乐版权清查工作流程"
+
+  stages:
+    - stage: 1
+      name: Input Validation
+      name_chinese: 输入验证
+      agents: [InputValidator]
+
+    - stage: 2
+      name: Source Discovery
+      name_chinese: 来源发现
+      agents: [PublicSourceDiscoverer, QueryGenerator, SourceRanker]
+
+    - stage: 3
+      name: Content Harvesting
+      name_chinese: 内容采集
+      agents: [ContentHarvester]
+
+    - stage: 4
+      name: Data Normalization
+      name_chinese: 数据规范化
+      agents: [DataNormalizer, PythonToolGenerator, PythonToolExecutor]
+
+    - stage: 5
+      name: Rights Chain Construction
+      name_chinese: 版权链构建
+      agents: [RightsChainBuilder, MasterRightsAnalyzer, CompositionRightsAnalyzer, ConfidenceScorer]
+
+    - stage: 6
+      name: Claim Verification
+      name_chinese: 声明验证
+      agents: [ClaimVerifier]
+      conditional: true
+
+    - stage: 7
+      name: Contact Extraction
+      name_chinese: 联系信息提取
+      agents: [ContactExtractor]
+
+    - stage: 8
+      name: Report Generation
+      name_chinese: 报告生成
+      agents: [ReportGenerator]
+
+# === Example Use Cases ===
+example_queries:
+  - query: "Who owns the rights to 'Blinding Lights' by The Weeknd?"
+    query_chinese: "谁拥有The Weeknd的《Blinding Lights》的版权?"
+    use_case: "Basic rights research"
+
+  - query: "I need to license 'Shape of You' by Ed Sheeran for a 30-second TV commercial in the US. Budget: $75,000."
+    query_chinese: "我需要为美国的30秒电视广告授权Ed Sheeran的《Shape of You》。预算:75,000美元。"
+    use_case: "Advertising sync licensing"
+
+  - query: "Verify: 'Yesterday' by The Beatles - Writer: John Lennon (50%), Paul McCartney (50%), Publisher: Sony/ATV"
+    query_chinese: "验证:披头士的《Yesterday》 - 作者:John Lennon(50%), Paul McCartney(50%), 出版商:Sony/ATV"
+    use_case: "Claim verification"
+
+  - query: "Research rights for 'Take On Me' by a-ha for indie film use"
+    query_chinese: "研究a-ha的《Take On Me》用于独立电影的版权"
+    use_case: "Independent film licensing"
+
+  - query: "Can I use 'Bohemian Rhapsody' in my YouTube video monetized in the UK?"
+    query_chinese: "我可以在英国货币化的YouTube视频中使用《Bohemian Rhapsody》吗?"
+    use_case: "YouTube content monetization"
